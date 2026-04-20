@@ -1,0 +1,150 @@
+/****************************************************************************
+** Meta object code from reading C++ file 'plugin.cpp'
+**
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.15.13)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#include <memory>
+#include <QtCore/qbytearray.h>
+#include <QtCore/qmetatype.h>
+#include <QtCore/qplugin.h>
+#if !defined(Q_MOC_OUTPUT_REVISION)
+#error "The header file 'plugin.cpp' doesn't include <QObject>."
+#elif Q_MOC_OUTPUT_REVISION != 67
+#error "This file was generated using the moc from 5.15.13. It"
+#error "cannot be used with the include files from this version of Qt."
+#error "(The moc has changed too much.)"
+#endif
+
+QT_BEGIN_MOC_NAMESPACE
+QT_WARNING_PUSH
+QT_WARNING_DISABLE_DEPRECATED
+struct qt_meta_stringdata_CdeDecorationFactory_t {
+    QByteArrayData data[1];
+    char stringdata0[21];
+};
+#define QT_MOC_LITERAL(idx, ofs, len) \
+    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
+    qptrdiff(offsetof(qt_meta_stringdata_CdeDecorationFactory_t, stringdata0) + ofs \
+        - idx * sizeof(QByteArrayData)) \
+    )
+static const qt_meta_stringdata_CdeDecorationFactory_t qt_meta_stringdata_CdeDecorationFactory = {
+    {
+QT_MOC_LITERAL(0, 0, 20) // "CdeDecorationFactory"
+
+    },
+    "CdeDecorationFactory"
+};
+#undef QT_MOC_LITERAL
+
+static const uint qt_meta_data_CdeDecorationFactory[] = {
+
+ // content:
+       8,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       0,    0, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       0,       // signalCount
+
+       0        // eod
+};
+
+void CdeDecorationFactory::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    (void)_o;
+    (void)_id;
+    (void)_c;
+    (void)_a;
+}
+
+QT_INIT_METAOBJECT const QMetaObject CdeDecorationFactory::staticMetaObject = { {
+    QMetaObject::SuperData::link<KPluginFactory::staticMetaObject>(),
+    qt_meta_stringdata_CdeDecorationFactory.data,
+    qt_meta_data_CdeDecorationFactory,
+    qt_static_metacall,
+    nullptr,
+    nullptr
+} };
+
+
+const QMetaObject *CdeDecorationFactory::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
+}
+
+void *CdeDecorationFactory::qt_metacast(const char *_clname)
+{
+    if (!_clname) return nullptr;
+    if (!strcmp(_clname, qt_meta_stringdata_CdeDecorationFactory.stringdata0))
+        return static_cast<void*>(this);
+    if (!strcmp(_clname, "org.kde.KPluginFactory"))
+        return static_cast< KPluginFactory*>(this);
+    return KPluginFactory::qt_metacast(_clname);
+}
+
+int CdeDecorationFactory::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = KPluginFactory::qt_metacall(_c, _id, _a);
+    return _id;
+}
+
+QT_PLUGIN_METADATA_SECTION
+static constexpr unsigned char qt_pluginMetaData[] = {
+    'Q', 'T', 'M', 'E', 'T', 'A', 'D', 'A', 'T', 'A', ' ', '!',
+    // metadata version, Qt version, architectural requirements
+    0, QT_VERSION_MAJOR, QT_VERSION_MINOR, qPluginArchRequirements(),
+    0xbf, 
+    // "IID"
+    0x02,  0x76,  'o',  'r',  'g',  '.',  'k',  'd', 
+    'e',  '.',  'K',  'P',  'l',  'u',  'g',  'i', 
+    'n',  'F',  'a',  'c',  't',  'o',  'r',  'y', 
+    // "className"
+    0x03,  0x74,  'C',  'd',  'e',  'D',  'e',  'c', 
+    'o',  'r',  'a',  't',  'i',  'o',  'n',  'F', 
+    'a',  'c',  't',  'o',  'r',  'y', 
+    // "MetaData"
+    0x04,  0xa2,  0x67,  'K',  'P',  'l',  'u',  'g', 
+    'i',  'n',  0xa4,  0x6b,  'D',  'e',  's',  'c', 
+    'r',  'i',  'p',  't',  'i',  'o',  'n',  0x78, 
+    0x58,  'C',  'D',  'E',  '-',  'i',  'n',  's', 
+    'p',  'i',  'r',  'e',  'd',  ' ',  'K',  'W', 
+    'i',  'n',  ' ',  'd',  'e',  'c',  'o',  'r', 
+    'a',  't',  'i',  'o',  'n',  ' ',  'f',  'o', 
+    'r',  ' ',  'P',  'l',  'a',  's',  'm',  'a', 
+    ' ',  '5',  ' ',  'w',  'i',  't',  'h',  ' ', 
+    'c',  'u',  's',  't',  'o',  'm',  ' ',  'c', 
+    'l',  'o',  's',  'e',  ' ',  'g',  'l',  'y', 
+    'p',  'h',  's',  ' ',  'a',  'n',  'd',  ' ', 
+    'r',  'e',  's',  'i',  'z',  'e',  ' ',  'h', 
+    'i',  'g',  'h',  'l',  'i',  'g',  'h',  't', 
+    's',  0x62,  'I',  'd',  0x76,  'o',  'r',  'g', 
+    '.',  'k',  'd',  'e',  '.',  'c',  'd',  'e', 
+    '.',  'd',  'e',  'c',  'o',  'r',  'a',  't', 
+    'i',  'o',  'n',  0x64,  'N',  'a',  'm',  'e', 
+    0x78,  0x19,  'C',  'D',  'E',  ' ',  'F',  'r', 
+    'a',  'm',  'e',  ' ',  'P',  'r',  'o',  't', 
+    'o',  't',  'y',  'p',  'e',  ' ',  '(',  'K', 
+    'F',  '5',  ')',  0x6c,  'S',  'e',  'r',  'v', 
+    'i',  'c',  'e',  'T',  'y',  'p',  'e',  's', 
+    0x81,  0x74,  'o',  'r',  'g',  '.',  'k',  'd', 
+    'e',  '.',  'k',  'd',  'e',  'c',  'o',  'r', 
+    'a',  't',  'i',  'o',  'n',  '2',  0x74,  'o', 
+    'r',  'g',  '.',  'k',  'd',  'e',  '.',  'k', 
+    'd',  'e',  'c',  'o',  'r',  'a',  't',  'i', 
+    'o',  'n',  '2',  0xa2,  0x64,  'b',  'l',  'u', 
+    'r',  0xf4,  0x75,  'r',  'e',  'c',  'o',  'm', 
+    'm',  'e',  'n',  'd',  'e',  'd',  'B',  'o', 
+    'r',  'd',  'e',  'r',  'S',  'i',  'z',  'e', 
+    0x66,  'N',  'o',  'r',  'm',  'a',  'l', 
+    0xff, 
+};
+QT_MOC_EXPORT_PLUGIN(CdeDecorationFactory, CdeDecorationFactory)
+
+QT_WARNING_POP
+QT_END_MOC_NAMESPACE

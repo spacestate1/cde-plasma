@@ -1,0 +1,16 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.cde.desktop",
+        "Name": "CDE",
+        "Description": "Common Desktop Environment look and feel",
+        "Authors": [
+            {
+                "Name": "CDE Plasma Theme"
+            }
+        ],
+        "Website": "",
+        "License": "MIT"
+    },
+    "KPackageStructure": "Plasma/LookAndFeel",
+    "X-Plasma-APIVersion": 2
+}

@@ -1,0 +1,12 @@
+{
+  "KPlugin": {
+    "Id": "org.kde.cde.decoration",
+    "Name": "CDE Frame",
+    "Description": "CDE-inspired KWin decoration with beveled frames and resize highlights"
+  },
+  "X-KDE-ConfigModule": "kcm_cdedecoration",
+  "org.kde.kdecoration3": {
+    "blur": false,
+    "recommendedBorderSize": "Normal"
+  }
+}

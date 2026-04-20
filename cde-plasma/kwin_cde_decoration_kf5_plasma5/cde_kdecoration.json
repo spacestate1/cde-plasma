@@ -1,0 +1,14 @@
+{
+  "KPlugin": {
+    "Id": "org.kde.cde.decoration",
+    "Name": "CDE Frame Prototype (KF5)",
+    "Description": "CDE-inspired KWin decoration for Plasma 5 with custom close glyphs and resize highlights",
+    "ServiceTypes": [
+      "org.kde.kdecoration2"
+    ]
+  },
+  "org.kde.kdecoration2": {
+    "blur": false,
+    "recommendedBorderSize": "Normal"
+  }
+}

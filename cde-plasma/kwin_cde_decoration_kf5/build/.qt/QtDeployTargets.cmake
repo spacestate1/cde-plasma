@@ -1,0 +1,4 @@
+set(__QT_DEPLOY_TARGET_kwin_cde_decoration_FILE /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/org.kde.cde.decoration.so)
+set(__QT_DEPLOY_TARGET_kwin_cde_decoration_TYPE MODULE_LIBRARY)
+set(__QT_DEPLOY_TARGET_kcm_cdedecoration_FILE /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kcm_cdedecoration.so)
+set(__QT_DEPLOY_TARGET_kcm_cdedecoration_TYPE MODULE_LIBRARY)

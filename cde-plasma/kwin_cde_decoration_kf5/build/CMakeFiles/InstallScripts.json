@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,0 +1,7 @@
+{
+    "KPlugin": {
+        "Id": "kcm_cdedecoration",
+        "Name": "CDE Decoration Settings",
+        "Description": "Configure colors for the CDE window decoration"
+    }
+}

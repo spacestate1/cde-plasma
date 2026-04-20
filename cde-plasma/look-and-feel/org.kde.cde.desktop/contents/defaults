@@ -1,0 +1,14 @@
+[kdeglobals][KDE]
+widgetStyle=cde
+
+[kdeglobals][General]
+ColorScheme=CDE
+
+[kwinrc][org.kde.kdecoration2]
+library=org.kde.cde.decoration
+
+[plasmarc][Theme]
+name=commonality
+
+[kcminputrc][Mouse]
+cursorTheme=DMZ-Black

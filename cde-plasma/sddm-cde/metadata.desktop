@@ -1,0 +1,13 @@
+[SddmGreeterTheme]
+Name=CDE
+Description=Common Desktop Environment login theme
+Author=CDE Plasma Theme
+Version=1.0
+Website=
+Screenshot=
+MainScript=Main.qml
+ConfigFile=theme.conf
+TranslationsDirectory=
+Type=sddm-theme
+Theme-API=2.0
+QtVersion=6
