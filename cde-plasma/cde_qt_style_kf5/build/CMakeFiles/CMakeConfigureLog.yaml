@@ -229,7 +229,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
       
       The CXX compiler identification is GNU, found in:
-        /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/4.3.1/CompilerIdCXX/a.out
+        /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/4.3.1/CompilerIdCXX/a.out
       
   -
     kind: "find-v1"
@@ -889,8 +889,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-4b1CW7"
-      binary: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-4b1CW7"
+      source: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-mC9nyF"
+      binary: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-mC9nyF"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -901,13 +901,13 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-4b1CW7'
+        Change Dir: '/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-mC9nyF'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_a792e/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_a792e.dir/build.make CMakeFiles/cmTC_a792e.dir/build
-        make[1]: Entering directory '/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-4b1CW7'
-        Building CXX object CMakeFiles/cmTC_a792e.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -v -o CMakeFiles/cmTC_a792e.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_4193c/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_4193c.dir/build.make CMakeFiles/cmTC_4193c.dir/build
+        make[1]: Entering directory '/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-mC9nyF'
+        Building CXX object CMakeFiles/cmTC_4193c.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_4193c.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         Target: x86_64-pc-linux-gnu
@@ -915,8 +915,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 15.2.1 20260209 (GCC) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a792e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a792e.dir/'
-         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_a792e.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/cckIFH4G.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4193c.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4193c.dir/'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_4193c.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/cctYhpdN.s
         GNU C++17 (GCC) version 15.2.1 20260209 (x86_64-pc-linux-gnu)
         	compiled by GNU C version 15.2.1 20260209, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -934,14 +934,14 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: 5e3969de92aa3c12a625237f01b15b2f
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a792e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a792e.dir/'
-         as -v --64 -o CMakeFiles/cmTC_a792e.dir/CMakeCXXCompilerABI.cpp.o /tmp/cckIFH4G.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4193c.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4193c.dir/'
+         as -v --64 -o CMakeFiles/cmTC_4193c.dir/CMakeCXXCompilerABI.cpp.o /tmp/cctYhpdN.s
         GNU assembler version 2.46 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.46
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a792e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a792e.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_a792e
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a792e.dir/link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4193c.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4193c.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_4193c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4193c.dir/link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper
@@ -952,14 +952,14 @@ events:
         gcc version 15.2.1 20260209 (GCC) 
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a792e' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_a792e.'
-         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccMoKkME.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_a792e /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_a792e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4193c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4193c.'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cci7ZHr8.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4193c /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4193c.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
         collect2 version 15.2.1 20260209
-        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccMoKkME.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_a792e /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_a792e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
+        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cci7ZHr8.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4193c /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4193c.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
         GNU ld (GNU Binutils) 2.46
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a792e' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_a792e.'
-        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_a792e.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_a792e
-        make[1]: Leaving directory '/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-4b1CW7'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4193c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4193c.'
+        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_4193c.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_4193c
+        make[1]: Leaving directory '/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-mC9nyF'
         
       exitCode: 0
   -
@@ -1000,13 +1000,13 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-4b1CW7']
+        ignore line: [Change Dir: '/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-mC9nyF']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_a792e/fast]
-        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_a792e.dir/build.make CMakeFiles/cmTC_a792e.dir/build]
-        ignore line: [make[1]: Entering directory '/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-4b1CW7']
-        ignore line: [Building CXX object CMakeFiles/cmTC_a792e.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_a792e.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_4193c/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_4193c.dir/build.make CMakeFiles/cmTC_4193c.dir/build]
+        ignore line: [make[1]: Entering directory '/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-mC9nyF']
+        ignore line: [Building CXX object CMakeFiles/cmTC_4193c.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_4193c.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [Target: x86_64-pc-linux-gnu]
@@ -1014,8 +1014,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 15.2.1 20260209 (GCC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a792e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a792e.dir/']
-        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_a792e.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/cckIFH4G.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4193c.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4193c.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_4193c.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/cctYhpdN.s]
         ignore line: [GNU C++17 (GCC) version 15.2.1 20260209 (x86_64-pc-linux-gnu)]
         ignore line: [	compiled by GNU C version 15.2.1 20260209  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -1033,14 +1033,14 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 5e3969de92aa3c12a625237f01b15b2f]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a792e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a792e.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_a792e.dir/CMakeCXXCompilerABI.cpp.o /tmp/cckIFH4G.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4193c.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4193c.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_4193c.dir/CMakeCXXCompilerABI.cpp.o /tmp/cctYhpdN.s]
         ignore line: [GNU assembler version 2.46 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.46]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a792e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a792e.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_a792e]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a792e.dir/link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4193c.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4193c.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_4193c]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4193c.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper]
@@ -1051,13 +1051,13 @@ events:
         ignore line: [gcc version 15.2.1 20260209 (GCC) ]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a792e' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_a792e.']
-        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccMoKkME.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_a792e /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_a792e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4193c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4193c.']
+        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cci7ZHr8.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4193c /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4193c.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccMoKkME.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cci7ZHr8.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -1072,7 +1072,7 @@ events:
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-pie] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_a792e] ==> ignore
+          arg [cmTC_4193c] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o]
@@ -1084,7 +1084,7 @@ events:
           arg [-L/lib] ==> dir [/lib]
           arg [-L/usr/lib] ==> dir [/usr/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_a792e.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_4193c.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -1095,7 +1095,7 @@ events:
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
         ignore line: [collect2 version 15.2.1 20260209]
-        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccMoKkME.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_a792e /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_a792e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
+        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cci7ZHr8.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4193c /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4193c.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
         linker tool for 'CXX': /usr/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o] ==> [/usr/lib/Scrt1.o]
         collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o] ==> [/usr/lib/crti.o]
@@ -1165,27 +1165,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/ECMConfig.cmake"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/ECMConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/ecm-config.cmake"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/ecm-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/ECM.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/ECM.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/ecm.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/ecm.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/ECM.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/ECM.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/ecm.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/ecm.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -1363,27 +1363,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/Qt5CoreConfig.cmake"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/Qt5CoreConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/qt5core-config.cmake"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/qt5core-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/Qt5Core.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/Qt5Core.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/qt5core.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/qt5core.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/Qt5Core.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/Qt5Core.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/qt5core.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/qt5core.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -1695,8 +1695,8 @@ events:
     checks:
       - "Looking for __GLIBC__"
     directories:
-      source: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-Vjk2bg"
-      binary: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-Vjk2bg"
+      source: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-n8XilD"
+      binary: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-n8XilD"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1708,17 +1708,17 @@ events:
       variable: "LIBC_IS_GLIBC"
       cached: true
       stdout: |
-        Change Dir: '/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-Vjk2bg'
+        Change Dir: '/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-n8XilD'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_658f3/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_658f3.dir/build.make CMakeFiles/cmTC_658f3.dir/build
-        make[1]: Entering directory '/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-Vjk2bg'
-        Building CXX object CMakeFiles/cmTC_658f3.dir/CheckSymbolExists.cxx.o
-        /usr/bin/c++    -o CMakeFiles/cmTC_658f3.dir/CheckSymbolExists.cxx.o -c /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-Vjk2bg/CheckSymbolExists.cxx
-        Linking CXX executable cmTC_658f3
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_658f3.dir/link.txt --verbose=1
-        /usr/bin/c++ CMakeFiles/cmTC_658f3.dir/CheckSymbolExists.cxx.o -o cmTC_658f3
-        make[1]: Leaving directory '/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-Vjk2bg'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_c2b14/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_c2b14.dir/build.make CMakeFiles/cmTC_c2b14.dir/build
+        make[1]: Entering directory '/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-n8XilD'
+        Building CXX object CMakeFiles/cmTC_c2b14.dir/CheckSymbolExists.cxx.o
+        /usr/bin/c++    -o CMakeFiles/cmTC_c2b14.dir/CheckSymbolExists.cxx.o -c /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-n8XilD/CheckSymbolExists.cxx
+        Linking CXX executable cmTC_c2b14
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c2b14.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_c2b14.dir/CheckSymbolExists.cxx.o -o cmTC_c2b14
+        make[1]: Leaving directory '/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-n8XilD'
         
       exitCode: 0
   -
@@ -1731,8 +1731,8 @@ events:
     checks:
       - "Performing Test _OFFT_IS_64BIT"
     directories:
-      source: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-NWfdf7"
-      binary: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-NWfdf7"
+      source: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-CFmQHB"
+      binary: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-CFmQHB"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1744,17 +1744,17 @@ events:
       variable: "_OFFT_IS_64BIT"
       cached: true
       stdout: |
-        Change Dir: '/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-NWfdf7'
+        Change Dir: '/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-CFmQHB'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_00bd9/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_00bd9.dir/build.make CMakeFiles/cmTC_00bd9.dir/build
-        make[1]: Entering directory '/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-NWfdf7'
-        Building CXX object CMakeFiles/cmTC_00bd9.dir/src.cxx.o
-        /usr/bin/c++ -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -D_OFFT_IS_64BIT   -o CMakeFiles/cmTC_00bd9.dir/src.cxx.o -c /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-NWfdf7/src.cxx
-        Linking CXX executable cmTC_00bd9
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_00bd9.dir/link.txt --verbose=1
-        /usr/bin/c++ CMakeFiles/cmTC_00bd9.dir/src.cxx.o -o cmTC_00bd9
-        make[1]: Leaving directory '/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-NWfdf7'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_b0ea9/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_b0ea9.dir/build.make CMakeFiles/cmTC_b0ea9.dir/build
+        make[1]: Entering directory '/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-CFmQHB'
+        Building CXX object CMakeFiles/cmTC_b0ea9.dir/src.cxx.o
+        /usr/bin/c++ -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -D_OFFT_IS_64BIT   -o CMakeFiles/cmTC_b0ea9.dir/src.cxx.o -c /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-CFmQHB/src.cxx
+        Linking CXX executable cmTC_b0ea9
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b0ea9.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_b0ea9.dir/src.cxx.o -o cmTC_b0ea9
+        make[1]: Leaving directory '/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-CFmQHB'
         
       exitCode: 0
   -
@@ -1768,8 +1768,8 @@ events:
     checks:
       - "Performing Test HAVE_DATE_TIME"
     directories:
-      source: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-pXwrbt"
-      binary: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-pXwrbt"
+      source: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-S60L7P"
+      binary: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-S60L7P"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fno-exceptions -Wall -Wextra -Wcast-align -Wchar-subscripts -Wformat-security -Wno-long-long -Wpointer-arith -Wundef -Wnon-virtual-dtor -Woverloaded-virtual -Werror=return-type -Werror=init-self -Wvla"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1781,17 +1781,17 @@ events:
       variable: "HAVE_DATE_TIME"
       cached: true
       stdout: |
-        Change Dir: '/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-pXwrbt'
+        Change Dir: '/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-S60L7P'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_0edfb/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_0edfb.dir/build.make CMakeFiles/cmTC_0edfb.dir/build
-        make[1]: Entering directory '/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-pXwrbt'
-        Building CXX object CMakeFiles/cmTC_0edfb.dir/src.cxx.o
-        /usr/bin/c++ -DHAVE_DATE_TIME  -fno-exceptions -Wall -Wextra -Wcast-align -Wchar-subscripts -Wformat-security -Wno-long-long -Wpointer-arith -Wundef -Wnon-virtual-dtor -Woverloaded-virtual -Werror=return-type -Werror=init-self -Wvla  -std=gnu++11   -Wdate-time -o CMakeFiles/cmTC_0edfb.dir/src.cxx.o -c /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-pXwrbt/src.cxx
-        Linking CXX executable cmTC_0edfb
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0edfb.dir/link.txt --verbose=1
-        /usr/bin/c++  -fno-exceptions -Wall -Wextra -Wcast-align -Wchar-subscripts -Wformat-security -Wno-long-long -Wpointer-arith -Wundef -Wnon-virtual-dtor -Woverloaded-virtual -Werror=return-type -Werror=init-self -Wvla  -Wl,--enable-new-dtags   CMakeFiles/cmTC_0edfb.dir/src.cxx.o -o cmTC_0edfb
-        make[1]: Leaving directory '/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-pXwrbt'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_78bde/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_78bde.dir/build.make CMakeFiles/cmTC_78bde.dir/build
+        make[1]: Entering directory '/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-S60L7P'
+        Building CXX object CMakeFiles/cmTC_78bde.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_DATE_TIME  -fno-exceptions -Wall -Wextra -Wcast-align -Wchar-subscripts -Wformat-security -Wno-long-long -Wpointer-arith -Wundef -Wnon-virtual-dtor -Woverloaded-virtual -Werror=return-type -Werror=init-self -Wvla  -std=gnu++11   -Wdate-time -o CMakeFiles/cmTC_78bde.dir/src.cxx.o -c /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-S60L7P/src.cxx
+        Linking CXX executable cmTC_78bde
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_78bde.dir/link.txt --verbose=1
+        /usr/bin/c++  -fno-exceptions -Wall -Wextra -Wcast-align -Wchar-subscripts -Wformat-security -Wno-long-long -Wpointer-arith -Wundef -Wnon-virtual-dtor -Woverloaded-virtual -Werror=return-type -Werror=init-self -Wvla  -Wl,--enable-new-dtags   CMakeFiles/cmTC_78bde.dir/src.cxx.o -o cmTC_78bde
+        make[1]: Leaving directory '/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-S60L7P'
         
       exitCode: 0
   -
@@ -1810,8 +1810,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-gV57eY"
-      binary: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-gV57eY"
+      source: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-iAJddj"
+      binary: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-iAJddj"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fno-exceptions -Wall -Wextra -Wcast-align -Wchar-subscripts -Wformat-security -Wno-long-long -Wpointer-arith -Wundef -Wnon-virtual-dtor -Woverloaded-virtual -Werror=return-type -Werror=init-self -Wvla -Wdate-time -Wsuggest-override -Wlogical-op"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1823,17 +1823,17 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-gV57eY'
+        Change Dir: '/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-iAJddj'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_42388/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_42388.dir/build.make CMakeFiles/cmTC_42388.dir/build
-        make[1]: Entering directory '/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-gV57eY'
-        Building CXX object CMakeFiles/cmTC_42388.dir/src.cxx.o
-        /usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD -D_GNU_SOURCE -D_LARGEFILE64_SOURCE  -fno-exceptions -Wall -Wextra -Wcast-align -Wchar-subscripts -Wformat-security -Wno-long-long -Wpointer-arith -Wundef -Wnon-virtual-dtor -Woverloaded-virtual -Werror=return-type -Werror=init-self -Wvla -Wdate-time -Wsuggest-override -Wlogical-op  -std=c++20 -o CMakeFiles/cmTC_42388.dir/src.cxx.o -c /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-gV57eY/src.cxx
-        Linking CXX executable cmTC_42388
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_42388.dir/link.txt --verbose=1
-        /usr/bin/c++  -fno-exceptions -Wall -Wextra -Wcast-align -Wchar-subscripts -Wformat-security -Wno-long-long -Wpointer-arith -Wundef -Wnon-virtual-dtor -Woverloaded-virtual -Werror=return-type -Werror=init-self -Wvla -Wdate-time -Wsuggest-override -Wlogical-op  -Wl,--enable-new-dtags   CMakeFiles/cmTC_42388.dir/src.cxx.o -o cmTC_42388
-        make[1]: Leaving directory '/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-gV57eY'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3c540/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_3c540.dir/build.make CMakeFiles/cmTC_3c540.dir/build
+        make[1]: Entering directory '/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-iAJddj'
+        Building CXX object CMakeFiles/cmTC_3c540.dir/src.cxx.o
+        /usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD -D_GNU_SOURCE -D_LARGEFILE64_SOURCE  -fno-exceptions -Wall -Wextra -Wcast-align -Wchar-subscripts -Wformat-security -Wno-long-long -Wpointer-arith -Wundef -Wnon-virtual-dtor -Woverloaded-virtual -Werror=return-type -Werror=init-self -Wvla -Wdate-time -Wsuggest-override -Wlogical-op  -std=c++20 -o CMakeFiles/cmTC_3c540.dir/src.cxx.o -c /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-iAJddj/src.cxx
+        Linking CXX executable cmTC_3c540
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3c540.dir/link.txt --verbose=1
+        /usr/bin/c++  -fno-exceptions -Wall -Wextra -Wcast-align -Wchar-subscripts -Wformat-security -Wno-long-long -Wpointer-arith -Wundef -Wnon-virtual-dtor -Woverloaded-virtual -Werror=return-type -Werror=init-self -Wvla -Wdate-time -Wsuggest-override -Wlogical-op  -Wl,--enable-new-dtags   CMakeFiles/cmTC_3c540.dir/src.cxx.o -o cmTC_3c540
+        make[1]: Leaving directory '/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-iAJddj'
         
       exitCode: 0
   -
@@ -1852,8 +1852,8 @@ events:
     checks:
       - "Performing Test HAVE_STDATOMIC"
     directories:
-      source: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-Tpl7Vo"
-      binary: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-Tpl7Vo"
+      source: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-uv7jP3"
+      binary: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-uv7jP3"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fno-exceptions -Wall -Wextra -Wcast-align -Wchar-subscripts -Wformat-security -Wno-long-long -Wpointer-arith -Wundef -Wnon-virtual-dtor -Woverloaded-virtual -Werror=return-type -Werror=init-self -Wvla -Wdate-time -Wsuggest-override -Wlogical-op"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1865,17 +1865,17 @@ events:
       variable: "HAVE_STDATOMIC"
       cached: true
       stdout: |
-        Change Dir: '/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-Tpl7Vo'
+        Change Dir: '/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-uv7jP3'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_b23e1/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_b23e1.dir/build.make CMakeFiles/cmTC_b23e1.dir/build
-        make[1]: Entering directory '/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-Tpl7Vo'
-        Building CXX object CMakeFiles/cmTC_b23e1.dir/src.cxx.o
-        /usr/bin/c++ -DHAVE_STDATOMIC -D_GNU_SOURCE -D_LARGEFILE64_SOURCE  -fno-exceptions -Wall -Wextra -Wcast-align -Wchar-subscripts -Wformat-security -Wno-long-long -Wpointer-arith -Wundef -Wnon-virtual-dtor -Woverloaded-virtual -Werror=return-type -Werror=init-self -Wvla -Wdate-time -Wsuggest-override -Wlogical-op  -std=c++20 -o CMakeFiles/cmTC_b23e1.dir/src.cxx.o -c /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-Tpl7Vo/src.cxx
-        Linking CXX executable cmTC_b23e1
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b23e1.dir/link.txt --verbose=1
-        /usr/bin/c++  -fno-exceptions -Wall -Wextra -Wcast-align -Wchar-subscripts -Wformat-security -Wno-long-long -Wpointer-arith -Wundef -Wnon-virtual-dtor -Woverloaded-virtual -Werror=return-type -Werror=init-self -Wvla -Wdate-time -Wsuggest-override -Wlogical-op  -Wl,--enable-new-dtags   CMakeFiles/cmTC_b23e1.dir/src.cxx.o -o cmTC_b23e1
-        make[1]: Leaving directory '/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-Tpl7Vo'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_0b5fd/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_0b5fd.dir/build.make CMakeFiles/cmTC_0b5fd.dir/build
+        make[1]: Entering directory '/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-uv7jP3'
+        Building CXX object CMakeFiles/cmTC_0b5fd.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_STDATOMIC -D_GNU_SOURCE -D_LARGEFILE64_SOURCE  -fno-exceptions -Wall -Wextra -Wcast-align -Wchar-subscripts -Wformat-security -Wno-long-long -Wpointer-arith -Wundef -Wnon-virtual-dtor -Woverloaded-virtual -Werror=return-type -Werror=init-self -Wvla -Wdate-time -Wsuggest-override -Wlogical-op  -std=c++20 -o CMakeFiles/cmTC_0b5fd.dir/src.cxx.o -c /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-uv7jP3/src.cxx
+        Linking CXX executable cmTC_0b5fd
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0b5fd.dir/link.txt --verbose=1
+        /usr/bin/c++  -fno-exceptions -Wall -Wextra -Wcast-align -Wchar-subscripts -Wformat-security -Wno-long-long -Wpointer-arith -Wundef -Wnon-virtual-dtor -Woverloaded-virtual -Werror=return-type -Werror=init-self -Wvla -Wdate-time -Wsuggest-override -Wlogical-op  -Wl,--enable-new-dtags   CMakeFiles/cmTC_0b5fd.dir/src.cxx.o -o cmTC_0b5fd
+        make[1]: Leaving directory '/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/CMakeScratch/TryCompile-uv7jP3'
         
       exitCode: 0
   -
@@ -1929,27 +1929,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/Qt6CoreToolsConfig.cmake"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/Qt6CoreToolsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/qt6coretools-config.cmake"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/qt6coretools-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/Qt6CoreTools.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/Qt6CoreTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/qt6coretools.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/qt6coretools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/Qt6CoreTools.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/Qt6CoreTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/qt6coretools.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/qt6coretools.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -2119,27 +2119,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/Qt6CoreConfig.cmake"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/Qt6CoreConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/qt6core-config.cmake"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/qt6core-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/Qt6Core.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/Qt6Core.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/qt6core.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/qt6core.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/Qt6Core.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/Qt6Core.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/qt6core.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/qt6core.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -3819,27 +3819,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/Qt6GuiToolsConfig.cmake"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/Qt6GuiToolsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/qt6guitools-config.cmake"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/qt6guitools-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/Qt6GuiTools.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/Qt6GuiTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/qt6guitools.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/qt6guitools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/Qt6GuiTools.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/Qt6GuiTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/qt6guitools.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/qt6guitools.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -4020,27 +4020,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/Qt6DBusToolsConfig.cmake"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/Qt6DBusToolsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/qt6dbustools-config.cmake"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/qt6dbustools-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/Qt6DBusTools.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/Qt6DBusTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/qt6dbustools.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/qt6dbustools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/Qt6DBusTools.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/Qt6DBusTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/qt6dbustools.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/qt6dbustools.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -4218,27 +4218,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/Qt6DBusConfig.cmake"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/Qt6DBusConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/qt6dbus-config.cmake"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/qt6dbus-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/Qt6DBus.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/Qt6DBus.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/qt6dbus.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/qt6dbus.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/Qt6DBus.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/Qt6DBus.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/qt6dbus.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/qt6dbus.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -4336,27 +4336,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/Qt6GuiConfig.cmake"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/Qt6GuiConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/qt6gui-config.cmake"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/qt6gui-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/Qt6Gui.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/Qt6Gui.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/qt6gui.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/qt6gui.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/Qt6Gui.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/Qt6Gui.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/qt6gui.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/qt6gui.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -4460,27 +4460,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/Qt6WidgetsToolsConfig.cmake"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/Qt6WidgetsToolsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/qt6widgetstools-config.cmake"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/qt6widgetstools-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/Qt6WidgetsTools.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/Qt6WidgetsTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/qt6widgetstools.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/qt6widgetstools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/Qt6WidgetsTools.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/Qt6WidgetsTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/qt6widgetstools.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/qt6widgetstools.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -4650,27 +4650,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/Qt6WidgetsConfig.cmake"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/Qt6WidgetsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/qt6widgets-config.cmake"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/qt6widgets-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/Qt6Widgets.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/Qt6Widgets.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/qt6widgets.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/qt6widgets.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/Qt6Widgets.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/Qt6Widgets.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/qt6widgets.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/qt6widgets.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -4778,27 +4778,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/Qt6Config.cmake"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/Qt6Config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/qt6-config.cmake"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/qt6-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/Qt6.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/Qt6.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/qt6.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/lib/cps/qt6.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/Qt6.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/Qt6.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/qt6.cps"
+        path: "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/pkgRedirects/share/cps/qt6.cps"
         mode: "cps"
         reason: "no_exist"
       -

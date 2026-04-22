@@ -1,4 +1,4 @@
-# Install script for directory: /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5
+# Install script for directory: /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -57,7 +57,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "cde_qt_style" OR NOT CMAKE_INSTALL_COMPONEN
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/usr/lib/qt6/plugins/styles" TYPE MODULE FILES "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/cde_qt_style.so")
+  file(INSTALL DESTINATION "/usr/lib/qt6/plugins/styles" TYPE MODULE FILES "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/cde_qt_style.so")
   if(EXISTS "$ENV{DESTDIR}/usr/lib/qt6/plugins/styles/cde_qt_style.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/usr/lib/qt6/plugins/styles/cde_qt_style.so")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -67,13 +67,13 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "cde_qt_style" OR NOT CMAKE_INSTALL_COMPONEN
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "cde_qt_style" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/cde_qt_style.dir/install-cxx-module-bmi-Release.cmake" OPTIONAL)
+  include("/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/cde_qt_style.dir/install-cxx-module-bmi-Release.cmake" OPTIONAL)
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/install_local_manifest.txt"
+  file(WRITE "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -89,6 +89,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

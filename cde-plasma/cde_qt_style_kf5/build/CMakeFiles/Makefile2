@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5
+CMAKE_SOURCE_DIR = /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build
+CMAKE_BINARY_DIR = /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -89,14 +89,14 @@ clean: CMakeFiles/cde_qt_style_autogen.dir/clean
 CMakeFiles/uninstall.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num= "Built target uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num= "Built target uninstall"
 .PHONY : CMakeFiles/uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles 0
 .PHONY : CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -106,7 +106,7 @@ uninstall: CMakeFiles/uninstall.dir/rule
 # codegen rule for target.
 CMakeFiles/uninstall.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num= "Finished codegen for target uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num= "Finished codegen for target uninstall"
 .PHONY : CMakeFiles/uninstall.dir/codegen
 
 # clean rule for target.
@@ -121,14 +121,14 @@ CMakeFiles/uninstall.dir/clean:
 CMakeFiles/fetch-translations.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fetch-translations.dir/build.make CMakeFiles/fetch-translations.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fetch-translations.dir/build.make CMakeFiles/fetch-translations.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num=6,7 "Built target fetch-translations"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num=6,7 "Built target fetch-translations"
 .PHONY : CMakeFiles/fetch-translations.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/fetch-translations.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/fetch-translations.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles 0
 .PHONY : CMakeFiles/fetch-translations.dir/rule
 
 # Convenience name for target.
@@ -138,7 +138,7 @@ fetch-translations: CMakeFiles/fetch-translations.dir/rule
 # codegen rule for target.
 CMakeFiles/fetch-translations.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fetch-translations.dir/build.make CMakeFiles/fetch-translations.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num=6,7 "Finished codegen for target fetch-translations"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num=6,7 "Finished codegen for target fetch-translations"
 .PHONY : CMakeFiles/fetch-translations.dir/codegen
 
 # clean rule for target.
@@ -154,14 +154,14 @@ CMakeFiles/cde_qt_style.dir/all: CMakeFiles/cde_qt_style_autogen.dir/all
 CMakeFiles/cde_qt_style.dir/all: CMakeFiles/cde_qt_style_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cde_qt_style.dir/build.make CMakeFiles/cde_qt_style.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cde_qt_style.dir/build.make CMakeFiles/cde_qt_style.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num=1,2,3,4 "Built target cde_qt_style"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num=1,2,3,4 "Built target cde_qt_style"
 .PHONY : CMakeFiles/cde_qt_style.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/cde_qt_style.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/cde_qt_style.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles 0
 .PHONY : CMakeFiles/cde_qt_style.dir/rule
 
 # Convenience name for target.
@@ -171,7 +171,7 @@ cde_qt_style: CMakeFiles/cde_qt_style.dir/rule
 # codegen rule for target.
 CMakeFiles/cde_qt_style.dir/codegen: CMakeFiles/cde_qt_style_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cde_qt_style.dir/build.make CMakeFiles/cde_qt_style.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num=1,2,3,4 "Finished codegen for target cde_qt_style"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num=1,2,3,4 "Finished codegen for target cde_qt_style"
 .PHONY : CMakeFiles/cde_qt_style.dir/codegen
 
 # clean rule for target.
@@ -186,14 +186,14 @@ CMakeFiles/cde_qt_style.dir/clean:
 CMakeFiles/cde_qt_style_autogen_timestamp_deps.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cde_qt_style_autogen_timestamp_deps.dir/build.make CMakeFiles/cde_qt_style_autogen_timestamp_deps.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cde_qt_style_autogen_timestamp_deps.dir/build.make CMakeFiles/cde_qt_style_autogen_timestamp_deps.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num= "Built target cde_qt_style_autogen_timestamp_deps"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num= "Built target cde_qt_style_autogen_timestamp_deps"
 .PHONY : CMakeFiles/cde_qt_style_autogen_timestamp_deps.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/cde_qt_style_autogen_timestamp_deps.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/cde_qt_style_autogen_timestamp_deps.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles 0
 .PHONY : CMakeFiles/cde_qt_style_autogen_timestamp_deps.dir/rule
 
 # Convenience name for target.
@@ -203,7 +203,7 @@ cde_qt_style_autogen_timestamp_deps: CMakeFiles/cde_qt_style_autogen_timestamp_d
 # codegen rule for target.
 CMakeFiles/cde_qt_style_autogen_timestamp_deps.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cde_qt_style_autogen_timestamp_deps.dir/build.make CMakeFiles/cde_qt_style_autogen_timestamp_deps.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num= "Finished codegen for target cde_qt_style_autogen_timestamp_deps"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num= "Finished codegen for target cde_qt_style_autogen_timestamp_deps"
 .PHONY : CMakeFiles/cde_qt_style_autogen_timestamp_deps.dir/codegen
 
 # clean rule for target.
@@ -218,14 +218,14 @@ CMakeFiles/cde_qt_style_autogen_timestamp_deps.dir/clean:
 CMakeFiles/cde_qt_style_autogen.dir/all: CMakeFiles/cde_qt_style_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cde_qt_style_autogen.dir/build.make CMakeFiles/cde_qt_style_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cde_qt_style_autogen.dir/build.make CMakeFiles/cde_qt_style_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num=5 "Built target cde_qt_style_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num=5 "Built target cde_qt_style_autogen"
 .PHONY : CMakeFiles/cde_qt_style_autogen.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/cde_qt_style_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/cde_qt_style_autogen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles 0
 .PHONY : CMakeFiles/cde_qt_style_autogen.dir/rule
 
 # Convenience name for target.
@@ -235,7 +235,7 @@ cde_qt_style_autogen: CMakeFiles/cde_qt_style_autogen.dir/rule
 # codegen rule for target.
 CMakeFiles/cde_qt_style_autogen.dir/codegen: CMakeFiles/cde_qt_style_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cde_qt_style_autogen.dir/build.make CMakeFiles/cde_qt_style_autogen.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num=5 "Finished codegen for target cde_qt_style_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num=5 "Finished codegen for target cde_qt_style_autogen"
 .PHONY : CMakeFiles/cde_qt_style_autogen.dir/codegen
 
 # clean rule for target.

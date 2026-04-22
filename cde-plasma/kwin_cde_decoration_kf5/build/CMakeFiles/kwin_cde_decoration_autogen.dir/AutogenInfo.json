@@ -1,15 +1,15 @@
 {
-	"BUILD_DIR" : "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen",
-	"CMAKE_BINARY_DIR" : "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build",
-	"CMAKE_CURRENT_BINARY_DIR" : "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build",
-	"CMAKE_CURRENT_SOURCE_DIR" : "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5",
+	"BUILD_DIR" : "/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen",
+	"CMAKE_BINARY_DIR" : "/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5",
 	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
 	"CMAKE_LIST_FILES" : 
 	[
-		"/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/CMakeLists.txt",
+		"/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/CMakeLists.txt",
 		"/usr/share/cmake/Modules/CMakeDetermineSystem.cmake",
 		"/usr/share/cmake/Modules/CMakeSystem.cmake.in",
-		"/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles/4.3.1/CMakeSystem.cmake",
+		"/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles/4.3.1/CMakeSystem.cmake",
 		"/usr/share/cmake/Modules/CMakeUnixFindMake.cmake",
 		"/usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake",
 		"/usr/share/cmake/Modules/Platform/Linux-Initialize.cmake",
@@ -65,7 +65,7 @@
 		"/usr/share/cmake/Modules/CMakeFindBinUtils.cmake",
 		"/usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake",
 		"/usr/share/cmake/Modules/CMakeCXXCompiler.cmake.in",
-		"/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles/4.3.1/CMakeCXXCompiler.cmake",
+		"/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles/4.3.1/CMakeCXXCompiler.cmake",
 		"/usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake",
 		"/usr/share/cmake/Modules/CMakeGenericSystem.cmake",
 		"/usr/share/cmake/Modules/CMakeInitializeConfigs.cmake",
@@ -91,7 +91,7 @@
 		"/usr/share/cmake/Modules/CMakeDetermineCompilerSupport.cmake",
 		"/usr/share/cmake/Modules/Internal/FeatureTesting.cmake",
 		"/usr/share/cmake/Modules/CMakeCXXCompiler.cmake.in",
-		"/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles/4.3.1/CMakeCXXCompiler.cmake",
+		"/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles/4.3.1/CMakeCXXCompiler.cmake",
 		"/usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake",
 		"/usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake",
 		"/usr/share/cmake/Modules/Linker/GNU-CXX.cmake",
@@ -1609,28 +1609,28 @@
 		"/usr/share/ECM/modules/ECMEnableSanitizers.cmake",
 		"/usr/share/ECM/modules/ECMCoverageOption.cmake"
 	],
-	"CMAKE_SOURCE_DIR" : "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5",
+	"CMAKE_SOURCE_DIR" : "/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5",
 	"CROSS_CONFIG" : false,
-	"DEP_FILE" : "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/deps",
+	"DEP_FILE" : "/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "kwin_cde_decoration_autogen/timestamp",
 	"HEADERS" : 
 	[
 		[
-			"/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdebutton.h",
+			"/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdebutton.h",
 			"MU",
 			"UVLADIE3JM/moc_cdebutton.cpp",
 			null
 		],
 		[
-			"/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecoration.h",
+			"/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecoration.h",
 			"MU",
 			"UVLADIE3JM/moc_cdedecoration.cpp",
 			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/include",
-	"MOC_COMPILATION_FILE" : "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/include",
+	"MOC_COMPILATION_FILE" : "/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : 
 	[
 		"KCOREADDONS_LIB",
@@ -1651,8 +1651,8 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build",
-		"/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5",
+		"/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build",
+		"/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5",
 		"/usr/include/qt6/QtCore",
 		"/usr/include/qt6",
 		"/usr/lib/qt6/mkspecs/linux-g++",
@@ -1694,31 +1694,31 @@
 		"-E",
 		"/usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 6,
-	"PARSE_CACHE_FILE" : "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles/kwin_cde_decoration_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE" : "/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles/kwin_cde_decoration_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "/usr/lib/qt6/moc",
 	"QT_UIC_EXECUTABLE" : "/usr/lib/qt6/uic",
 	"QT_VERSION_MAJOR" : 6,
 	"QT_VERSION_MINOR" : 11,
-	"SETTINGS_FILE" : "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles/kwin_cde_decoration_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles/kwin_cde_decoration_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
 		[
-			"/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdebutton.cpp",
+			"/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdebutton.cpp",
 			"MU",
 			null
 		],
 		[
-			"/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecoration.cpp",
+			"/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecoration.cpp",
 			"MU",
 			null
 		],
 		[
-			"/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/plugin.cpp",
+			"/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/plugin.cpp",
 			"MU",
 			null
 		]

@@ -1,4 +1,4 @@
-# Install script for directory: /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5
+# Install script for directory: /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -49,7 +49,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "kwin_cde_decoration" OR NOT CMAKE_INSTALL_C
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/qt6/plugins/org.kde.kdecoration3/org.kde.cde.decoration.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/qt6/plugins/org.kde.kdecoration3" TYPE MODULE FILES "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/org.kde.cde.decoration.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/qt6/plugins/org.kde.kdecoration3" TYPE MODULE FILES "/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/org.kde.cde.decoration.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/qt6/plugins/org.kde.kdecoration3/org.kde.cde.decoration.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/qt6/plugins/org.kde.kdecoration3/org.kde.cde.decoration.so")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -59,7 +59,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "kwin_cde_decoration" OR NOT CMAKE_INSTALL_C
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "kwin_cde_decoration" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles/kwin_cde_decoration.dir/install-cxx-module-bmi-Release.cmake" OPTIONAL)
+  include("/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles/kwin_cde_decoration.dir/install-cxx-module-bmi-Release.cmake" OPTIONAL)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "kwin_cde_decoration" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -69,7 +69,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "kwin_cde_decoration" OR NOT CMAKE_INSTALL_C
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/qt6/plugins/org.kde.kdecoration3.kcm/kcm_cdedecoration.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/qt6/plugins/org.kde.kdecoration3.kcm" TYPE MODULE FILES "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kcm_cdedecoration.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/qt6/plugins/org.kde.kdecoration3.kcm" TYPE MODULE FILES "/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kcm_cdedecoration.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/qt6/plugins/org.kde.kdecoration3.kcm/kcm_cdedecoration.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/qt6/plugins/org.kde.kdecoration3.kcm/kcm_cdedecoration.so")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -79,13 +79,13 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "kwin_cde_decoration" OR NOT CMAKE_INSTALL_C
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "kwin_cde_decoration" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles/kcm_cdedecoration.dir/install-cxx-module-bmi-Release.cmake" OPTIONAL)
+  include("/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles/kcm_cdedecoration.dir/install-cxx-module-bmi-Release.cmake" OPTIONAL)
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/install_local_manifest.txt"
+  file(WRITE "/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -101,6 +101,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5
+CMAKE_SOURCE_DIR = /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build
+CMAKE_BINARY_DIR = /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build
 
 # Utility rule file for cde_qt_style_autogen.
 
@@ -71,9 +71,9 @@ CMakeFiles/cde_qt_style_autogen: cde_qt_style_autogen/timestamp
 cde_qt_style_autogen/timestamp: /usr/lib/qt6/moc
 cde_qt_style_autogen/timestamp: /usr/lib/qt6/uic
 cde_qt_style_autogen/timestamp: CMakeFiles/cde_qt_style_autogen.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target cde_qt_style"
-	/usr/bin/cmake -E cmake_autogen /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/cde_qt_style_autogen.dir/AutogenInfo.json Release
-	/usr/bin/cmake -E touch /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/cde_qt_style_autogen/timestamp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target cde_qt_style"
+	/usr/bin/cmake -E cmake_autogen /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/cde_qt_style_autogen.dir/AutogenInfo.json Release
+	/usr/bin/cmake -E touch /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/cde_qt_style_autogen/timestamp
 
 CMakeFiles/cde_qt_style_autogen.dir/codegen:
 .PHONY : CMakeFiles/cde_qt_style_autogen.dir/codegen
@@ -92,6 +92,6 @@ CMakeFiles/cde_qt_style_autogen.dir/clean:
 .PHONY : CMakeFiles/cde_qt_style_autogen.dir/clean
 
 CMakeFiles/cde_qt_style_autogen.dir/depend:
-	cd /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5 /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5 /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/cde_qt_style_autogen.dir/DependInfo.cmake "--color=$(COLOR)" cde_qt_style_autogen
+	cd /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5 /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5 /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/cde_qt_style_autogen.dir/DependInfo.cmake "--color=$(COLOR)" cde_qt_style_autogen
 .PHONY : CMakeFiles/cde_qt_style_autogen.dir/depend
 

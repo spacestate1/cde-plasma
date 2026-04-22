@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/cde_qt_style_autogen/mocs_compilation.cpp" "CMakeFiles/cde_qt_style.dir/cde_qt_style_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/cde_qt_style.dir/cde_qt_style_autogen/mocs_compilation.cpp.o.d"
-  "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/src/cdestyle.cpp" "CMakeFiles/cde_qt_style.dir/src/cdestyle.cpp.o" "gcc" "CMakeFiles/cde_qt_style.dir/src/cdestyle.cpp.o.d"
-  "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/src/plugin.cpp" "CMakeFiles/cde_qt_style.dir/src/plugin.cpp.o" "gcc" "CMakeFiles/cde_qt_style.dir/src/plugin.cpp.o.d"
+  "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/cde_qt_style_autogen/mocs_compilation.cpp" "CMakeFiles/cde_qt_style.dir/cde_qt_style_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/cde_qt_style.dir/cde_qt_style_autogen/mocs_compilation.cpp.o.d"
+  "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/src/cdestyle.cpp" "CMakeFiles/cde_qt_style.dir/src/cdestyle.cpp.o" "gcc" "CMakeFiles/cde_qt_style.dir/src/cdestyle.cpp.o.d"
+  "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/src/plugin.cpp" "CMakeFiles/cde_qt_style.dir/src/plugin.cpp.o" "gcc" "CMakeFiles/cde_qt_style.dir/src/plugin.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

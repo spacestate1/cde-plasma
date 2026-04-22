@@ -1,8 +1,8 @@
 CMakeFiles/kwin_cde_decoration.dir/kwin_cde_decoration_autogen/mocs_compilation.cpp.o: \
- /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/mocs_compilation.cpp \
+ /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/mocs_compilation.cpp \
  /usr/include/stdc-predef.h \
- /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/UVLADIE3JM/moc_cdebutton.cpp \
- /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/UVLADIE3JM/../../../src/cdebutton.h \
+ /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/UVLADIE3JM/moc_cdebutton.cpp \
+ /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/UVLADIE3JM/../../../src/cdebutton.h \
  /usr/include/KDecoration3/kdecoration3/decorationbutton.h \
  /usr/include/KDecoration3/kdecoration3/decorationdefines.h \
  /usr/include/KDecoration3/kdecoration3/kdecoration3_export.h \
@@ -359,8 +359,8 @@ CMakeFiles/kwin_cde_decoration.dir/kwin_cde_decoration_autogen/mocs_compilation.
  /usr/include/qt6/QtCore/qpoint.h /usr/include/qt6/QtCore/qtmochelpers.h \
  /usr/include/qt6/QtCore/qtmocconstants.h \
  /usr/include/qt6/QtCore/q20algorithm.h \
- /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/UVLADIE3JM/moc_cdedecoration.cpp \
- /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/UVLADIE3JM/../../../src/cdedecoration.h \
+ /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/UVLADIE3JM/moc_cdedecoration.cpp \
+ /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/UVLADIE3JM/../../../src/cdedecoration.h \
  /usr/include/qt6/QtGui/QColor /usr/include/qt6/QtGui/qcolor.h \
  /usr/include/qt6/QtGui/qtguiglobal.h \
  /usr/include/qt6/QtGui/qtgui-config.h \

@@ -1,7 +1,7 @@
 CMakeFiles/kcm_cdedecoration.dir/src/cdedecorationkcm.cpp.o: \
- /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecorationkcm.cpp \
+ /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecorationkcm.cpp \
  /usr/include/stdc-predef.h \
- /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecorationkcm.h \
+ /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecorationkcm.h \
  /usr/include/KF6/KCMUtils/KCModule /usr/include/KF6/KCMUtils/kcmodule.h \
  /usr/include/KF6/KCMUtils/kcmutils_export.h \
  /usr/include/KF6/KCMUtils/kcmutils_version.h \
@@ -413,7 +413,7 @@ CMakeFiles/kcm_cdedecoration.dir/src/cdedecorationkcm.cpp.o: \
  /usr/include/qt6/QtGui/qfontvariableaxis.h \
  /usr/include/qt6/QtWidgets/qsizepolicy.h \
  /usr/include/qt6/QtGui/qcursor.h /usr/include/qt6/QtGui/qbitmap.h \
- /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdeconfig.h \
+ /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdeconfig.h \
  /usr/include/qt6/QtGui/QColor \
  /usr/include/KF6/KWidgetsAddons/KColorButton \
  /usr/include/KF6/KWidgetsAddons/kcolorbutton.h \
@@ -449,7 +449,7 @@ CMakeFiles/kcm_cdedecoration.dir/src/cdedecorationkcm.cpp.o: \
  /usr/include/qt6/QtWidgets/qframe.h /usr/include/qt6/QtGui/qpicture.h \
  /usr/include/qt6/QtGui/qtextdocument.h \
  /usr/include/qt6/QtWidgets/QVBoxLayout \
- /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kcm_cdedecoration_autogen/include/cdedecorationkcm.moc \
+ /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kcm_cdedecoration_autogen/include/cdedecorationkcm.moc \
  /usr/include/qt6/QtCore/qplugin.h /usr/include/qt6/QtCore/qpointer.h \
  /usr/include/qt6/QtCore/q20algorithm.h \
  /usr/include/qt6/QtCore/qtmochelpers.h \

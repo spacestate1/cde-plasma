@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5
+CMAKE_SOURCE_DIR = /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build
+CMAKE_BINARY_DIR = /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -94,14 +94,14 @@ clean: CMakeFiles/kcm_cdedecoration_autogen.dir/clean
 CMakeFiles/uninstall.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num= "Built target uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num= "Built target uninstall"
 .PHONY : CMakeFiles/uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 0
 .PHONY : CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -111,7 +111,7 @@ uninstall: CMakeFiles/uninstall.dir/rule
 # codegen rule for target.
 CMakeFiles/uninstall.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num= "Finished codegen for target uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num= "Finished codegen for target uninstall"
 .PHONY : CMakeFiles/uninstall.dir/codegen
 
 # clean rule for target.
@@ -126,14 +126,14 @@ CMakeFiles/uninstall.dir/clean:
 CMakeFiles/fetch-translations.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fetch-translations.dir/build.make CMakeFiles/fetch-translations.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fetch-translations.dir/build.make CMakeFiles/fetch-translations.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=1,2 "Built target fetch-translations"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=1,2 "Built target fetch-translations"
 .PHONY : CMakeFiles/fetch-translations.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/fetch-translations.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/fetch-translations.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 0
 .PHONY : CMakeFiles/fetch-translations.dir/rule
 
 # Convenience name for target.
@@ -143,7 +143,7 @@ fetch-translations: CMakeFiles/fetch-translations.dir/rule
 # codegen rule for target.
 CMakeFiles/fetch-translations.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fetch-translations.dir/build.make CMakeFiles/fetch-translations.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=1,2 "Finished codegen for target fetch-translations"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=1,2 "Finished codegen for target fetch-translations"
 .PHONY : CMakeFiles/fetch-translations.dir/codegen
 
 # clean rule for target.
@@ -159,14 +159,14 @@ CMakeFiles/kwin_cde_decoration.dir/all: CMakeFiles/kwin_cde_decoration_autogen_t
 CMakeFiles/kwin_cde_decoration.dir/all: CMakeFiles/kwin_cde_decoration_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kwin_cde_decoration.dir/build.make CMakeFiles/kwin_cde_decoration.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kwin_cde_decoration.dir/build.make CMakeFiles/kwin_cde_decoration.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=7,8,9,10,11 "Built target kwin_cde_decoration"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=7,8,9,10,11 "Built target kwin_cde_decoration"
 .PHONY : CMakeFiles/kwin_cde_decoration.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/kwin_cde_decoration.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/kwin_cde_decoration.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 0
 .PHONY : CMakeFiles/kwin_cde_decoration.dir/rule
 
 # Convenience name for target.
@@ -176,7 +176,7 @@ kwin_cde_decoration: CMakeFiles/kwin_cde_decoration.dir/rule
 # codegen rule for target.
 CMakeFiles/kwin_cde_decoration.dir/codegen: CMakeFiles/kwin_cde_decoration_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kwin_cde_decoration.dir/build.make CMakeFiles/kwin_cde_decoration.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=7,8,9,10,11 "Finished codegen for target kwin_cde_decoration"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=7,8,9,10,11 "Finished codegen for target kwin_cde_decoration"
 .PHONY : CMakeFiles/kwin_cde_decoration.dir/codegen
 
 # clean rule for target.
@@ -192,14 +192,14 @@ CMakeFiles/kcm_cdedecoration.dir/all: CMakeFiles/kcm_cdedecoration_autogen_times
 CMakeFiles/kcm_cdedecoration.dir/all: CMakeFiles/kcm_cdedecoration_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kcm_cdedecoration.dir/build.make CMakeFiles/kcm_cdedecoration.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kcm_cdedecoration.dir/build.make CMakeFiles/kcm_cdedecoration.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=3,4,5 "Built target kcm_cdedecoration"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=3,4,5 "Built target kcm_cdedecoration"
 .PHONY : CMakeFiles/kcm_cdedecoration.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/kcm_cdedecoration.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/kcm_cdedecoration.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 0
 .PHONY : CMakeFiles/kcm_cdedecoration.dir/rule
 
 # Convenience name for target.
@@ -209,7 +209,7 @@ kcm_cdedecoration: CMakeFiles/kcm_cdedecoration.dir/rule
 # codegen rule for target.
 CMakeFiles/kcm_cdedecoration.dir/codegen: CMakeFiles/kcm_cdedecoration_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kcm_cdedecoration.dir/build.make CMakeFiles/kcm_cdedecoration.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=3,4,5 "Finished codegen for target kcm_cdedecoration"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=3,4,5 "Finished codegen for target kcm_cdedecoration"
 .PHONY : CMakeFiles/kcm_cdedecoration.dir/codegen
 
 # clean rule for target.
@@ -224,14 +224,14 @@ CMakeFiles/kcm_cdedecoration.dir/clean:
 CMakeFiles/kwin_cde_decoration_autogen_timestamp_deps.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kwin_cde_decoration_autogen_timestamp_deps.dir/build.make CMakeFiles/kwin_cde_decoration_autogen_timestamp_deps.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kwin_cde_decoration_autogen_timestamp_deps.dir/build.make CMakeFiles/kwin_cde_decoration_autogen_timestamp_deps.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num= "Built target kwin_cde_decoration_autogen_timestamp_deps"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num= "Built target kwin_cde_decoration_autogen_timestamp_deps"
 .PHONY : CMakeFiles/kwin_cde_decoration_autogen_timestamp_deps.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/kwin_cde_decoration_autogen_timestamp_deps.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/kwin_cde_decoration_autogen_timestamp_deps.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 0
 .PHONY : CMakeFiles/kwin_cde_decoration_autogen_timestamp_deps.dir/rule
 
 # Convenience name for target.
@@ -241,7 +241,7 @@ kwin_cde_decoration_autogen_timestamp_deps: CMakeFiles/kwin_cde_decoration_autog
 # codegen rule for target.
 CMakeFiles/kwin_cde_decoration_autogen_timestamp_deps.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kwin_cde_decoration_autogen_timestamp_deps.dir/build.make CMakeFiles/kwin_cde_decoration_autogen_timestamp_deps.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num= "Finished codegen for target kwin_cde_decoration_autogen_timestamp_deps"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num= "Finished codegen for target kwin_cde_decoration_autogen_timestamp_deps"
 .PHONY : CMakeFiles/kwin_cde_decoration_autogen_timestamp_deps.dir/codegen
 
 # clean rule for target.
@@ -256,14 +256,14 @@ CMakeFiles/kwin_cde_decoration_autogen_timestamp_deps.dir/clean:
 CMakeFiles/kwin_cde_decoration_autogen.dir/all: CMakeFiles/kwin_cde_decoration_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kwin_cde_decoration_autogen.dir/build.make CMakeFiles/kwin_cde_decoration_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kwin_cde_decoration_autogen.dir/build.make CMakeFiles/kwin_cde_decoration_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=12 "Built target kwin_cde_decoration_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=12 "Built target kwin_cde_decoration_autogen"
 .PHONY : CMakeFiles/kwin_cde_decoration_autogen.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/kwin_cde_decoration_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/kwin_cde_decoration_autogen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 0
 .PHONY : CMakeFiles/kwin_cde_decoration_autogen.dir/rule
 
 # Convenience name for target.
@@ -273,7 +273,7 @@ kwin_cde_decoration_autogen: CMakeFiles/kwin_cde_decoration_autogen.dir/rule
 # codegen rule for target.
 CMakeFiles/kwin_cde_decoration_autogen.dir/codegen: CMakeFiles/kwin_cde_decoration_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kwin_cde_decoration_autogen.dir/build.make CMakeFiles/kwin_cde_decoration_autogen.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=12 "Finished codegen for target kwin_cde_decoration_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=12 "Finished codegen for target kwin_cde_decoration_autogen"
 .PHONY : CMakeFiles/kwin_cde_decoration_autogen.dir/codegen
 
 # clean rule for target.
@@ -288,14 +288,14 @@ CMakeFiles/kwin_cde_decoration_autogen.dir/clean:
 CMakeFiles/kcm_cdedecoration_autogen_timestamp_deps.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kcm_cdedecoration_autogen_timestamp_deps.dir/build.make CMakeFiles/kcm_cdedecoration_autogen_timestamp_deps.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kcm_cdedecoration_autogen_timestamp_deps.dir/build.make CMakeFiles/kcm_cdedecoration_autogen_timestamp_deps.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num= "Built target kcm_cdedecoration_autogen_timestamp_deps"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num= "Built target kcm_cdedecoration_autogen_timestamp_deps"
 .PHONY : CMakeFiles/kcm_cdedecoration_autogen_timestamp_deps.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/kcm_cdedecoration_autogen_timestamp_deps.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/kcm_cdedecoration_autogen_timestamp_deps.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 0
 .PHONY : CMakeFiles/kcm_cdedecoration_autogen_timestamp_deps.dir/rule
 
 # Convenience name for target.
@@ -305,7 +305,7 @@ kcm_cdedecoration_autogen_timestamp_deps: CMakeFiles/kcm_cdedecoration_autogen_t
 # codegen rule for target.
 CMakeFiles/kcm_cdedecoration_autogen_timestamp_deps.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kcm_cdedecoration_autogen_timestamp_deps.dir/build.make CMakeFiles/kcm_cdedecoration_autogen_timestamp_deps.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num= "Finished codegen for target kcm_cdedecoration_autogen_timestamp_deps"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num= "Finished codegen for target kcm_cdedecoration_autogen_timestamp_deps"
 .PHONY : CMakeFiles/kcm_cdedecoration_autogen_timestamp_deps.dir/codegen
 
 # clean rule for target.
@@ -320,14 +320,14 @@ CMakeFiles/kcm_cdedecoration_autogen_timestamp_deps.dir/clean:
 CMakeFiles/kcm_cdedecoration_autogen.dir/all: CMakeFiles/kcm_cdedecoration_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kcm_cdedecoration_autogen.dir/build.make CMakeFiles/kcm_cdedecoration_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kcm_cdedecoration_autogen.dir/build.make CMakeFiles/kcm_cdedecoration_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=6 "Built target kcm_cdedecoration_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=6 "Built target kcm_cdedecoration_autogen"
 .PHONY : CMakeFiles/kcm_cdedecoration_autogen.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/kcm_cdedecoration_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/kcm_cdedecoration_autogen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles 0
 .PHONY : CMakeFiles/kcm_cdedecoration_autogen.dir/rule
 
 # Convenience name for target.
@@ -337,7 +337,7 @@ kcm_cdedecoration_autogen: CMakeFiles/kcm_cdedecoration_autogen.dir/rule
 # codegen rule for target.
 CMakeFiles/kcm_cdedecoration_autogen.dir/codegen: CMakeFiles/kcm_cdedecoration_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kcm_cdedecoration_autogen.dir/build.make CMakeFiles/kcm_cdedecoration_autogen.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=6 "Finished codegen for target kcm_cdedecoration_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=6 "Finished codegen for target kcm_cdedecoration_autogen"
 .PHONY : CMakeFiles/kcm_cdedecoration_autogen.dir/codegen
 
 # clean rule for target.

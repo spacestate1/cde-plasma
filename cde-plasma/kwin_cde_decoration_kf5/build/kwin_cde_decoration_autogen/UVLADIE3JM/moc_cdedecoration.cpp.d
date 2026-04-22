@@ -1,5 +1,5 @@
-/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/UVLADIE3JM/moc_cdedecoration.cpp: /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecoration.h \
-  /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/moc_predefs.h \
+/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/UVLADIE3JM/moc_cdedecoration.cpp: /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecoration.h \
+  /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/moc_predefs.h \
   /usr/include/KDecoration3/kdecoration3/decoration.h \
   /usr/include/KDecoration3/kdecoration3/decorationdefines.h \
   /usr/include/KDecoration3/kdecoration3/decorationshadow.h \

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5
+CMAKE_SOURCE_DIR = /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build
+CMAKE_BINARY_DIR = /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build
 
 # Utility rule file for uninstall.
 
@@ -67,7 +67,7 @@ include CMakeFiles/uninstall.dir/compiler_depend.make
 include CMakeFiles/uninstall.dir/progress.make
 
 CMakeFiles/uninstall:
-	/usr/bin/cmake -P /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/ecm_uninstall.cmake
+	/usr/bin/cmake -P /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/ecm_uninstall.cmake
 
 CMakeFiles/uninstall.dir/codegen:
 .PHONY : CMakeFiles/uninstall.dir/codegen
@@ -85,6 +85,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5 /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5 /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles/uninstall.dir/DependInfo.cmake "--color=$(COLOR)" uninstall
+	cd /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5 /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5 /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles/uninstall.dir/DependInfo.cmake "--color=$(COLOR)" uninstall
 .PHONY : CMakeFiles/uninstall.dir/depend
 

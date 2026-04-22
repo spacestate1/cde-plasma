@@ -1,14 +1,14 @@
 kwin_cde_decoration_autogen/timestamp: \
-	/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/CMakeLists.txt \
-	/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles/4.3.1/CMakeCXXCompiler.cmake \
-	/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles/4.3.1/CMakeSystem.cmake \
-	/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/moc_predefs.h \
-	/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cde_kdecoration.json \
-	/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdebutton.cpp \
-	/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdebutton.h \
-	/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecoration.cpp \
-	/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecoration.h \
-	/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/plugin.cpp \
+	/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/CMakeLists.txt \
+	/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles/4.3.1/CMakeCXXCompiler.cmake \
+	/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles/4.3.1/CMakeSystem.cmake \
+	/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/moc_predefs.h \
+	/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cde_kdecoration.json \
+	/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdebutton.cpp \
+	/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdebutton.h \
+	/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecoration.cpp \
+	/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecoration.h \
+	/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/plugin.cpp \
 	/usr/include/KDecoration3/kdecoration3/decoration.h \
 	/usr/include/KDecoration3/kdecoration3/decorationbutton.h \
 	/usr/include/KDecoration3/kdecoration3/decorationdefines.h \

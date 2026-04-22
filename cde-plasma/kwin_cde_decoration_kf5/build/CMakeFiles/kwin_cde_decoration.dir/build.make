@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5
+CMAKE_SOURCE_DIR = /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build
+CMAKE_BINARY_DIR = /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/kwin_cde_decoration.dir/depend.make
@@ -75,58 +75,58 @@ CMakeFiles/kwin_cde_decoration.dir/codegen:
 CMakeFiles/kwin_cde_decoration.dir/kwin_cde_decoration_autogen/mocs_compilation.cpp.o: CMakeFiles/kwin_cde_decoration.dir/flags.make
 CMakeFiles/kwin_cde_decoration.dir/kwin_cde_decoration_autogen/mocs_compilation.cpp.o: kwin_cde_decoration_autogen/mocs_compilation.cpp
 CMakeFiles/kwin_cde_decoration.dir/kwin_cde_decoration_autogen/mocs_compilation.cpp.o: CMakeFiles/kwin_cde_decoration.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/kwin_cde_decoration.dir/kwin_cde_decoration_autogen/mocs_compilation.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kwin_cde_decoration.dir/kwin_cde_decoration_autogen/mocs_compilation.cpp.o -MF CMakeFiles/kwin_cde_decoration.dir/kwin_cde_decoration_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/kwin_cde_decoration.dir/kwin_cde_decoration_autogen/mocs_compilation.cpp.o -c /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/kwin_cde_decoration.dir/kwin_cde_decoration_autogen/mocs_compilation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kwin_cde_decoration.dir/kwin_cde_decoration_autogen/mocs_compilation.cpp.o -MF CMakeFiles/kwin_cde_decoration.dir/kwin_cde_decoration_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/kwin_cde_decoration.dir/kwin_cde_decoration_autogen/mocs_compilation.cpp.o -c /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/mocs_compilation.cpp
 
 CMakeFiles/kwin_cde_decoration.dir/kwin_cde_decoration_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/kwin_cde_decoration.dir/kwin_cde_decoration_autogen/mocs_compilation.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/mocs_compilation.cpp > CMakeFiles/kwin_cde_decoration.dir/kwin_cde_decoration_autogen/mocs_compilation.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/mocs_compilation.cpp > CMakeFiles/kwin_cde_decoration.dir/kwin_cde_decoration_autogen/mocs_compilation.cpp.i
 
 CMakeFiles/kwin_cde_decoration.dir/kwin_cde_decoration_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/kwin_cde_decoration.dir/kwin_cde_decoration_autogen/mocs_compilation.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/mocs_compilation.cpp -o CMakeFiles/kwin_cde_decoration.dir/kwin_cde_decoration_autogen/mocs_compilation.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/mocs_compilation.cpp -o CMakeFiles/kwin_cde_decoration.dir/kwin_cde_decoration_autogen/mocs_compilation.cpp.s
 
 CMakeFiles/kwin_cde_decoration.dir/src/cdebutton.cpp.o: CMakeFiles/kwin_cde_decoration.dir/flags.make
-CMakeFiles/kwin_cde_decoration.dir/src/cdebutton.cpp.o: /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdebutton.cpp
+CMakeFiles/kwin_cde_decoration.dir/src/cdebutton.cpp.o: /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdebutton.cpp
 CMakeFiles/kwin_cde_decoration.dir/src/cdebutton.cpp.o: CMakeFiles/kwin_cde_decoration.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/kwin_cde_decoration.dir/src/cdebutton.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kwin_cde_decoration.dir/src/cdebutton.cpp.o -MF CMakeFiles/kwin_cde_decoration.dir/src/cdebutton.cpp.o.d -o CMakeFiles/kwin_cde_decoration.dir/src/cdebutton.cpp.o -c /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdebutton.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/kwin_cde_decoration.dir/src/cdebutton.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kwin_cde_decoration.dir/src/cdebutton.cpp.o -MF CMakeFiles/kwin_cde_decoration.dir/src/cdebutton.cpp.o.d -o CMakeFiles/kwin_cde_decoration.dir/src/cdebutton.cpp.o -c /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdebutton.cpp
 
 CMakeFiles/kwin_cde_decoration.dir/src/cdebutton.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/kwin_cde_decoration.dir/src/cdebutton.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdebutton.cpp > CMakeFiles/kwin_cde_decoration.dir/src/cdebutton.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdebutton.cpp > CMakeFiles/kwin_cde_decoration.dir/src/cdebutton.cpp.i
 
 CMakeFiles/kwin_cde_decoration.dir/src/cdebutton.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/kwin_cde_decoration.dir/src/cdebutton.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdebutton.cpp -o CMakeFiles/kwin_cde_decoration.dir/src/cdebutton.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdebutton.cpp -o CMakeFiles/kwin_cde_decoration.dir/src/cdebutton.cpp.s
 
 CMakeFiles/kwin_cde_decoration.dir/src/cdedecoration.cpp.o: CMakeFiles/kwin_cde_decoration.dir/flags.make
-CMakeFiles/kwin_cde_decoration.dir/src/cdedecoration.cpp.o: /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecoration.cpp
+CMakeFiles/kwin_cde_decoration.dir/src/cdedecoration.cpp.o: /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecoration.cpp
 CMakeFiles/kwin_cde_decoration.dir/src/cdedecoration.cpp.o: CMakeFiles/kwin_cde_decoration.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/kwin_cde_decoration.dir/src/cdedecoration.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kwin_cde_decoration.dir/src/cdedecoration.cpp.o -MF CMakeFiles/kwin_cde_decoration.dir/src/cdedecoration.cpp.o.d -o CMakeFiles/kwin_cde_decoration.dir/src/cdedecoration.cpp.o -c /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecoration.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/kwin_cde_decoration.dir/src/cdedecoration.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kwin_cde_decoration.dir/src/cdedecoration.cpp.o -MF CMakeFiles/kwin_cde_decoration.dir/src/cdedecoration.cpp.o.d -o CMakeFiles/kwin_cde_decoration.dir/src/cdedecoration.cpp.o -c /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecoration.cpp
 
 CMakeFiles/kwin_cde_decoration.dir/src/cdedecoration.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/kwin_cde_decoration.dir/src/cdedecoration.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecoration.cpp > CMakeFiles/kwin_cde_decoration.dir/src/cdedecoration.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecoration.cpp > CMakeFiles/kwin_cde_decoration.dir/src/cdedecoration.cpp.i
 
 CMakeFiles/kwin_cde_decoration.dir/src/cdedecoration.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/kwin_cde_decoration.dir/src/cdedecoration.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecoration.cpp -o CMakeFiles/kwin_cde_decoration.dir/src/cdedecoration.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecoration.cpp -o CMakeFiles/kwin_cde_decoration.dir/src/cdedecoration.cpp.s
 
 CMakeFiles/kwin_cde_decoration.dir/src/plugin.cpp.o: CMakeFiles/kwin_cde_decoration.dir/flags.make
-CMakeFiles/kwin_cde_decoration.dir/src/plugin.cpp.o: /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/plugin.cpp
+CMakeFiles/kwin_cde_decoration.dir/src/plugin.cpp.o: /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/plugin.cpp
 CMakeFiles/kwin_cde_decoration.dir/src/plugin.cpp.o: CMakeFiles/kwin_cde_decoration.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/kwin_cde_decoration.dir/src/plugin.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kwin_cde_decoration.dir/src/plugin.cpp.o -MF CMakeFiles/kwin_cde_decoration.dir/src/plugin.cpp.o.d -o CMakeFiles/kwin_cde_decoration.dir/src/plugin.cpp.o -c /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/plugin.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/kwin_cde_decoration.dir/src/plugin.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kwin_cde_decoration.dir/src/plugin.cpp.o -MF CMakeFiles/kwin_cde_decoration.dir/src/plugin.cpp.o.d -o CMakeFiles/kwin_cde_decoration.dir/src/plugin.cpp.o -c /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/plugin.cpp
 
 CMakeFiles/kwin_cde_decoration.dir/src/plugin.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/kwin_cde_decoration.dir/src/plugin.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/plugin.cpp > CMakeFiles/kwin_cde_decoration.dir/src/plugin.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/plugin.cpp > CMakeFiles/kwin_cde_decoration.dir/src/plugin.cpp.i
 
 CMakeFiles/kwin_cde_decoration.dir/src/plugin.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/kwin_cde_decoration.dir/src/plugin.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/plugin.cpp -o CMakeFiles/kwin_cde_decoration.dir/src/plugin.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/plugin.cpp -o CMakeFiles/kwin_cde_decoration.dir/src/plugin.cpp.s
 
 # Object files for target kwin_cde_decoration
 kwin_cde_decoration_OBJECTS = \
@@ -146,7 +146,7 @@ org.kde.cde.decoration.so: CMakeFiles/kwin_cde_decoration.dir/build.make
 org.kde.cde.decoration.so: /usr/lib/libGLX.so
 org.kde.cde.decoration.so: /usr/lib/libOpenGL.so
 org.kde.cde.decoration.so: CMakeFiles/kwin_cde_decoration.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX shared module org.kde.cde.decoration.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX shared module org.kde.cde.decoration.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/kwin_cde_decoration.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -158,6 +158,6 @@ CMakeFiles/kwin_cde_decoration.dir/clean:
 .PHONY : CMakeFiles/kwin_cde_decoration.dir/clean
 
 CMakeFiles/kwin_cde_decoration.dir/depend:
-	cd /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5 /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5 /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles/kwin_cde_decoration.dir/DependInfo.cmake "--color=$(COLOR)" kwin_cde_decoration
+	cd /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5 /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5 /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles/kwin_cde_decoration.dir/DependInfo.cmake "--color=$(COLOR)" kwin_cde_decoration
 .PHONY : CMakeFiles/kwin_cde_decoration.dir/depend
 

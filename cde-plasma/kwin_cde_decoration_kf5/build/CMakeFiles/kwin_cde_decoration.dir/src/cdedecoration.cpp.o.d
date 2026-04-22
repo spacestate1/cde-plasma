@@ -1,7 +1,7 @@
 CMakeFiles/kwin_cde_decoration.dir/src/cdedecoration.cpp.o: \
- /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecoration.cpp \
+ /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecoration.cpp \
  /usr/include/stdc-predef.h \
- /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecoration.h \
+ /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecoration.h \
  /usr/include/qt6/QtGui/QColor /usr/include/qt6/QtGui/qcolor.h \
  /usr/include/qt6/QtGui/qtguiglobal.h /usr/include/qt6/QtCore/qglobal.h \
  /usr/include/c++/15.2.1/type_traits \
@@ -374,10 +374,10 @@ CMakeFiles/kwin_cde_decoration.dir/src/cdedecoration.cpp.o: \
  /usr/include/qt6/QtCore/QMarginsF /usr/include/qt6/QtCore/QRectF \
  /usr/include/qt6/QtCore/QSharedDataPointer \
  /usr/include/KDecoration3/kdecoration3/decorationdefines.h \
- /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdebutton.h \
+ /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdebutton.h \
  /usr/include/KDecoration3/kdecoration3/decorationbutton.h \
- /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdecommon.h \
- /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdeconfig.h \
+ /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdecommon.h \
+ /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdeconfig.h \
  /usr/include/qt6/QtGui/QFontMetrics \
  /usr/include/qt6/QtGui/qfontmetrics.h /usr/include/qt6/QtGui/QPainter \
  /usr/include/qt6/QtGui/qpainter.h /usr/include/qt6/QtGui/qtextoption.h \

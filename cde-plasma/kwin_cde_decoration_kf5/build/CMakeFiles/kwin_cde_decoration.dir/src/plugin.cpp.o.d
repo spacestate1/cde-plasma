@@ -1,5 +1,5 @@
 CMakeFiles/kwin_cde_decoration.dir/src/plugin.cpp.o: \
- /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/plugin.cpp \
+ /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/plugin.cpp \
  /usr/include/stdc-predef.h /usr/include/KF6/KCoreAddons/KPluginFactory \
  /usr/include/KF6/KCoreAddons/kpluginfactory.h \
  /usr/include/KF6/KCoreAddons/kcoreaddons_export.h \
@@ -381,7 +381,7 @@ CMakeFiles/kwin_cde_decoration.dir/src/plugin.cpp.o: \
  /usr/include/qt6/QtCore/QMetaType /usr/include/qt6/QtCore/QString \
  /usr/include/qt6/QtCore/QStringList /usr/include/qt6/QtCore/QObject \
  /usr/include/qt6/QtCore/QVariant \
- /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecoration.h \
+ /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecoration.h \
  /usr/include/qt6/QtGui/QColor /usr/include/qt6/QtGui/qcolor.h \
  /usr/include/qt6/QtGui/qtguiglobal.h \
  /usr/include/qt6/QtGui/qtgui-config.h \
@@ -407,7 +407,7 @@ CMakeFiles/kwin_cde_decoration.dir/src/plugin.cpp.o: \
  /usr/include/qt6/QtCore/QMarginsF /usr/include/qt6/QtCore/QRectF \
  /usr/include/qt6/QtCore/QSharedDataPointer \
  /usr/include/KDecoration3/kdecoration3/decorationdefines.h \
- /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/include/plugin.moc \
+ /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/include/plugin.moc \
  /usr/include/qt6/QtCore/qplugin.h /usr/include/qt6/QtCore/qpointer.h \
  /usr/include/qt6/QtCore/q20algorithm.h \
  /usr/include/qt6/QtCore/qtmochelpers.h \

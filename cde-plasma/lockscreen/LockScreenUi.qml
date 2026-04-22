@@ -34,6 +34,21 @@ Item {
 
     property string failMessage: ""
     property bool uiVisible: false
+    // Queued password — used when doUnlock() is called before PAM is ready
+    // to prompt (e.g. right after resume-from-suspend). Sent once the
+    // authenticator's next promptForSecret arrives.
+    property string pendingPassword: ""
+
+    focus: true
+
+    // Any keypress while the UI is hidden wakes and restarts auth, so users
+    // who wake the machine with the keyboard aren't stuck at a dead screen.
+    Keys.onPressed: (event) => {
+        if (!lockScreenUi.uiVisible) {
+            showAndAuth()
+            event.accepted = true
+        }
+    }
 
     // Bevel component
     component Bevel: Item {
@@ -219,6 +234,11 @@ Item {
             lockScreenUi.uiVisible = true
             authenticator.startAuthenticating()
             passwordInput.forceActiveFocus()
+        } else if (!authenticator.promptForSecret) {
+            // UI was still visible (no fadeout) but PAM went stale across a
+            // suspend/resume — re-arm the session so respond() will be heard.
+            authenticator.startAuthenticating()
+            passwordInput.forceActiveFocus()
         }
     }
 
@@ -227,7 +247,14 @@ Item {
             return
         }
         lockScreenUi.failMessage = ""
-        authenticator.respond(passwordInput.text)
+        if (authenticator.promptForSecret) {
+            authenticator.respond(passwordInput.text)
+        } else {
+            // PAM isn't prompting yet (stale session after wake). Queue the
+            // password and send it once onPromptForSecretChanged fires.
+            lockScreenUi.pendingPassword = passwordInput.text
+            authenticator.startAuthenticating()
+        }
     }
 
     Connections {
@@ -239,6 +266,7 @@ Item {
             }
             lockScreenUi.failMessage = "Unlock failed"
             passwordInput.text = ""
+            lockScreenUi.pendingPassword = ""
             graceLockTimer.restart()
         }
         function onSucceeded() {
@@ -257,8 +285,17 @@ Item {
             }
         }
         function onPromptForSecretChanged() {
-            passwordInput.text = ""
+            // Only react on the rising edge — the signal also fires when PAM
+            // stops prompting (e.g. after respond()), and clearing the field
+            // there would wipe text the user just typed.
+            if (!authenticator.promptForSecret) {
+                return
+            }
             passwordInput.forceActiveFocus()
+            if (lockScreenUi.pendingPassword.length > 0) {
+                authenticator.respond(lockScreenUi.pendingPassword)
+                lockScreenUi.pendingPassword = ""
+            }
         }
     }
 

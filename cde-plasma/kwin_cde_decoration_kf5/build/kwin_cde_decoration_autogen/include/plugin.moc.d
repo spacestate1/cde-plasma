@@ -1,7 +1,7 @@
-/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/include/plugin.moc: /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/plugin.cpp \
-  /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/moc_predefs.h \
-  /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cde_kdecoration.json \
-  /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecoration.h \
+/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/include/plugin.moc: /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/plugin.cpp \
+  /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kwin_cde_decoration_autogen/moc_predefs.h \
+  /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cde_kdecoration.json \
+  /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecoration.h \
   /usr/include/KDecoration3/kdecoration3/decoration.h \
   /usr/include/KDecoration3/kdecoration3/decorationdefines.h \
   /usr/include/KDecoration3/kdecoration3/decorationshadow.h \

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5
+CMAKE_SOURCE_DIR = /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build
+CMAKE_BINARY_DIR = /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/cde_qt_style.dir/depend.make
@@ -75,44 +75,44 @@ CMakeFiles/cde_qt_style.dir/codegen:
 CMakeFiles/cde_qt_style.dir/cde_qt_style_autogen/mocs_compilation.cpp.o: CMakeFiles/cde_qt_style.dir/flags.make
 CMakeFiles/cde_qt_style.dir/cde_qt_style_autogen/mocs_compilation.cpp.o: cde_qt_style_autogen/mocs_compilation.cpp
 CMakeFiles/cde_qt_style.dir/cde_qt_style_autogen/mocs_compilation.cpp.o: CMakeFiles/cde_qt_style.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cde_qt_style.dir/cde_qt_style_autogen/mocs_compilation.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cde_qt_style.dir/cde_qt_style_autogen/mocs_compilation.cpp.o -MF CMakeFiles/cde_qt_style.dir/cde_qt_style_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/cde_qt_style.dir/cde_qt_style_autogen/mocs_compilation.cpp.o -c /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/cde_qt_style_autogen/mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cde_qt_style.dir/cde_qt_style_autogen/mocs_compilation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cde_qt_style.dir/cde_qt_style_autogen/mocs_compilation.cpp.o -MF CMakeFiles/cde_qt_style.dir/cde_qt_style_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/cde_qt_style.dir/cde_qt_style_autogen/mocs_compilation.cpp.o -c /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/cde_qt_style_autogen/mocs_compilation.cpp
 
 CMakeFiles/cde_qt_style.dir/cde_qt_style_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cde_qt_style.dir/cde_qt_style_autogen/mocs_compilation.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/cde_qt_style_autogen/mocs_compilation.cpp > CMakeFiles/cde_qt_style.dir/cde_qt_style_autogen/mocs_compilation.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/cde_qt_style_autogen/mocs_compilation.cpp > CMakeFiles/cde_qt_style.dir/cde_qt_style_autogen/mocs_compilation.cpp.i
 
 CMakeFiles/cde_qt_style.dir/cde_qt_style_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cde_qt_style.dir/cde_qt_style_autogen/mocs_compilation.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/cde_qt_style_autogen/mocs_compilation.cpp -o CMakeFiles/cde_qt_style.dir/cde_qt_style_autogen/mocs_compilation.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/cde_qt_style_autogen/mocs_compilation.cpp -o CMakeFiles/cde_qt_style.dir/cde_qt_style_autogen/mocs_compilation.cpp.s
 
 CMakeFiles/cde_qt_style.dir/src/cdestyle.cpp.o: CMakeFiles/cde_qt_style.dir/flags.make
-CMakeFiles/cde_qt_style.dir/src/cdestyle.cpp.o: /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/src/cdestyle.cpp
+CMakeFiles/cde_qt_style.dir/src/cdestyle.cpp.o: /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/src/cdestyle.cpp
 CMakeFiles/cde_qt_style.dir/src/cdestyle.cpp.o: CMakeFiles/cde_qt_style.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cde_qt_style.dir/src/cdestyle.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cde_qt_style.dir/src/cdestyle.cpp.o -MF CMakeFiles/cde_qt_style.dir/src/cdestyle.cpp.o.d -o CMakeFiles/cde_qt_style.dir/src/cdestyle.cpp.o -c /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/src/cdestyle.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cde_qt_style.dir/src/cdestyle.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cde_qt_style.dir/src/cdestyle.cpp.o -MF CMakeFiles/cde_qt_style.dir/src/cdestyle.cpp.o.d -o CMakeFiles/cde_qt_style.dir/src/cdestyle.cpp.o -c /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/src/cdestyle.cpp
 
 CMakeFiles/cde_qt_style.dir/src/cdestyle.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cde_qt_style.dir/src/cdestyle.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/src/cdestyle.cpp > CMakeFiles/cde_qt_style.dir/src/cdestyle.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/src/cdestyle.cpp > CMakeFiles/cde_qt_style.dir/src/cdestyle.cpp.i
 
 CMakeFiles/cde_qt_style.dir/src/cdestyle.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cde_qt_style.dir/src/cdestyle.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/src/cdestyle.cpp -o CMakeFiles/cde_qt_style.dir/src/cdestyle.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/src/cdestyle.cpp -o CMakeFiles/cde_qt_style.dir/src/cdestyle.cpp.s
 
 CMakeFiles/cde_qt_style.dir/src/plugin.cpp.o: CMakeFiles/cde_qt_style.dir/flags.make
-CMakeFiles/cde_qt_style.dir/src/plugin.cpp.o: /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/src/plugin.cpp
+CMakeFiles/cde_qt_style.dir/src/plugin.cpp.o: /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/src/plugin.cpp
 CMakeFiles/cde_qt_style.dir/src/plugin.cpp.o: CMakeFiles/cde_qt_style.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/cde_qt_style.dir/src/plugin.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cde_qt_style.dir/src/plugin.cpp.o -MF CMakeFiles/cde_qt_style.dir/src/plugin.cpp.o.d -o CMakeFiles/cde_qt_style.dir/src/plugin.cpp.o -c /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/src/plugin.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/cde_qt_style.dir/src/plugin.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cde_qt_style.dir/src/plugin.cpp.o -MF CMakeFiles/cde_qt_style.dir/src/plugin.cpp.o.d -o CMakeFiles/cde_qt_style.dir/src/plugin.cpp.o -c /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/src/plugin.cpp
 
 CMakeFiles/cde_qt_style.dir/src/plugin.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cde_qt_style.dir/src/plugin.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/src/plugin.cpp > CMakeFiles/cde_qt_style.dir/src/plugin.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/src/plugin.cpp > CMakeFiles/cde_qt_style.dir/src/plugin.cpp.i
 
 CMakeFiles/cde_qt_style.dir/src/plugin.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cde_qt_style.dir/src/plugin.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/src/plugin.cpp -o CMakeFiles/cde_qt_style.dir/src/plugin.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/src/plugin.cpp -o CMakeFiles/cde_qt_style.dir/src/plugin.cpp.s
 
 # Object files for target cde_qt_style
 cde_qt_style_OBJECTS = \
@@ -130,7 +130,7 @@ cde_qt_style.so: CMakeFiles/cde_qt_style.dir/build.make
 cde_qt_style.so: /usr/lib/libGLX.so
 cde_qt_style.so: /usr/lib/libOpenGL.so
 cde_qt_style.so: CMakeFiles/cde_qt_style.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX shared module cde_qt_style.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX shared module cde_qt_style.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cde_qt_style.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -142,6 +142,6 @@ CMakeFiles/cde_qt_style.dir/clean:
 .PHONY : CMakeFiles/cde_qt_style.dir/clean
 
 CMakeFiles/cde_qt_style.dir/depend:
-	cd /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5 /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5 /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/cde_qt_style.dir/DependInfo.cmake "--color=$(COLOR)" cde_qt_style
+	cd /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5 /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5 /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/cde_qt_style.dir/DependInfo.cmake "--color=$(COLOR)" cde_qt_style
 .PHONY : CMakeFiles/cde_qt_style.dir/depend
 

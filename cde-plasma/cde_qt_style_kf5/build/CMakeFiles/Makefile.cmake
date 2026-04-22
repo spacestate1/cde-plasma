@@ -7,7 +7,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/CMakeLists.txt"
+  "/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/CMakeLists.txt"
   "CMakeFiles/4.3.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.3.1/CMakeSystem.cmake"
   "/usr/lib/cmake/Qt5Core/Qt5CoreConfig.cmake"

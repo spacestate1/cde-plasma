@@ -1,7 +1,7 @@
-/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/cde_qt_style_autogen/include/plugin.moc: /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/src/plugin.cpp \
-  /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/cde_qt_style_autogen/moc_predefs.h \
-  /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/src/cde_qt_style.json \
-  /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/src/cdestyle.h \
+/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/cde_qt_style_autogen/include/plugin.moc: /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/src/plugin.cpp \
+  /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/cde_qt_style_autogen/moc_predefs.h \
+  /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/src/cde_qt_style.json \
+  /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/src/cdestyle.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \

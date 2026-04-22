@@ -20,6 +20,12 @@ LOG_DIR="$SCRIPT_DIR/logs"
 mkdir -p "$LOG_DIR"
 LOG_FILE="$LOG_DIR/install-$(date '+%Y%m%d-%H%M%S').log"
 
+# Snapshot of pre-install KDE config values — uninstall.sh reads this to
+# restore the user's prior settings (rather than clobbering them with stock
+# Breeze values).
+SNAPSHOT_DIR="$HOME/.local/share/cde-plasma"
+SNAPSHOT_FILE="$SNAPSHOT_DIR/pre-install.snapshot"
+
 # Send all output to both terminal and timestamped log file.
 exec > >(while IFS= read -r line; do
     printf '%s\n' "$line"
@@ -270,6 +276,37 @@ check_deps() {
     echo
 }
 
+# Pick a safe -j value for make. Each Qt6 + KF6 compile unit can peak around
+# 500 MB–1 GB of RAM, so parallelism is capped by (available RAM + swap) / 1 GB,
+# not just nproc. On low-memory systems (e.g. a 2 GB VM with Plasma running and
+# no swap) this drops to -j1 to avoid kswapd thrashing / OOM.
+compute_make_jobs() {
+    local nproc_jobs mem_avail_kb swap_kb budget_mb mem_per_job=1024 jobs
+    nproc_jobs="$(nproc 2>/dev/null || echo 1)"
+
+    mem_avail_kb="$(awk '/^MemAvailable:/ {print $2}' /proc/meminfo 2>/dev/null || echo 0)"
+    swap_kb="$(awk '/^SwapFree:/ {print $2}' /proc/meminfo 2>/dev/null || echo 0)"
+    budget_mb=$(( (mem_avail_kb + swap_kb) / 1024 ))
+
+    if [ "$budget_mb" -lt "$mem_per_job" ]; then
+        jobs=1
+    else
+        jobs=$(( budget_mb / mem_per_job ))
+        [ "$jobs" -gt "$nproc_jobs" ] && jobs="$nproc_jobs"
+    fi
+    [ "$jobs" -lt 1 ] && jobs=1
+
+    # Warn if we're clearly memory-starved so the user can add swap.
+    if [ "$jobs" = "1" ] && [ "$budget_mb" -lt 768 ] && [ "$swap_kb" = "0" ]; then
+        echo "  WARNING: only ${budget_mb} MB RAM available and no swap." >&2
+        echo "  Even -j1 may OOM during a Qt6 compile. Consider adding a swap file:" >&2
+        echo "    sudo fallocate -l 2G /swapfile && sudo chmod 600 /swapfile" >&2
+        echo "    sudo mkswap /swapfile && sudo swapon /swapfile" >&2
+    fi
+
+    echo "$jobs"
+}
+
 # Build and install KWin decoration
 install_kwin_decoration() {
     echo "[1/8] Building KWin decoration..."
@@ -286,7 +323,10 @@ install_kwin_decoration() {
     cd "$src_dir"
     rm -rf build && mkdir build && cd build
     cmake .. -DCMAKE_BUILD_TYPE=Release
-    make -j"$(nproc)"
+    local jobs
+    jobs="$(compute_make_jobs)"
+    echo "  Building with make -j${jobs} (capped by available RAM + swap)"
+    make -j"$jobs"
     echo "Installing KWin decoration (requires sudo)..."
     sudo make install
 
@@ -323,7 +363,10 @@ install_qt_style() {
     cd "$src_dir"
     rm -rf build && mkdir build && cd build
     cmake .. -DCMAKE_BUILD_TYPE=Release
-    make -j"$(nproc)"
+    local jobs
+    jobs="$(compute_make_jobs)"
+    echo "  Building with make -j${jobs} (capped by available RAM + swap)"
+    make -j"$jobs"
     echo "Installing Qt style (requires sudo)..."
     sudo make install
     echo "Qt widget style installed."
@@ -452,9 +495,77 @@ install_lockscreen() {
     echo
 }
 
+# Snapshot the current values of every KDE config key we're about to modify.
+# uninstall.sh replays this to put the user back exactly where they were.
+# If a snapshot already exists (re-install scenario), we leave it alone — the
+# existing snapshot reflects the true pre-install state, not the current
+# CDE-applied state.
+snapshot_kde_config() {
+    local kreadconfig="kreadconfig6"
+    if [ "$PLASMA_VERSION" = "5" ]; then
+        kreadconfig="kreadconfig5"
+    fi
+
+    if ! command -v "$kreadconfig" &>/dev/null; then
+        echo "  $kreadconfig not found — skipping pre-install snapshot."
+        echo "  (uninstall.sh will fall back to Breeze defaults)"
+        return
+    fi
+
+    if [ -f "$SNAPSHOT_FILE" ]; then
+        echo "  Pre-install snapshot already exists — not overwriting."
+        return
+    fi
+
+    # If CDE already looks applied, the "current state" is not a genuine
+    # pre-install snapshot — capturing it would make uninstall a no-op.
+    local cur_style cur_decor
+    cur_style="$("$kreadconfig" --file kdeglobals --group KDE --key widgetStyle 2>/dev/null || echo "")"
+    cur_decor="$("$kreadconfig" --file kwinrc --group org.kde.kdecoration2 --key library 2>/dev/null || echo "")"
+    if [ "$cur_style" = "cde" ] || [ "$cur_decor" = "org.kde.cde.decoration" ]; then
+        echo "  CDE already active — skipping snapshot to avoid capturing CDE state."
+        echo "  (uninstall.sh will fall back to Breeze defaults)"
+        return
+    fi
+
+    mkdir -p "$SNAPSHOT_DIR"
+    local sentinel="__CDE_UNSET_SENTINEL_$$__"
+    local tmp="$SNAPSHOT_FILE.tmp"
+    : > "$tmp"
+
+    # Every (file, group, key) tuple configure_kde() writes below.
+    local entries=(
+        "kdeglobals|KDE|widgetStyle"
+        "kwinrc|org.kde.kdecoration2|library"
+        "kwinrc|org.kde.kdecoration2|theme"
+        "plasmarc|Theme|name"
+        "kdeglobals|General|ColorScheme"
+        "kcminputrc|Mouse|cursorTheme"
+        "kcminputrc|Mouse|cursorSize"
+        "kdeglobals|KDE|LookAndFeelPackage"
+        "kscreenlockerrc|Greeter|LookAndFeel"
+    )
+
+    local entry file group key val
+    for entry in "${entries[@]}"; do
+        IFS='|' read -r file group key <<< "$entry"
+        val="$("$kreadconfig" --file "$file" --group "$group" --key "$key" --default "$sentinel" 2>/dev/null)" || val="$sentinel"
+        if [ "$val" = "$sentinel" ]; then
+            printf '%s\t%s\t%s\tUNSET\t\n' "$file" "$group" "$key" >> "$tmp"
+        else
+            printf '%s\t%s\t%s\tSET\t%s\n' "$file" "$group" "$key" "$val" >> "$tmp"
+        fi
+    done
+
+    mv "$tmp" "$SNAPSHOT_FILE"
+    echo "  Pre-install settings snapshotted to $SNAPSHOT_FILE"
+}
+
 # Configure KDE to use the theme
 configure_kde() {
     echo "Configuring KDE settings..."
+
+    snapshot_kde_config
 
     local kwriteconfig_cmd="kwriteconfig5"
     if [ "$PLASMA_VERSION" = "6" ]; then

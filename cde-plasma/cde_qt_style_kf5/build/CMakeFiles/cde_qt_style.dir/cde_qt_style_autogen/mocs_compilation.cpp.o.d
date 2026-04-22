@@ -1,8 +1,8 @@
 CMakeFiles/cde_qt_style.dir/cde_qt_style_autogen/mocs_compilation.cpp.o: \
- /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/cde_qt_style_autogen/mocs_compilation.cpp \
+ /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/cde_qt_style_autogen/mocs_compilation.cpp \
  /usr/include/stdc-predef.h \
- /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/cde_qt_style_autogen/UVLADIE3JM/moc_cdestyle.cpp \
- /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/cde_qt_style_autogen/UVLADIE3JM/../../../src/cdestyle.h \
+ /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/cde_qt_style_autogen/UVLADIE3JM/moc_cdestyle.cpp \
+ /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/cde_qt_style_autogen/UVLADIE3JM/../../../src/cdestyle.h \
  /usr/include/qt6/QtWidgets/QProxyStyle \
  /usr/include/qt6/QtWidgets/qproxystyle.h \
  /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \

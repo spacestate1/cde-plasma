@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5
+CMAKE_SOURCE_DIR = /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build
+CMAKE_BINARY_DIR = /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build
 
 # Utility rule file for kwin_cde_decoration_autogen_timestamp_deps.
 
@@ -81,6 +81,6 @@ CMakeFiles/kwin_cde_decoration_autogen_timestamp_deps.dir/clean:
 .PHONY : CMakeFiles/kwin_cde_decoration_autogen_timestamp_deps.dir/clean
 
 CMakeFiles/kwin_cde_decoration_autogen_timestamp_deps.dir/depend:
-	cd /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5 /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5 /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles/kwin_cde_decoration_autogen_timestamp_deps.dir/DependInfo.cmake "--color=$(COLOR)" kwin_cde_decoration_autogen_timestamp_deps
+	cd /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5 /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5 /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/CMakeFiles/kwin_cde_decoration_autogen_timestamp_deps.dir/DependInfo.cmake "--color=$(COLOR)" kwin_cde_decoration_autogen_timestamp_deps
 .PHONY : CMakeFiles/kwin_cde_decoration_autogen_timestamp_deps.dir/depend
 

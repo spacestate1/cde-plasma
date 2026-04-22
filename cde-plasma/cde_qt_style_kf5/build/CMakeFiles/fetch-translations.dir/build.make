@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5
+CMAKE_SOURCE_DIR = /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build
+CMAKE_BINARY_DIR = /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build
 
 # Utility rule file for fetch-translations.
 
@@ -67,14 +67,14 @@ include CMakeFiles/fetch-translations.dir/compiler_depend.make
 include CMakeFiles/fetch-translations.dir/progress.make
 
 CMakeFiles/fetch-translations: releaseme
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Downloading translations for cde_qt_style branch trunk..."
-	git -C /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/releaseme pull
-	cmake -E remove_directory /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/po
-	cmake -E remove_directory /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/poqm
-	ruby /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/releaseme/fetchpo.rb --origin trunk --project cde_qt_style --output-dir /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/po --output-poqm-dir /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/poqm /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Downloading translations for cde_qt_style branch trunk..."
+	git -C /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/releaseme pull
+	cmake -E remove_directory /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/po
+	cmake -E remove_directory /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/poqm
+	ruby /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/releaseme/fetchpo.rb --origin trunk --project cde_qt_style --output-dir /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/po --output-poqm-dir /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/poqm /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5
 
 releaseme:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Fetching releaseme scripts to download translations..."
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Fetching releaseme scripts to download translations..."
 	git clone --depth 1 https://invent.kde.org/sdk/releaseme.git
 
 CMakeFiles/fetch-translations.dir/codegen:
@@ -94,6 +94,6 @@ CMakeFiles/fetch-translations.dir/clean:
 .PHONY : CMakeFiles/fetch-translations.dir/clean
 
 CMakeFiles/fetch-translations.dir/depend:
-	cd /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5 /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5 /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/fetch-translations.dir/DependInfo.cmake "--color=$(COLOR)" fetch-translations
+	cd /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5 /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5 /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build /storage01/code/c_things/cde-plasma/cde-plasma/cde_qt_style_kf5/build/CMakeFiles/fetch-translations.dir/DependInfo.cmake "--color=$(COLOR)" fetch-translations
 .PHONY : CMakeFiles/fetch-translations.dir/depend
 

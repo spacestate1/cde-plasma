@@ -1,5 +1,5 @@
-/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kcm_cdedecoration_autogen/UVLADIE3JM/moc_cdedecorationkcm.cpp: /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecorationkcm.h \
-  /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kcm_cdedecoration_autogen/moc_predefs.h \
+/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kcm_cdedecoration_autogen/UVLADIE3JM/moc_cdedecorationkcm.cpp: /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/src/cdedecorationkcm.h \
+  /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/kcm_cdedecoration_autogen/moc_predefs.h \
   /usr/include/KF6/KCMUtils/KCModule \
   /usr/include/KF6/KCMUtils/kcmodule.h \
   /usr/include/KF6/KCMUtils/kcmutils_export.h \

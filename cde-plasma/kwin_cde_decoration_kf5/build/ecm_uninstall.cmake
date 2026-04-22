@@ -1,10 +1,10 @@
 cmake_policy(VERSION 3.16)
 
-if(NOT EXISTS "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/install_manifest.txt")
-    message(FATAL_ERROR "Cannot find install manifest: /storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/install_manifest.txt")
+if(NOT EXISTS "/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/install_manifest.txt")
+    message(FATAL_ERROR "Cannot find install manifest: /storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/install_manifest.txt")
 endif()
 
-file(READ "/storage01/code/c_things/cde-plasma/old-source/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/install_manifest.txt" files)
+file(READ "/storage01/code/c_things/cde-plasma/cde-plasma/kwin_cde_decoration_kf5/build/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 foreach(file ${files})
     message(STATUS "Uninstalling $ENV{DESTDIR}${file}")
