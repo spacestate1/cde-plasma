@@ -1,0 +1,148 @@
+#!/bin/bash
+#
+# cde-plasma-apply — switch the current user's Plasma session to the CDE
+# theme. Assumes the cde-plasma package is installed system-wide (assets in
+# /usr/share/...). For the source-tree workflow, use install.sh instead.
+#
+# What this does:
+#   1. Snapshots the user's pre-CDE KDE settings (so cde-plasma-unapply can
+#      restore them).
+#   2. Sets KDE config to use the CDE widget style / decoration / plasma
+#      theme / color scheme / look-and-feel.
+#   3. Overlays the CDE lock screen QML on top of Plasma's stock lockscreen
+#      (with a backup so unapply can restore).
+#   4. Drops an SDDM config snippet selecting the sddm-cde theme.
+#
+# Re-runnable. Idempotent. The snapshot is only taken once so re-applying
+# doesn't lose the original pre-CDE state.
+
+set -e
+
+DATA_DIR="/usr/share/cde-plasma"
+LOCKSCREEN_OVERLAY="$DATA_DIR/lockscreen/LockScreenUi.qml"
+LOCKSCREEN_DIR="/usr/share/plasma/shells/org.kde.plasma.desktop/contents/lockscreen"
+LOCKSCREEN_BACKUP="${LOCKSCREEN_DIR}.breeze-backup"
+
+SNAPSHOT_DIR="$HOME/.local/share/cde-plasma"
+SNAPSHOT_FILE="$SNAPSHOT_DIR/pre-apply.snapshot"
+
+KWRITECONFIG=""
+KREADCONFIG=""
+for cmd in kwriteconfig6 kwriteconfig5; do
+    command -v "$cmd" &>/dev/null && KWRITECONFIG="$cmd" && break
+done
+for cmd in kreadconfig6 kreadconfig5; do
+    command -v "$cmd" &>/dev/null && KREADCONFIG="$cmd" && break
+done
+
+if [ -z "$KWRITECONFIG" ]; then
+    echo "ERROR: kwriteconfig6/5 not found. Install plasma-workspace." >&2
+    exit 1
+fi
+
+# --- 1. Snapshot pre-apply state (once) ---
+snapshot_kde_config() {
+    [ -z "$KREADCONFIG" ] && return
+    [ -f "$SNAPSHOT_FILE" ] && return   # already snapshotted
+
+    local cur_style
+    cur_style="$("$KREADCONFIG" --file kdeglobals --group KDE --key widgetStyle 2>/dev/null || echo "")"
+    if [ "$cur_style" = "cde" ]; then
+        return   # CDE already active; the current state isn't a clean baseline
+    fi
+
+    mkdir -p "$SNAPSHOT_DIR"
+    local sentinel="__CDE_UNSET_$$__"
+    local entries=(
+        "kdeglobals|KDE|widgetStyle"
+        "kwinrc|org.kde.kdecoration2|library"
+        "kwinrc|org.kde.kdecoration2|theme"
+        "plasmarc|Theme|name"
+        "kdeglobals|General|ColorScheme"
+        "kdeglobals|KDE|LookAndFeelPackage"
+        "kscreenlockerrc|Greeter|LookAndFeel"
+        "kcminputrc|Mouse|cursorTheme"
+        "kcminputrc|Mouse|cursorSize"
+        "kwinrc|Wayland|InputMethod"
+        "kcmvirtualkeyboardrc|General|VirtualKeyboardEnabled"
+    )
+    : > "$SNAPSHOT_FILE.tmp"
+    local entry file group key val
+    for entry in "${entries[@]}"; do
+        IFS='|' read -r file group key <<< "$entry"
+        val="$("$KREADCONFIG" --file "$file" --group "$group" --key "$key" --default "$sentinel" 2>/dev/null)" || val="$sentinel"
+        if [ "$val" = "$sentinel" ]; then
+            printf '%s\t%s\t%s\tUNSET\t\n' "$file" "$group" "$key" >> "$SNAPSHOT_FILE.tmp"
+        else
+            printf '%s\t%s\t%s\tSET\t%s\n' "$file" "$group" "$key" "$val" >> "$SNAPSHOT_FILE.tmp"
+        fi
+    done
+    mv "$SNAPSHOT_FILE.tmp" "$SNAPSHOT_FILE"
+}
+
+snapshot_kde_config
+
+# --- 2. Per-user KDE config ---
+echo "Configuring KDE for current user..."
+$KWRITECONFIG --file kdeglobals --group KDE --key widgetStyle "cde"
+$KWRITECONFIG --file kwinrc --group org.kde.kdecoration2 --key library "org.kde.cde.decoration"
+$KWRITECONFIG --file kwinrc --group org.kde.kdecoration2 --key theme ""
+$KWRITECONFIG --file plasmarc --group Theme --key name "commonality"
+$KWRITECONFIG --file kdeglobals --group General --key ColorScheme "CDE"
+$KWRITECONFIG --file kdeglobals --group KDE --key LookAndFeelPackage "org.kde.cde.desktop"
+$KWRITECONFIG --file kscreenlockerrc --group Greeter --key LookAndFeel "org.kde.cde.desktop"
+
+# Cursor — pick whichever retro/system cursor is present
+for theme in Hackneyed LHackneyed Vanilla-DMZ DMZ-Black breeze_cursors Adwaita; do
+    if [ -d "/usr/share/icons/$theme/cursors" ]; then
+        $KWRITECONFIG --file kcminputrc --group Mouse --key cursorTheme "$theme"
+        $KWRITECONFIG --file kcminputrc --group Mouse --key cursorSize 24
+        break
+    fi
+done
+
+# Disable the on-screen / virtual keyboard. CDE predates touchscreens; the OSK
+# popping up over text fields breaks the aesthetic. Belt-and-braces: clear the
+# kwinrc Wayland InputMethod (the modern pop-up VK), and explicitly disable
+# the virtualkeyboard kcm flag (legacy). The SDDM-side OSK is killed below.
+$KWRITECONFIG --file kwinrc --group Wayland --key InputMethod ""
+$KWRITECONFIG --file kcmvirtualkeyboardrc --group General --key VirtualKeyboardEnabled "false"
+
+# --- 3. Lock screen overlay (system-wide, needs sudo) ---
+if [ -f "$LOCKSCREEN_OVERLAY" ] && [ -d "$LOCKSCREEN_DIR" ]; then
+    if [ ! -d "$LOCKSCREEN_BACKUP" ]; then
+        echo "Backing up original lock screen (sudo)..."
+        sudo cp -r "$LOCKSCREEN_DIR" "$LOCKSCREEN_BACKUP"
+    fi
+    echo "Installing CDE lock screen overlay (sudo)..."
+    sudo cp "$LOCKSCREEN_OVERLAY" "$LOCKSCREEN_DIR/LockScreenUi.qml"
+fi
+
+# --- 4. SDDM theme + disable login-screen virtual keyboard ---
+# [General] InputMethod= (empty) tells SDDM to skip Qt virtual keyboard at the
+# greeter, matching the no-OSK behavior we set for the user session above.
+if [ -d /usr/share/sddm/themes/sddm-cde ]; then
+    echo "Configuring SDDM to use sddm-cde (sudo)..."
+    sudo mkdir -p /etc/sddm.conf.d
+    sudo tee /etc/sddm.conf.d/sddm-cde-theme.conf >/dev/null <<EOF
+[Theme]
+Current=sddm-cde
+
+[General]
+InputMethod=
+EOF
+fi
+
+# --- 5. Reload KWin / Plasma so changes appear without a full re-login ---
+for cmd in qdbus6 qdbus qdbus-qt6; do
+    if command -v "$cmd" &>/dev/null; then
+        "$cmd" org.kde.KWin /KWin reconfigure 2>/dev/null || true
+        break
+    fi
+done
+if pgrep -x plasmashell >/dev/null; then
+    plasmashell --replace &>/dev/null &
+fi
+
+echo
+echo "CDE theme applied. Log out and back in for full effect (especially on Wayland)."

@@ -1,0 +1,76 @@
+#!/bin/bash
+#
+# cde-plasma-unapply — revert what cde-plasma-apply did, without uninstalling
+# the package itself. Use this when you want to switch back to your previous
+# theme but keep the cde-plasma package installed (e.g. to try it again later).
+# To remove the package entirely, use your distro's package manager
+# (pacman -R / apt remove / dnf remove cde-plasma).
+
+set -e
+
+LOCKSCREEN_DIR="/usr/share/plasma/shells/org.kde.plasma.desktop/contents/lockscreen"
+LOCKSCREEN_BACKUP="${LOCKSCREEN_DIR}.breeze-backup"
+
+SNAPSHOT_DIR="$HOME/.local/share/cde-plasma"
+SNAPSHOT_FILE="$SNAPSHOT_DIR/pre-apply.snapshot"
+
+KWRITECONFIG=""
+for cmd in kwriteconfig6 kwriteconfig5; do
+    command -v "$cmd" &>/dev/null && KWRITECONFIG="$cmd" && break
+done
+if [ -z "$KWRITECONFIG" ]; then
+    echo "ERROR: kwriteconfig6/5 not found." >&2
+    exit 1
+fi
+
+# --- Restore from snapshot, or fall back to Breeze defaults ---
+if [ -f "$SNAPSHOT_FILE" ]; then
+    echo "Restoring pre-apply KDE settings from snapshot..."
+    while IFS=$'\t' read -r file group key state val; do
+        [ -z "$file" ] && continue
+        case "$state" in
+            UNSET) $KWRITECONFIG --file "$file" --group "$group" --key "$key" --delete 2>/dev/null || true ;;
+            SET)   $KWRITECONFIG --file "$file" --group "$group" --key "$key" "$val" 2>/dev/null || true ;;
+        esac
+    done < "$SNAPSHOT_FILE"
+    rm -f "$SNAPSHOT_FILE"
+    rmdir "$SNAPSHOT_DIR" 2>/dev/null || true
+else
+    echo "No snapshot found — reverting to Breeze defaults."
+    $KWRITECONFIG --file kdeglobals --group KDE --key widgetStyle "Breeze"
+    $KWRITECONFIG --file kwinrc --group org.kde.kdecoration2 --key library "org.kde.breeze"
+    $KWRITECONFIG --file kwinrc --group org.kde.kdecoration2 --key theme "Breeze"
+    $KWRITECONFIG --file plasmarc --group Theme --key name "default"
+    $KWRITECONFIG --file kdeglobals --group General --key ColorScheme "BreezeLight"
+    $KWRITECONFIG --file kdeglobals --group KDE --key LookAndFeelPackage "org.kde.breeze.desktop"
+    $KWRITECONFIG --file kscreenlockerrc --group Greeter --key LookAndFeel --delete 2>/dev/null || true
+fi
+
+# --- Restore lock screen ---
+if [ -f "$LOCKSCREEN_BACKUP/LockScreenUi.qml" ]; then
+    echo "Restoring original lock screen (sudo)..."
+    sudo cp "$LOCKSCREEN_BACKUP/LockScreenUi.qml" "$LOCKSCREEN_DIR/LockScreenUi.qml"
+    sudo cp -rn "$LOCKSCREEN_BACKUP"/. "$LOCKSCREEN_DIR"/ 2>/dev/null || true
+    sudo rm -rf "$LOCKSCREEN_BACKUP"
+fi
+
+# --- Drop SDDM config ---
+if [ -f /etc/sddm.conf.d/sddm-cde-theme.conf ]; then
+    echo "Removing SDDM CDE config (sudo)..."
+    sudo rm -f /etc/sddm.conf.d/sddm-cde-theme.conf
+fi
+
+# --- Reload ---
+for cmd in qdbus6 qdbus qdbus-qt6; do
+    if command -v "$cmd" &>/dev/null; then
+        "$cmd" org.kde.KWin /KWin reconfigure 2>/dev/null || true
+        break
+    fi
+done
+if pgrep -x plasmashell >/dev/null; then
+    plasmashell --replace &>/dev/null &
+fi
+
+echo
+echo "CDE theme deactivated. The cde-plasma package is still installed."
+echo "Log out and back in for full effect."

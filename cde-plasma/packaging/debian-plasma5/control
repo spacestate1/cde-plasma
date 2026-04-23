@@ -1,0 +1,44 @@
+Source: cde-plasma
+Section: x11
+Priority: optional
+Maintainer: Connor McRann <cmcrann@protonmail.com>
+Build-Depends:
+ debhelper-compat (= 13),
+ cmake,
+ extra-cmake-modules,
+ qtbase5-dev,
+ qtbase5-dev-tools,
+ libkf5coreaddons-dev,
+ libkf5config-dev,
+ libkdecorations2-dev,
+ pkg-config
+Standards-Version: 4.6.2
+Homepage: https://github.com/spacestate1/cde-plasma
+Vcs-Git: https://github.com/spacestate1/cde-plasma.git
+Vcs-Browser: https://github.com/spacestate1/cde-plasma
+
+Package: cde-plasma
+Architecture: amd64 arm64
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ plasma-workspace
+Recommends: sddm
+Suggests: hackneyed-cursor-theme
+Conflicts: cde-plasma6
+Description: CDE (Common Desktop Environment) theme for KDE Plasma 5
+ A complete recreation of the early-90s Common Desktop Environment look
+ for KDE Plasma 5, including:
+   - KWin window decoration with CDE-style beveled borders and L-shaped
+     resize corners
+   - Qt5 widget style (buttons, scrollbars, flat progress bars)
+   - Plasma desktop theme (panel, system tray, plasmoids)
+   - SDDM login theme
+   - Lock screen overlay
+   - Blue-gray color scheme
+ .
+ This is the Plasma 5 build. For Plasma 6, use the main cde-plasma package
+ from a release targeting Debian 13 / Ubuntu 24.10 or later.
+ .
+ After installation, run `cde-plasma-apply` as your user to switch to the
+ theme. Run `cde-plasma-unapply` to revert (the package stays installed).

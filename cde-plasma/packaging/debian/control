@@ -1,0 +1,44 @@
+Source: cde-plasma
+Section: x11
+Priority: optional
+Maintainer: Connor McRann <cmcrann@protonmail.com>
+Build-Depends:
+ debhelper-compat (= 13),
+ cmake,
+ extra-cmake-modules,
+ qt6-base-dev,
+ qt6-base-private-dev,
+ libkf6coreaddons-dev,
+ libkf6config-dev,
+ libkf6configwidgets-dev,
+ libkf6kcmutils-dev,
+ libkf6widgetsaddons-dev,
+ libkf6colorscheme-dev,
+ libkdecorations3-dev,
+ pkg-config
+Standards-Version: 4.6.2
+Homepage: https://github.com/spacestate1/cde-plasma
+Vcs-Git: https://github.com/spacestate1/cde-plasma.git
+Vcs-Browser: https://github.com/spacestate1/cde-plasma
+
+Package: cde-plasma
+Architecture: amd64 arm64
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ plasma-workspace
+Recommends: sddm
+Suggests: hackneyed-cursor-theme
+Description: CDE (Common Desktop Environment) theme for KDE Plasma 6
+ A complete recreation of the early-90s Common Desktop Environment look
+ for modern KDE Plasma 6, including:
+   - KWin window decoration with CDE-style beveled borders and L-shaped
+     resize corners
+   - Qt widget style (buttons, scrollbars, flat progress bars)
+   - Plasma desktop theme (panel, system tray, plasmoids)
+   - SDDM login theme
+   - Lock screen overlay
+   - Blue-gray color scheme
+ .
+ After installation, run `cde-plasma-apply` as your user to switch to the
+ theme. Run `cde-plasma-unapply` to revert (the package stays installed).

@@ -82,6 +82,89 @@ has_systemd() {
     [ -d /run/systemd/system ]
 }
 
+# Build the prebuilt target identifier used to pick a bundled tarball.
+# Shape: <distro>-plasma<N>-<arch>, e.g. arch-plasma6-x86_64.
+# Distro is part of the key because plugin paths differ across families
+# (Debian uses multi-arch /usr/lib/x86_64-linux-gnu/qt6/plugins, Arch/Fedora
+# use /usr/lib/qt6/plugins), and the tarball's staging tree was cut by the
+# build-host's CMake — it only lands correctly on the same family.
+detect_target() {
+    local distro arch
+    distro="$(detect_distro)"
+    arch="$(uname -m)"
+    echo "${distro}-plasma${PLASMA_VERSION}-${arch}"
+}
+
+PREBUILT_DIR="$SCRIPT_DIR/prebuilt"
+
+# Check a just-extracted .so for unresolved libraries. A prebuilt cut against
+# a slightly different Qt/KF ABI typically leaves "not found" entries in ldd
+# output — we'd rather catch that now than have KWin silently refuse to load
+# the decoration at runtime.
+prebuilt_so_looks_ok() {
+    local so="$1"
+    if ! command -v ldd &>/dev/null; then
+        return 0   # can't check; assume ok
+    fi
+    if ldd "$so" 2>/dev/null | grep -q 'not found'; then
+        echo "  WARN: $so has unresolved libraries:"
+        ldd "$so" 2>/dev/null | grep 'not found' | sed 's/^/    /'
+        return 1
+    fi
+    return 0
+}
+
+# Try to install the two compiled plugins from a prebuilt tarball matching
+# the current target. Returns 0 on success, non-zero if no tarball matched
+# or the extracted plugins failed the sanity check.
+try_install_prebuilt() {
+    local target tarball
+    target="$(detect_target)"
+    tarball="$PREBUILT_DIR/cde-plasma-${target}.tar.gz"
+
+    if [ ! -f "$tarball" ]; then
+        echo "  No prebuilt tarball for target '$target' — will build from source."
+        return 1
+    fi
+
+    echo "  Found prebuilt: $tarball"
+    echo "  Extracting to / (requires sudo)..."
+    if ! sudo tar xzf "$tarball" -C /; then
+        echo "  Extract failed — will build from source."
+        return 1
+    fi
+
+    # Verify the .so files that were just laid down still resolve.
+    # The tarball lists its own contents; we re-run ldd on each one after
+    # install so Qt/KF ABI drift gets caught before we declare victory.
+    local bad=0 rel abs
+    while IFS= read -r rel; do
+        case "$rel" in
+            *.so)
+                abs="/$rel"
+                if [ -f "$abs" ] && ! prebuilt_so_looks_ok "$abs"; then
+                    bad=1
+                fi
+                ;;
+        esac
+    done < <(tar tzf "$tarball" | sed 's|^\./||')
+
+    if [ "$bad" = "1" ]; then
+        echo "  Prebuilt plugins failed ldd check — removing and falling back to source build."
+        # Roll back: re-list the tarball and delete every file it placed.
+        while IFS= read -r rel; do
+            abs="/${rel#./}"
+            if [ -f "$abs" ]; then
+                sudo rm -f "$abs"
+            fi
+        done < <(tar tzf "$tarball")
+        return 1
+    fi
+
+    echo "  Prebuilt plugins installed cleanly."
+    return 0
+}
+
 # Detect distro family
 detect_distro() {
     if [ -f /etc/os-release ]; then
@@ -307,6 +390,25 @@ compute_make_jobs() {
     echo "$jobs"
 }
 
+# Install the two compiled plugins — prefers a prebuilt tarball matching
+# the current distro/Plasma/arch, falls back to a full source build (with
+# toolchain install) only when no prebuilt matches or the one we have
+# fails its ABI sanity check.
+install_compiled_components() {
+    echo "[1-2/8] Installing compiled plugins (KWin decoration + Qt style)..."
+
+    if try_install_prebuilt; then
+        echo "Compiled plugins installed from prebuilt."
+        echo
+        return
+    fi
+
+    echo "  Will build from source. Checking toolchain..."
+    check_deps
+    install_kwin_decoration
+    install_qt_style
+}
+
 # Build and install KWin decoration
 install_kwin_decoration() {
     echo "[1/8] Building KWin decoration..."
@@ -440,17 +542,22 @@ install_sddm_theme() {
     sudo mkdir -p /etc/sddm.conf.d
     local sddm_cursor
     sddm_cursor="$(resolve_cursor_theme)"
+    # [General] InputMethod= (empty) disables the Qt virtual keyboard at the
+    # SDDM greeter, matching the no-OSK behavior we set in the user session.
     sudo tee /etc/sddm.conf.d/sddm-cde-theme.conf > /dev/null << EOF
 [Theme]
 Current=sddm-cde
 CursorTheme=$sddm_cursor
+
+[General]
+InputMethod=
 EOF
 
     if has_systemd; then
         sudo mkdir -p /etc/systemd/system/sddm.service.d
         sudo tee /etc/systemd/system/sddm.service.d/cde-theme.conf > /dev/null << EOF
 [Service]
-ExecStartPre=/bin/sh -c '[ -f /etc/sddm.conf.d/sddm-cde-theme.conf ] || echo -e "[Theme]\nCurrent=sddm-cde\nCursorTheme=$sddm_cursor" > /etc/sddm.conf.d/sddm-cde-theme.conf'
+ExecStartPre=/bin/sh -c '[ -f /etc/sddm.conf.d/sddm-cde-theme.conf ] || printf "[Theme]\nCurrent=sddm-cde\nCursorTheme=$sddm_cursor\n\n[General]\nInputMethod=\n" > /etc/sddm.conf.d/sddm-cde-theme.conf'
 EOF
         sudo systemctl daemon-reload
     fi
@@ -544,6 +651,8 @@ snapshot_kde_config() {
         "kcminputrc|Mouse|cursorSize"
         "kdeglobals|KDE|LookAndFeelPackage"
         "kscreenlockerrc|Greeter|LookAndFeel"
+        "kwinrc|Wayland|InputMethod"
+        "kcmvirtualkeyboardrc|General|VirtualKeyboardEnabled"
     )
 
     local entry file group key val
@@ -588,6 +697,11 @@ configure_kde() {
     $kwriteconfig_cmd --file kdeglobals --group KDE --key LookAndFeelPackage "org.kde.cde.desktop"
     $kwriteconfig_cmd --file kscreenlockerrc --group Greeter --key LookAndFeel "org.kde.cde.desktop"
 
+    # Disable on-screen / virtual keyboard. CDE predates touchscreens; the OSK
+    # popping up over text fields breaks the aesthetic.
+    $kwriteconfig_cmd --file kwinrc --group Wayland --key InputMethod ""
+    $kwriteconfig_cmd --file kcmvirtualkeyboardrc --group General --key VirtualKeyboardEnabled "false"
+
     echo "KDE configured to use CDE theme."
     echo
 }
@@ -628,9 +742,7 @@ restart_kde() {
 
 # Main
 main() {
-    check_deps
-    install_kwin_decoration
-    install_qt_style
+    install_compiled_components
     install_plasma_theme
     install_color_scheme
     install_cursor

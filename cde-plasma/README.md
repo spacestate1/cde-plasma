@@ -35,37 +35,69 @@ CDE-styled login screen with beveled window frame, user/password fields, and ses
 ## Requirements
 
 - KDE Plasma 6
-- Qt 6, CMake, g++, pkg-config
-- extra-cmake-modules, KF6 CoreAddons, KDecoration3, KCMUtils
-
-Dependencies are installed automatically by the installer.
+- For distro packages: just the package manager. No toolchain.
+- For source build: Qt 6, CMake, g++, pkg-config, extra-cmake-modules, KF6 CoreAddons, KDecoration3, KCMUtils. The installer pulls these in for you.
 
 ## Installation
+
+### From a release package (recommended)
+
+Grab the latest release for your distro from the [Releases page](https://github.com/spacestate1/cde-plasma/releases):
+
+| Distro | File | Install |
+| --- | --- | --- |
+| Arch / Manjaro / EndeavourOS | `cde-plasma-VERSION-1-x86_64.pkg.tar.zst` | `sudo pacman -U cde-plasma-*.pkg.tar.zst` |
+| Debian 13 (Trixie) | `cde-plasma_VERSION-1_amd64_debian.deb` | `sudo apt install ./cde-plasma_*_debian.deb` |
+| Ubuntu 24.10 | `cde-plasma_VERSION-1_amd64_ubuntu.deb` | `sudo apt install ./cde-plasma_*_ubuntu.deb` |
+| Fedora 40+ | `cde-plasma-VERSION-1.fc40.x86_64.rpm` | `sudo dnf install cde-plasma-*.rpm` |
+
+Then activate the theme as your normal user (not root):
+
+```bash
+cde-plasma-apply
+```
+
+To revert later without uninstalling:
+
+```bash
+cde-plasma-unapply
+```
+
+### From source (any distro)
 
 ```bash
 ./install.sh        # interactive
 ./install.sh -y     # auto-yes (no prompts, good for SSH)
 ```
 
-The installer:
-1. Detects your distro (Arch/Ubuntu/Fedora) and installs build dependencies
-2. Builds and installs the KWin decoration plugin
-3. Builds and installs the Qt widget style plugin
-4. Installs the Plasma desktop theme
-5. Installs the CDE color scheme
-6. Installs the cursor theme (checks ~/Downloads for Hackneyed, then KDE Store)
-7. Installs the SDDM login theme
-8. Installs the look-and-feel theme (splash, logout)
-9. Installs the CDE lock screen (system override with backup)
-10. Configures KDE and SDDM to use the theme
-
-All steps are logged to `logs/install-YYYYMMDD-HHMMSS.log`.
+The installer detects your distro (Arch/Ubuntu/Fedora), pulls in the build dependencies, compiles the KWin decoration and Qt style, installs the asset directories, and configures KDE. Logs land in `logs/install-YYYYMMDD-HHMMSS.log`.
 
 ### Remote / Headless Install
 
 ```bash
 scp -r cde-plasma user@host:~/cde-plasma
 ssh user@host "cd ~/cde-plasma && bash install.sh -y"
+```
+
+## Cutting a release (maintainers)
+
+Release packages are built by `.github/workflows/release.yml`. Trigger a release by pushing a `v*` tag:
+
+```bash
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+The workflow builds packages for Arch, Debian, Ubuntu, and Fedora in parallel matrix jobs (each in its own distro container) and attaches the `.pkg.tar.zst` / `.deb` / `.rpm` files to a GitHub Release.
+
+For testing without cutting a tag, use the workflow's manual dispatch — packages get built and uploaded as workflow artifacts, but no Release is created.
+
+To build a single package locally:
+
+```bash
+bash cde-plasma/packaging/build-arch.sh   0.1.0   # produces dist/*.pkg.tar.zst
+bash cde-plasma/packaging/build-debian.sh 0.1.0   # produces dist/*.deb
+bash cde-plasma/packaging/build-fedora.sh 0.1.0   # produces dist/*.rpm
 ```
 
 ## Uninstallation

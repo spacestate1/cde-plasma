@@ -1,2 +1,0 @@
-/usr/lib/qt6/plugins/org.kde.kdecoration3/org.kde.cde.decoration.so
-/usr/lib/qt6/plugins/org.kde.kdecoration3.kcm/kcm_cdedecoration.so

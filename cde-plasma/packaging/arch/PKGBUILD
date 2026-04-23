@@ -1,0 +1,69 @@
+# Maintainer: spacestate1 <cmcrann@protonmail.com>
+pkgname=cde-plasma
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="Common Desktop Environment (CDE) theme for KDE Plasma 6: KWin decoration, Qt style, Plasma theme, SDDM, lock screen"
+arch=('x86_64')
+url="https://github.com/spacestate1/cde-plasma"
+license=('MIT')
+depends=(
+    'qt6-base'
+    'kdecoration'
+    'kcoreaddons'
+    'kconfig'
+    'kconfigwidgets'
+    'kcmutils'
+    'kwidgetsaddons'
+    'kcolorscheme'
+    'plasma-workspace'
+)
+makedepends=(
+    'cmake'
+    'extra-cmake-modules'
+    'gcc'
+    'pkg-config'
+)
+optdepends=(
+    'sddm: CDE-styled login screen'
+    'hackneyed-cursor-theme: retro cursor matching the CDE aesthetic'
+)
+source=("$pkgname-$pkgver.tar.gz::https://github.com/spacestate1/cde-plasma/archive/refs/tags/v$pkgver.tar.gz")
+sha256sums=('SKIP')
+install="$pkgname.install"
+
+# The repo root has a `cde-plasma/` subdir that contains all the actual code.
+# Reflect that in the cd target.
+_srcsubdir="$pkgname-$pkgver/cde-plasma"
+
+build() {
+    cd "$srcdir/$_srcsubdir"
+
+    # Use top-level build dirs (build-decoration / build-style / build-assets)
+    # rather than nested */build to keep the build trees out of the source
+    # subprojects — defensive against stale CMakeCache.txt files that may
+    # creep into a source tree.
+
+    cmake -B build-decoration -S kwin_cde_decoration_kf5 \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_BUILD_TYPE=Release
+    cmake --build build-decoration
+
+    cmake -B build-style -S cde_qt_style_kf5 \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_BUILD_TYPE=Release
+    cmake --build build-style
+
+    cmake -B build-assets -S . \
+        -DCMAKE_INSTALL_PREFIX=/usr
+}
+
+package() {
+    cd "$srcdir/$_srcsubdir"
+
+    DESTDIR="$pkgdir" cmake --install build-decoration
+    DESTDIR="$pkgdir" cmake --install build-style
+    DESTDIR="$pkgdir" cmake --install build-assets
+
+    install -Dm644 "$srcdir/$pkgname-$pkgver/LICENSE" \
+        "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

@@ -1,0 +1,33 @@
+#!/usr/bin/make -f
+#
+# Plasma 5 / KF5 / Qt5 variant. Same shape as packaging/debian/rules but
+# points at the *_plasma5 subprojects which use KDecoration2 + Qt5.
+
+%:
+	dh $@
+
+BUILD_DECOR  := obj-decoration
+BUILD_STYLE  := obj-style
+BUILD_ASSETS := obj-assets
+SRCDIR       := cde-plasma
+DESTDIR      := $(CURDIR)/debian/cde-plasma
+
+override_dh_auto_configure:
+	cmake -B $(BUILD_DECOR) -S $(SRCDIR)/kwin_cde_decoration_kf5_plasma5 \
+		-DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release
+	cmake -B $(BUILD_STYLE) -S $(SRCDIR)/cde_qt_style_kf5_plasma5 \
+		-DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release
+	cmake -B $(BUILD_ASSETS) -S $(SRCDIR) \
+		-DCMAKE_INSTALL_PREFIX=/usr
+
+override_dh_auto_build:
+	cmake --build $(BUILD_DECOR)
+	cmake --build $(BUILD_STYLE)
+
+override_dh_auto_install:
+	DESTDIR=$(DESTDIR) cmake --install $(BUILD_DECOR)
+	DESTDIR=$(DESTDIR) cmake --install $(BUILD_STYLE)
+	DESTDIR=$(DESTDIR) cmake --install $(BUILD_ASSETS)
+
+override_dh_auto_test:
+	# no tests

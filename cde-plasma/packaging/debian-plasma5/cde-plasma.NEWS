@@ -1,0 +1,9 @@
+cde-plasma (0.1.0) UNRELEASED; urgency=medium
+
+  After installation, switch to the CDE theme by running as your normal user:
+
+      cde-plasma-apply
+
+  To revert later (without uninstalling): cde-plasma-unapply
+
+ -- Connor McRann <cmcrann@protonmail.com>  Wed, 22 Apr 2026 14:00:00 +0000
