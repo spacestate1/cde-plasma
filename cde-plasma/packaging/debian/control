@@ -38,7 +38,7 @@ Description: CDE (Common Desktop Environment) theme for KDE Plasma 6
    - Plasma desktop theme (panel, system tray, plasmoids)
    - SDDM login theme
    - Lock screen overlay
-   - Blue-gray color scheme
+   - Multiple bundled color schemes (Blue-Gray, Dark, Chartreuse, Electric Pink)
  .
  After installation, run `cde-plasma-apply` as your user to switch to the
  theme. Run `cde-plasma-unapply` to revert (the package stays installed).

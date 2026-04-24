@@ -13,6 +13,8 @@ LOCKSCREEN_BACKUP="${LOCKSCREEN_DIR}.breeze-backup"
 
 SNAPSHOT_DIR="$HOME/.local/share/cde-plasma"
 SNAPSHOT_FILE="$SNAPSHOT_DIR/pre-apply.snapshot"
+RUNTIME_DIR="${XDG_RUNTIME_DIR:-/tmp}"
+STATE_LOCK_FILE="$RUNTIME_DIR/cde-plasma-${UID}.lock"
 
 KWRITECONFIG=""
 for cmd in kwriteconfig6 kwriteconfig5; do
@@ -22,6 +24,19 @@ if [ -z "$KWRITECONFIG" ]; then
     echo "ERROR: kwriteconfig6/5 not found." >&2
     exit 1
 fi
+
+acquire_state_lock() {
+    exec 9>"$STATE_LOCK_FILE"
+    if command -v flock &>/dev/null; then
+        flock 9
+        return
+    fi
+
+    echo "ERROR: flock not found; cannot safely serialize apply/unapply operations." >&2
+    exit 1
+}
+
+acquire_state_lock
 
 # --- Restore from snapshot, or fall back to Breeze defaults ---
 if [ -f "$SNAPSHOT_FILE" ]; then

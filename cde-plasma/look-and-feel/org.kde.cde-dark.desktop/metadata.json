@@ -1,0 +1,17 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.cde-dark.desktop",
+        "Name": "CDE Dark",
+        "Description": "Common Desktop Environment look and feel (dark variant)",
+        "Authors": [
+            {
+                "Name": "CDE Plasma Theme"
+            }
+        ],
+        "Website": "",
+        "License": "MIT"
+    },
+    "KPackageStructure": "Plasma/LookAndFeel",
+    "X-Plasma-APIVersion": "2",
+    "X-Plasma-MainScript": "defaults"
+}

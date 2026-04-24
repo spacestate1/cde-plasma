@@ -11,6 +11,12 @@ To revert later (without uninstalling the package):
 
     cde-plasma-unapply
 
+To flip between the bundled light and dark CDE modes without a full Global
+Theme re-apply:
+
+    cde-plasma-mode light
+    cde-plasma-mode dark
+
 EOF
 }
 

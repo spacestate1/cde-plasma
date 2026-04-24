@@ -1,6 +1,8 @@
 # CDE Plasma Theme
 
-A complete Common Desktop Environment (CDE) theme for KDE Plasma 6, featuring the classic blue-gray color scheme with beveled 3D controls.
+A Common Desktop Environment (CDE) theme set for KDE Plasma, with parallel support for Plasma 5 and Plasma 6.
+
+It includes a custom KWin decoration, Qt widget style, Plasma theme, SDDM theme, lock screen styling, bundled color schemes, and helper scripts for applying or reverting the theme safely.
 
 ## Screenshots
 
@@ -23,54 +25,75 @@ CDE-styled login screen with beveled window frame, user/password fields, and ses
 
 ## Components
 
-- **KWin Decoration** — Window frames with CDE-style beveled borders, L-shaped resize corners, and titlebar buttons
-- **Qt Widget Style** — Buttons, scrollbars, menus, flat progress bars with CDE appearance
-- **Plasma Theme** — Panel, system tray, and plasmoid styling
-- **SDDM Login Theme** — CDE-styled login screen with window frame
-- **Lock Screen** — CDE-styled lock screen matching the SDDM login
-- **Color Scheme** — Blue-gray palette matching classic CDE
-- **Cursor Theme** — Hackneyed retro cursor (auto-downloaded or from ~/Downloads)
-- **Demo Script** — Six-window color palette showcase for screenshots
+- **KWin Decoration**: CDE-style beveled borders, L-shaped resize corners, titlebar buttons, and preset frame color options
+- **Qt Widget Style**: CDE buttons, scrollbars, menus, flat progress bars, and classic bevel rendering
+- **Plasma Theme**: Panel, system tray, launcher, task manager, and plasmoid styling
+- **Look-and-Feel Themes**: light and dark global themes
+- **SDDM Theme**: CDE login screen
+- **Lock Screen**: CDE lock screen integration for Plasma 5 and Plasma 6 layouts
+- **Color Schemes**: `CDE Blue-Gray`, `CDE Dark`, `CDE Chartreuse`, and `CDE Electric Pink`
+- **Helper Scripts**: apply, unapply, and light/dark mode switching
+- **Demo Script**: screenshot/demo palette generator
+
+## Version Support
+
+- **Plasma 5**: KF5 / Qt5 code paths for the KWin decoration and Qt style
+- **Plasma 6**: KF6 / Qt6 code paths for the KWin decoration and Qt style
+- Shared assets such as Plasma theme, look-and-feel, SDDM theme, and most scripts are common across both
+
+The source installer auto-detects whether the machine is running Plasma 5 or Plasma 6 and builds the matching compiled components.
 
 ## Requirements
 
-- KDE Plasma 6
-- For distro packages: just the package manager. No toolchain.
-- For source build: Qt 6, CMake, g++, pkg-config, extra-cmake-modules, KF6 CoreAddons, KDecoration3, KCMUtils. The installer pulls these in for you.
+- For release packages: use the package manager for your distro
+- For source installs: `install.sh` installs the needed build dependencies for the detected Plasma version
+- Plasma 5 builds use KF5 / Qt5 dependencies
+- Plasma 6 builds use KF6 / Qt6 dependencies
 
 ## Installation
 
-### From a release package (recommended)
+### From a Release Package
 
-Grab the latest release for your distro from the [Releases page](https://github.com/spacestate1/cde-plasma/releases):
+Grab the appropriate package from the [Releases page](https://github.com/spacestate1/cde-plasma/releases).
 
-| Distro | File | Install |
+Current package targets:
+
+| Target | Plasma Version | Package Type |
 | --- | --- | --- |
-| Arch / Manjaro / EndeavourOS | `cde-plasma-VERSION-1-x86_64.pkg.tar.zst` | `sudo pacman -U cde-plasma-*.pkg.tar.zst` |
-| Debian 13 (Trixie) | `cde-plasma_VERSION-1_amd64_debian.deb` | `sudo apt install ./cde-plasma_*_debian.deb` |
-| Ubuntu 24.10 | `cde-plasma_VERSION-1_amd64_ubuntu.deb` | `sudo apt install ./cde-plasma_*_ubuntu.deb` |
-| Fedora 40+ | `cde-plasma-VERSION-1.fc40.x86_64.rpm` | `sudo dnf install cde-plasma-*.rpm` |
+| Arch / Manjaro / EndeavourOS | Plasma 6 | `.pkg.tar.zst` |
+| Debian 13 / Ubuntu 24.10+ | Plasma 6 | `.deb` |
+| Debian 12 / Ubuntu 22.04 / 24.04 | Plasma 5 | `.deb` |
+| Fedora 40+ | Plasma 6 | `.rpm` |
 
-Then activate the theme as your normal user (not root):
+Install the package, then apply the theme as your normal user:
 
 ```bash
 cde-plasma-apply
 ```
 
-To revert later without uninstalling:
+To revert without uninstalling:
 
 ```bash
 cde-plasma-unapply
 ```
 
-### From source (any distro)
+### From Source
 
 ```bash
-./install.sh        # interactive
-./install.sh -y     # auto-yes (no prompts, good for SSH)
+./install.sh
+./install.sh -y
 ```
 
-The installer detects your distro (Arch/Ubuntu/Fedora), pulls in the build dependencies, compiles the KWin decoration and Qt style, installs the asset directories, and configures KDE. Logs land in `logs/install-YYYYMMDD-HHMMSS.log`.
+What `install.sh` does:
+
+- detects Plasma 5 vs Plasma 6
+- installs the matching build dependencies
+- builds the matching KWin decoration and Qt widget style
+- installs the shared Plasma / SDDM / look-and-feel assets
+- installs all bundled color schemes
+- applies the theme if you choose to do so
+
+Logs are written to `logs/install-YYYYMMDD-HHMMSS.log`.
 
 ### Remote / Headless Install
 
@@ -79,26 +102,87 @@ scp -r cde-plasma user@host:~/cde-plasma
 ssh user@host "cd ~/cde-plasma && bash install.sh -y"
 ```
 
-## Cutting a release (maintainers)
+## Applying and Switching
 
-Release packages are built by `.github/workflows/release.yml`. Trigger a release by pushing a `v*` tag:
-
-```bash
-git tag v0.1.0
-git push origin v0.1.0
-```
-
-The workflow builds packages for Arch, Debian, Ubuntu, and Fedora in parallel matrix jobs (each in its own distro container) and attaches the `.pkg.tar.zst` / `.deb` / `.rpm` files to a GitHub Release.
-
-For testing without cutting a tag, use the workflow's manual dispatch — packages get built and uploaded as workflow artifacts, but no Release is created.
-
-To build a single package locally:
+### Full Apply / Revert
 
 ```bash
-bash cde-plasma/packaging/build-arch.sh   0.1.0   # produces dist/*.pkg.tar.zst
-bash cde-plasma/packaging/build-debian.sh 0.1.0   # produces dist/*.deb
-bash cde-plasma/packaging/build-fedora.sh 0.1.0   # produces dist/*.rpm
+cde-plasma-apply
+cde-plasma-unapply
 ```
+
+`cde-plasma-apply` snapshots the current user theme settings first so they can be restored later by `cde-plasma-unapply`.
+
+### Safe Light / Dark Switching
+
+```bash
+cde-plasma-mode light
+cde-plasma-mode dark
+```
+
+This helper directly updates the relevant KDE config keys and is the safest way to switch between the built-in light and dark variants after installation.
+
+### Important Plasma 5 Note
+
+On some Plasma 5.27 systems, the **Global Theme** GUI in System Settings does not reliably apply every category, especially colors and window decoration. If the GUI only partially applies the theme, use:
+
+```bash
+cde-plasma-mode light
+# or
+cde-plasma-mode dark
+```
+
+## Manual Activation
+
+After installation, the main settings are:
+
+- **Window Decorations**: `CDE Frame`
+- **Application Style**: `CDE`
+- **Plasma Style**: `Commonality` or `Commonality-Dark`
+- **Colors**: `CDE Blue-Gray`, `CDE Dark`, `CDE Chartreuse`, or `CDE Electric Pink`
+- **Cursors**: `Hackneyed-48px` when installed
+
+Logging out and back in may be needed for SDDM or lock-screen changes to show up fully.
+
+## Packaging and Local Builds
+
+This repo contains local packaging/build scripts for the supported targets.
+
+### Debian / Ubuntu
+
+Plasma 6 build:
+
+```bash
+bash packaging/build-debian.sh 0.1.0
+```
+
+Plasma 5 build:
+
+```bash
+bash packaging/build-debian.sh 0.1.0 --plasma5
+```
+
+### Fedora RPM
+
+Plasma 6 build:
+
+```bash
+bash packaging/build-fedora.sh 0.1.0
+```
+
+### Arch
+
+Plasma 6 build:
+
+```bash
+bash packaging/build-arch.sh 0.1.0
+```
+
+Current packaging matrix:
+
+- **Debian / Ubuntu**: Plasma 5 and Plasma 6
+- **Fedora RPM**: Plasma 6
+- **Arch**: Plasma 6
 
 ## Uninstallation
 
@@ -106,31 +190,19 @@ bash cde-plasma/packaging/build-fedora.sh 0.1.0   # produces dist/*.rpm
 ./uninstall.sh
 ```
 
-To restore the original lock screen:
-```bash
-sudo cp -r /usr/share/plasma/shells/org.kde.plasma.desktop/contents/lockscreen.breeze-backup/* \
-           /usr/share/plasma/shells/org.kde.plasma.desktop/contents/lockscreen/
-```
-
-## Manual Activation
-
-After installation, activate via System Settings:
-
-- **Window Decorations**: Appearance > Window Decorations > CDE Frame
-- **Application Style**: Appearance > Application Style > CDE
-- **Plasma Style**: Appearance > Plasma Style > Commonality
-- **Colors**: Appearance > Colors > CDE Blue-Gray
-- **Cursors**: Appearance > Cursors > Hackneyed-48px
-
-Log out and back in to see the SDDM login theme.
+This removes the user-local theme assets, color schemes, helper installs, and compiled plugin installs handled by the source-tree installer. If you installed a distro package, use the package manager to remove the packaged files.
 
 ## Demo
 
-Run the color palette demo to see all six CDE variations:
+Run the color palette demo:
 
 ```bash
 python3 demo/cde_demo.py
 ```
+
+## Maintainer Note
+
+The packaging scripts in `packaging/` are current, but this repo copy may not include any external CI workflow files. The local build scripts are the authoritative way to build packages from this tree.
 
 ## License
 

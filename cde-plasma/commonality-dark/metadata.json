@@ -1,0 +1,23 @@
+{
+    "KPackageStructure": "Plasma/Theme",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "phobian@tutanota.com",
+                "Name": "Mark Whittaker"
+            }
+        ],
+        "Category": "Plasma Theme",
+        "ServiceTypes": [
+            "Plasma/Theme"
+        ],
+        "EnabledByDefault": true,
+        "Name": "Commonality Dark",
+        "Description": "Remembering CDE (dark variant)",
+        "Id": "commonality-dark",
+        "Version": "6.1",
+        "License": "GPL-2.0+",
+        "X-KPackage-Dependencies": [
+        ]
+    }
+}

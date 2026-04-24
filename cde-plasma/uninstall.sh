@@ -5,6 +5,8 @@
 #
 
 set -e
+RUNTIME_DIR="${XDG_RUNTIME_DIR:-/tmp}"
+STATE_LOCK_FILE="$RUNTIME_DIR/cde-plasma-install-${UID}.lock"
 
 AUTO_YES=false
 while [ $# -gt 0 ]; do
@@ -28,6 +30,19 @@ if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     echo "Cancelled."
     exit 0
 fi
+
+acquire_state_lock() {
+    exec 9>"$STATE_LOCK_FILE"
+    if command -v flock &>/dev/null; then
+        flock 9
+        return
+    fi
+
+    echo "ERROR: flock not found; cannot safely serialize install/uninstall operations." >&2
+    exit 1
+}
+
+acquire_state_lock
 
 # Pick whichever kwriteconfig is available (Plasma 6 first, then 5)
 KWRITECONFIG=""
@@ -116,6 +131,11 @@ reset_kde_config_to_breeze_defaults() {
 
     # Drop the cursor size install.sh forced to 24 so KDE uses its own default
     $KWRITECONFIG --file kcminputrc --group Mouse --key cursorSize --delete 2>/dev/null || true
+
+    # Drop the Wayland input-method override install.sh set to "" and the
+    # virtual-keyboard disable flag so Plasma uses its defaults.
+    $KWRITECONFIG --file kwinrc --group Wayland --key InputMethod --delete 2>/dev/null || true
+    $KWRITECONFIG --file kcmvirtualkeyboardrc --group General --key VirtualKeyboardEnabled --delete 2>/dev/null || true
 }
 
 if ! restore_kde_config_from_snapshot; then
@@ -132,10 +152,21 @@ for dir in "$QT_PLUGIN_DIR" /usr/lib/qt6/plugins /usr/lib/qt/plugins; do
     sudo rm -f "$dir/org.kde.kdecoration3/org.kde.cde.decoration.so" 2>/dev/null || true
     sudo rm -f "$dir/org.kde.kdecoration3/kwin_cde_decoration.so" 2>/dev/null || true
     sudo rm -f "$dir/org.kde.kdecoration3/libkwin_cde_decoration.so" 2>/dev/null || true
+    # KCM (decoration config-UI) plugin, installed alongside by the Qt6 build
+    sudo rm -f "$dir/org.kde.kdecoration3.kcm/kcm_cdedecoration.so" 2>/dev/null || true
 done
-# Legacy Qt5 / KDecoration2 paths
+# Qt5 / KDecoration2 paths. The current P5 build names the .so after the
+# plugin Id (org.kde.cde.decoration.so) so kscreenlocker's per-decoration
+# KCM lookup works; older installs used kwin_cde_decoration_kf5.so and
+# shipped a separate kcm_cdedecoration_kf5.so in ...kdecoration2.kcm/.
+# Clean up all of them.
+sudo rm -f /usr/lib/*/qt5/plugins/org.kde.kdecoration2/org.kde.cde.decoration.so 2>/dev/null || true
 sudo rm -f /usr/lib/*/qt5/plugins/org.kde.kdecoration2/kwin_cde_decoration_kf5.so 2>/dev/null || true
+sudo rm -f /usr/lib/*/qt5/plugins/org.kde.kdecoration2/libkwin_cde_decoration_kf5.so 2>/dev/null || true
 sudo rm -f /usr/lib/*/qt5/plugins/org.kde.kdecoration2/kwin_cde_decoration.so 2>/dev/null || true
+sudo rm -f /usr/lib/*/qt5/plugins/org.kde.kdecoration2.kcm/kcm_cdedecoration_kf5.so 2>/dev/null || true
+sudo rm -f /usr/lib/*/qt5/plugins/org.kde.kdecoration2.kcm/libkcm_cdedecoration_kf5.so 2>/dev/null || true
+sudo rmdir /usr/lib/*/qt5/plugins/org.kde.kdecoration2.kcm 2>/dev/null || true
 
 echo "Removing Qt style..."
 for dir in "$QT_PLUGIN_DIR" /usr/lib/qt6/plugins /usr/lib/qt/plugins; do
@@ -148,14 +179,24 @@ sudo rm -f /usr/lib/*/qt5/plugins/styles/cde_qt_style.so 2>/dev/null || true
 # -----------------------------------------------------------------------------
 # 3. Remove user-local theme data
 # -----------------------------------------------------------------------------
-echo "Removing Plasma theme..."
+echo "Removing Plasma themes..."
 rm -rf ~/.local/share/plasma/desktoptheme/commonality 2>/dev/null || true
+rm -rf ~/.local/share/plasma/desktoptheme/commonality-dark 2>/dev/null || true
 
 echo "Removing look-and-feel..."
 rm -rf ~/.local/share/plasma/look-and-feel/org.kde.cde.desktop 2>/dev/null || true
+rm -rf ~/.local/share/plasma/look-and-feel/org.kde.cde-dark.desktop 2>/dev/null || true
 
-echo "Removing color scheme..."
+echo "Removing color schemes..."
 rm -f ~/.local/share/color-schemes/CDE.colors 2>/dev/null || true
+rm -f ~/.local/share/color-schemes/CDE-Dark.colors 2>/dev/null || true
+rm -f ~/.local/share/color-schemes/CDE-Chartreuse.colors 2>/dev/null || true
+rm -f ~/.local/share/color-schemes/CDE-ElectricPink.colors 2>/dev/null || true
+
+# Per-user CDE decoration color config (Frame/ActiveTitle/etc.). Written by
+# the CDE look-and-feel's `defaults` file on apply, and by the decoration's
+# Configure dialog. Only a CDE install uses this file, so it's safe to drop.
+rm -f ~/.config/cdedecoration 2>/dev/null || true
 
 # -----------------------------------------------------------------------------
 # 4. Restore the original system lock screen

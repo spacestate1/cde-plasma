@@ -1,0 +1,24 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+    configure)
+        cat <<'EOF'
+
+CDE Plasma has been installed.
+
+To apply the theme for your user session, run:
+  cde-plasma-apply
+
+To switch between the built-in light and dark variants later, run:
+  cde-plasma-mode light
+  cde-plasma-mode dark
+
+To revert the applied theme without uninstalling the package, run:
+  cde-plasma-unapply
+
+EOF
+        ;;
+esac
+
+exit 0

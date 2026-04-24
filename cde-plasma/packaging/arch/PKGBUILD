@@ -2,7 +2,7 @@
 pkgname=cde-plasma
 pkgver=0.1.0
 pkgrel=1
-pkgdesc="Common Desktop Environment (CDE) theme for KDE Plasma 6: KWin decoration, Qt style, Plasma theme, SDDM, lock screen"
+pkgdesc="Common Desktop Environment (CDE) theme for KDE Plasma 6 with KWin decoration, Qt style, Plasma theme, SDDM, lock screen, and bundled color schemes"
 arch=('x86_64')
 url="https://github.com/spacestate1/cde-plasma"
 license=('MIT')
@@ -43,12 +43,12 @@ build() {
     # subprojects — defensive against stale CMakeCache.txt files that may
     # creep into a source tree.
 
-    cmake -B build-decoration -S kwin_cde_decoration_kf5 \
+    cmake -B build-decoration -S kwin_cde_decoration_kf6_plasma6 \
         -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_BUILD_TYPE=Release
     cmake --build build-decoration
 
-    cmake -B build-style -S cde_qt_style_kf5 \
+    cmake -B build-style -S cde_qt_style_kf6_plasma6 \
         -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_BUILD_TYPE=Release
     cmake --build build-style

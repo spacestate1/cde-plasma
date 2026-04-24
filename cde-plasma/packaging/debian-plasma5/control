@@ -10,6 +10,9 @@ Build-Depends:
  qtbase5-dev-tools,
  libkf5coreaddons-dev,
  libkf5config-dev,
+ libkf5configwidgets-dev,
+ libkf5kcmutils-dev,
+ libkf5widgetsaddons-dev,
  libkdecorations2-dev,
  pkg-config
 Standards-Version: 4.6.2
@@ -35,7 +38,7 @@ Description: CDE (Common Desktop Environment) theme for KDE Plasma 5
    - Plasma desktop theme (panel, system tray, plasmoids)
    - SDDM login theme
    - Lock screen overlay
-   - Blue-gray color scheme
+   - Multiple bundled color schemes (Blue-Gray, Dark, Chartreuse, Electric Pink)
  .
  This is the Plasma 5 build. For Plasma 6, use the main cde-plasma package
  from a release targeting Debian 13 / Ubuntu 24.10 or later.

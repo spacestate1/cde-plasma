@@ -68,7 +68,7 @@ else
         -e "s|^cde-plasma (0\\.0\\.0-1)|cde-plasma (${VERSION}-1)|" \
         -e "s|^cde-plasma (0\\.1\\.0)|cde-plasma (${VERSION})|" \
         -e "s|UNRELEASED;|stable;|" \
-        -e "s|, 22 Apr 2026 14:00:00 +0000|${DATE_RFC#*, }|" \
+        -e "s|Wed, 22 Apr 2026 14:00:00 +0000|${DATE_RFC}|" \
         "$WORK_DIR/$SRC_TOP/debian/changelog" \
         "$WORK_DIR/$SRC_TOP/debian/cde-plasma.NEWS" 2>/dev/null || true
 fi

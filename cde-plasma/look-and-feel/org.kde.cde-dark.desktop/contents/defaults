@@ -1,0 +1,38 @@
+[kdeglobals][KDE]
+widgetStyle=cde
+
+[kdeglobals][General]
+ColorScheme=CDE-Dark
+
+[kdeglobals][Icons]
+Theme=breeze-dark
+
+[plasmarc][Theme]
+name=commonality-dark
+
+[kcminputrc][Mouse]
+cursorTheme=DMZ-Black
+
+[kwinrc][WindowSwitcher]
+LayoutName=org.kde.breeze.desktop
+
+[kwinrc][DesktopSwitcher]
+LayoutName=org.kde.breeze.desktop
+
+[kwinrc][org.kde.kdecoration2]
+library=org.kde.cde.decoration
+theme=
+
+[KSplash]
+Theme=org.kde.BreezeDark
+
+# CDE decoration per-color-button preset. Lives inside kwinrc so Plasma's
+# Global Theme apply propagates these through its standard allowlist
+# (cdedecoration as a standalone file is filtered out). The decoration
+# plugin reads this group on every repaint.
+[kwinrc][org.kde.cde.decoration]
+FrameColor=55,60,75
+ActiveTitleColor=111,82,153
+InactiveTitleColor=52,13,55
+ActiveTextColor=255,255,255
+InactiveTextColor=170,170,170

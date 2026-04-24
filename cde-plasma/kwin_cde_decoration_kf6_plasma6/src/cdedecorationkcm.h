@@ -15,6 +15,12 @@ public:
     void save() override;
     void defaults() override;
 
+private Q_SLOTS:
+    void applyLightPreset();
+    void applyDarkPreset();
+    void applyChartreusePreset();
+    void applyElectricPreset();
+
 private:
     void updateChanged();
 

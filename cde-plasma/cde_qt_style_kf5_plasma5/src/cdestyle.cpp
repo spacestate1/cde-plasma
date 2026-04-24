@@ -3,6 +3,7 @@
 #include <QPainter>
 #include <QPolygon>
 #include <QStyleFactory>
+#include <QStyleOptionButton>
 #include <QStyleOptionComplex>
 #include <QStyleOptionFrame>
 #include <QStyleOptionMenuItem>
@@ -22,7 +23,15 @@ constexpr int kScrollBarExtent = 18;
 constexpr int kScrollBarSpacing = 2;
 constexpr int kScrollBarSliderMin = 24;
 constexpr int kScrollButtonExtent = 18;
-constexpr int kScrollCrossInset = 2;
+constexpr int kButtonBevelThickness = 2;
+constexpr int kButtonDefaultIndicator = 1;
+constexpr int kButtonContentMargin = 4;
+// Win9x-proportioned: slider spans the full scrollbar width (same as the
+// arrow buttons). Previous value (2) gave the thumb a narrower channel.
+constexpr int kScrollCrossInset = 0;
+// Bevel thickness used for both the arrow buttons and the thumb so they
+// look evenly proportioned. Win9x uses 2 across the board.
+constexpr int kScrollBevelThickness = 2;
 constexpr int kMenuPanelWidth = 2;
 constexpr int kMenuHMargin = 2;
 constexpr int kMenuVMargin = 2;
@@ -43,56 +52,10 @@ struct ScrollBarRects
     QRect addPage;
 };
 
-// CDE Blue-Gray color palette (from KDE 3 CDE theme)
-QColor cdeWindowColor()
-{
-    return QColor(174, 178, 195);  // #AEB2C3 - main background
-}
-
-QColor cdeBaseColor()
-{
-    return QColor(147, 151, 165);  // #9397A5 - window background
-}
-
-QColor cdeLightColor()
-{
-    return QColor(200, 203, 214);  // lighter shade for highlights
-}
-
-QColor cdeMidLightColor()
-{
-    return QColor(187, 190, 204);  // mid-light shade
-}
-
-QColor cdeMidColor()
-{
-    return QColor(138, 142, 155);  // #8A8E9B - alternate background
-}
-
-QColor cdeDarkColor()
-{
-    return QColor(100, 103, 115);  // dark shade for borders
-}
-
-QColor cdeShadowColor()
-{
-    return QColor(60, 62, 70);     // shadow color
-}
-
-QColor cdeTextColor()
-{
-    return QColor(0, 0, 0);        // #000000 - black text
-}
-
-QColor cdeHighlightColor()
-{
-    return QColor(113, 139, 165);  // #718BA5 - selection color
-}
-
-QColor disabledTextColor()
-{
-    return QColor(90, 92, 100);    // disabled text
-}
+// Old hard-coded CDE light palette getters have been removed — the style
+// now derives its bevel/shadow ramp from the active color scheme's Window
+// color in applyCdeShades() below, so a CDE Dark scheme recolors widgets
+// correctly.
 
 QColor scaledShade(const QColor &base, int percent)
 {
@@ -153,6 +116,42 @@ void drawHorizontalChannelEdges(QPainter *painter, const QRect &rect, const QPal
     painter->drawLine(rect.left(), rect.top(), rect.right(), rect.top());
     painter->setPen(palette.dark().color());
     painter->drawLine(rect.left(), rect.bottom(), rect.right(), rect.bottom());
+}
+
+bool isDefaultPushButton(const QStyleOption *option)
+{
+    const auto *button = qstyleoption_cast<const QStyleOptionButton *>(option);
+    if (!button) {
+        return false;
+    }
+
+    return button->features.testFlag(QStyleOptionButton::DefaultButton)
+        || button->features.testFlag(QStyleOptionButton::AutoDefaultButton);
+}
+
+void drawCommandButton(QPainter *painter, const QStyleOption *option)
+{
+    if (!painter || !option || !option->rect.isValid()) {
+        return;
+    }
+
+    const bool sunken = option->state & (QStyle::State_Sunken | QStyle::State_On);
+    const bool isDefault = isDefaultPushButton(option);
+    QRect bounds = option->rect;
+
+    if (isDefault && bounds.width() > 2 && bounds.height() > 2) {
+        painter->fillRect(bounds, option->palette.shadow().color());
+        bounds.adjust(kButtonDefaultIndicator, kButtonDefaultIndicator,
+                      -kButtonDefaultIndicator, -kButtonDefaultIndicator);
+    }
+
+    const QColor fill = sunken ? option->palette.mid().color() : option->palette.button().color();
+    drawBevel(painter, bounds, fill, option->palette, sunken, 1);
+
+    const QRect inner = bounds.adjusted(1, 1, -1, -1);
+    if (inner.width() > 2 && inner.height() > 2) {
+        drawBevel(painter, inner, fill, option->palette, sunken, 1);
+    }
 }
 
 void drawArrowGlyph(QPainter *painter, const QRect &rect, Qt::ArrowType arrow, const QColor &color, bool pressed)
@@ -321,82 +320,54 @@ CdeStyle::CdeStyle()
 {
 }
 
+// Derive CDE-flavored bevel/shadow shades from the active color scheme's
+// Window color, so the style adapts when the user switches between CDE light,
+// CDE Dark, or any other scheme. Only the shade ramp (Light/Midlight/Mid/
+// Dark/Shadow) is forced; Window/Base/Text/Highlight pass through from the
+// scheme unchanged.
+static void applyCdeShades(QPalette &palette)
+{
+    const QColor window = palette.color(QPalette::Active, QPalette::Window);
+    const bool isDark = qGray(window.rgb()) < 128;
+
+    // Lighten/darken ratios are different for light vs dark bases so the
+    // bevels stay visible in both regimes (multiplicative lighter/darker
+    // compresses contrast at low luminance, so dark bases need stronger
+    // deltas).
+    const QColor light     = window.lighter(isDark ? 160 : 120);
+    const QColor midlight  = window.lighter(isDark ? 130 : 110);
+    const QColor mid       = isDark ? window.lighter(115) : window.darker(110);
+    const QColor darkShade = window.darker (isDark ? 140 : 130);
+    const QColor shadow    = window.darker (isDark ? 200 : 160);
+
+    for (auto grp : {QPalette::Active, QPalette::Inactive, QPalette::Disabled}) {
+        palette.setColor(grp, QPalette::Light,    light);
+        palette.setColor(grp, QPalette::Midlight, midlight);
+        palette.setColor(grp, QPalette::Mid,      mid);
+        palette.setColor(grp, QPalette::Dark,     darkShade);
+        palette.setColor(grp, QPalette::Shadow,   shadow);
+    }
+
+    // Selection text stays white — white-on-accent is the CDE convention
+    // that survives both light and dark modes.
+    palette.setColor(QPalette::Active,   QPalette::HighlightedText, QColor(255, 255, 255));
+    palette.setColor(QPalette::Inactive, QPalette::HighlightedText, QColor(255, 255, 255));
+    palette.setColor(QPalette::Disabled, QPalette::HighlightedText, QColor(245, 245, 245));
+}
+
 void CdeStyle::polish(QPalette &palette)
 {
-    palette = standardPalette();
+    QProxyStyle::polish(palette);
+    applyCdeShades(palette);
 }
 
 QPalette CdeStyle::standardPalette() const
 {
-    if (m_paletteBuilt)
-        return m_cachedPalette;
-
+    // Do not cache: the parent Fusion palette tracks the active KDE color
+    // scheme, so a cached value would go stale when the user switches
+    // between CDE and CDE Dark at runtime.
     QPalette palette = QProxyStyle::standardPalette();
-
-    const QColor window = cdeWindowColor();
-    const QColor base = cdeBaseColor();
-    const QColor light = cdeLightColor();
-    const QColor midlight = cdeMidLightColor();
-    const QColor mid = cdeMidColor();
-    const QColor dark = cdeDarkColor();
-    const QColor shadow = cdeShadowColor();
-    const QColor text = cdeTextColor();
-    const QColor disabledText = disabledTextColor();
-    const QColor highlight = cdeHighlightColor();
-
-    palette.setColor(QPalette::Active, QPalette::Window, window);
-    palette.setColor(QPalette::Active, QPalette::Button, window);
-    palette.setColor(QPalette::Active, QPalette::Base, base);
-    palette.setColor(QPalette::Active, QPalette::AlternateBase, light);
-    palette.setColor(QPalette::Active, QPalette::Light, light);
-    palette.setColor(QPalette::Active, QPalette::Midlight, midlight);
-    palette.setColor(QPalette::Active, QPalette::Mid, mid);
-    palette.setColor(QPalette::Active, QPalette::Dark, dark);
-    palette.setColor(QPalette::Active, QPalette::Shadow, shadow);
-    palette.setColor(QPalette::Active, QPalette::Text, text);
-    palette.setColor(QPalette::Active, QPalette::WindowText, text);
-    palette.setColor(QPalette::Active, QPalette::ButtonText, text);
-    palette.setColor(QPalette::Active, QPalette::BrightText, QColor(255, 255, 255));
-    palette.setColor(QPalette::Active, QPalette::Highlight, highlight);
-    palette.setColor(QPalette::Active, QPalette::HighlightedText, QColor(255, 255, 255));
-
-    palette.setColor(QPalette::Inactive, QPalette::Window, window);
-    palette.setColor(QPalette::Inactive, QPalette::Button, window);
-    palette.setColor(QPalette::Inactive, QPalette::Base, base);
-    palette.setColor(QPalette::Inactive, QPalette::AlternateBase, light);
-    palette.setColor(QPalette::Inactive, QPalette::Light, light);
-    palette.setColor(QPalette::Inactive, QPalette::Midlight, midlight);
-    palette.setColor(QPalette::Inactive, QPalette::Mid, mid);
-    palette.setColor(QPalette::Inactive, QPalette::Dark, dark);
-    palette.setColor(QPalette::Inactive, QPalette::Shadow, shadow);
-    palette.setColor(QPalette::Inactive, QPalette::Text, text);
-    palette.setColor(QPalette::Inactive, QPalette::WindowText, text);
-    palette.setColor(QPalette::Inactive, QPalette::ButtonText, text);
-    palette.setColor(QPalette::Inactive, QPalette::BrightText, QColor(255, 255, 255));
-    palette.setColor(QPalette::Inactive, QPalette::Highlight, highlight);
-    palette.setColor(QPalette::Inactive, QPalette::HighlightedText, QColor(255, 255, 255));
-
-    palette.setColor(QPalette::Disabled, QPalette::Window, window);
-    palette.setColor(QPalette::Disabled, QPalette::Button, window);
-    palette.setColor(QPalette::Disabled, QPalette::Base, base);
-    palette.setColor(QPalette::Disabled, QPalette::AlternateBase, light);
-    palette.setColor(QPalette::Disabled, QPalette::Light, light);
-    palette.setColor(QPalette::Disabled, QPalette::Midlight, midlight);
-    palette.setColor(QPalette::Disabled, QPalette::Mid, mid);
-    palette.setColor(QPalette::Disabled, QPalette::Dark, dark);
-    palette.setColor(QPalette::Disabled, QPalette::Shadow, shadow);
-    palette.setColor(QPalette::Disabled, QPalette::Text, disabledText);
-    palette.setColor(QPalette::Disabled, QPalette::WindowText, disabledText);
-    palette.setColor(QPalette::Disabled, QPalette::ButtonText, disabledText);
-    palette.setColor(QPalette::Disabled, QPalette::BrightText, QColor(245, 245, 245));
-    palette.setColor(QPalette::Disabled, QPalette::Highlight, mid);
-    palette.setColor(QPalette::Disabled, QPalette::HighlightedText, QColor(245, 245, 245));
-
-    palette.setColor(QPalette::ToolTipBase, base);
-    palette.setColor(QPalette::ToolTipText, text);
-
-    m_cachedPalette = palette;
-    m_paletteBuilt = true;
+    applyCdeShades(palette);
     return palette;
 }
 
@@ -413,6 +384,10 @@ int CdeStyle::pixelMetric(PixelMetric metric, const QStyleOption *option, const 
         return kMenuVMargin;
     case PM_MenuDesktopFrameWidth:
         return 0;
+    case PM_ButtonMargin:
+        return kButtonContentMargin;
+    case PM_ButtonDefaultIndicator:
+        return kButtonDefaultIndicator;
     case PM_ScrollBarExtent:
         return kScrollBarExtent;
     case PM_ScrollBarSliderMin:
@@ -431,6 +406,11 @@ QRect CdeStyle::subElementRect(SubElement element, const QStyleOption *option, c
     }
     if (element == SE_LineEditContents && option) {
         return option->rect.adjusted(kFrameWidth, kFrameWidth, -kFrameWidth, -kFrameWidth);
+    }
+    if (element == SE_PushButtonContents && option) {
+        const int defaultInset = isDefaultPushButton(option) ? kButtonDefaultIndicator : 0;
+        const int inset = defaultInset + kButtonBevelThickness + kButtonContentMargin;
+        return option->rect.adjusted(inset, inset, -inset, -inset);
     }
 
     return QProxyStyle::subElementRect(element, option, widget);
@@ -548,6 +528,9 @@ void CdeStyle::drawPrimitive(PrimitiveElement element,
     }
 
     switch (element) {
+    case PE_PanelButtonCommand:
+        drawCommandButton(painter, option);
+        return;
     case PE_FrameMenu:
     case PE_PanelMenu:
         drawBevel(painter, option->rect, option->palette.button().color(), option->palette, false, kMenuPanelWidth);
@@ -579,6 +562,21 @@ void CdeStyle::drawControl(ControlElement element,
                            QPainter *painter,
                            const QWidget *widget) const
 {
+    if (element == CE_PushButtonLabel) {
+        const auto *button = qstyleoption_cast<const QStyleOptionButton *>(option);
+        if (!button || !painter) {
+            return;
+        }
+
+        painter->save();
+        if (button->state & (State_Sunken | State_On)) {
+            painter->translate(1, 1);
+        }
+        QProxyStyle::drawControl(element, option, painter, widget);
+        painter->restore();
+        return;
+    }
+
     if (element == CE_MenuEmptyArea) {
         if (!option || !painter) {
             return;
@@ -775,12 +773,12 @@ void CdeStyle::drawComplexControl(ComplexControl control,
     }
 
     if (rects.subLine.isValid()) {
-        drawBevel(painter, rects.subLine, subLinePressed ? pressedFill : buttonFill, slider->palette, subLinePressed, 1);
+        drawBevel(painter, rects.subLine, subLinePressed ? pressedFill : buttonFill, slider->palette, subLinePressed, kScrollBevelThickness);
         drawArrowGlyph(painter, rects.subLine, vertical ? Qt::UpArrow : Qt::LeftArrow, glyphColor, subLinePressed);
     }
 
     if (rects.addLine.isValid()) {
-        drawBevel(painter, rects.addLine, addLinePressed ? pressedFill : buttonFill, slider->palette, addLinePressed, 1);
+        drawBevel(painter, rects.addLine, addLinePressed ? pressedFill : buttonFill, slider->palette, addLinePressed, kScrollBevelThickness);
         drawArrowGlyph(painter, rects.addLine, vertical ? Qt::DownArrow : Qt::RightArrow, glyphColor, addLinePressed);
     }
 

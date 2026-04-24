@@ -71,9 +71,6 @@ CdeDecoration::CdeDecoration(QObject *parent, const QVariantList &args)
 
 CdeDecoration::~CdeDecoration()
 {
-    // Clean up buttons (though Qt parent ownership should handle this)
-    qDeleteAll(m_leftButtons);
-    qDeleteAll(m_rightButtons);
     m_leftButtons.clear();
     m_rightButtons.clear();
 }
@@ -98,21 +95,72 @@ bool CdeDecoration::init()
     return true;
 }
 
+// One-shot migration: if the user has a tuned palette in the legacy
+// ~/.config/cdedecoration file but no kwinrc[org.kde.cde.decoration] yet,
+// copy the values over so their customization survives the relocation.
+static void migrateFromLegacyConfig()
+{
+    KConfig legacy(Config::legacyConfigFile);
+    if (!legacy.hasGroup(Config::legacyGroupName)) {
+        return;
+    }
+    KConfig cur(Config::configFile);
+    KConfigGroup curGroup = cur.group(Config::groupName);
+    if (curGroup.hasKey(Config::frameColorKey)) {
+        return;
+    }
+    KConfigGroup legacyGroup = legacy.group(Config::legacyGroupName);
+    const QStringList keys = {
+        Config::frameColorKey, Config::activeTitleColorKey,
+        Config::inactiveTitleColorKey, Config::activeTextColorKey,
+        Config::inactiveTextColorKey,
+    };
+    for (const QString &key : keys) {
+        if (legacyGroup.hasKey(key)) {
+            curGroup.writeEntry(key, legacyGroup.readEntry(key, QColor()));
+        }
+    }
+    cur.sync();
+}
+
 void CdeDecoration::loadConfig()
 {
-    KConfig config(Config::configFile);
-    KConfigGroup group = config.group(Config::groupName);
+    migrateFromLegacyConfig();
+
+    // Primary source: active color scheme ([WM] + [Colors:Window] in
+    // kdeglobals, written by Plasma on any scheme apply). Secondary source:
+    // user overrides in kwinrc[org.kde.cde.decoration] from the KCM.
+    // Force a disk re-read — KConfig's in-process cache can otherwise return
+    // stale [WM]/[Colors:Window] after the scheme changes.
+    KConfig kdeglobals(QStringLiteral("kdeglobals"));
+    kdeglobals.reparseConfiguration();
+    KConfigGroup wm = kdeglobals.group(QStringLiteral("WM"));
+    KConfigGroup colorsWindow = kdeglobals.group(QStringLiteral("Colors:Window"));
+
+    const QColor schemeFrame        = colorsWindow.readEntry(QStringLiteral("BackgroundNormal"),
+                                                              Config::defaultFrameColor);
+    const QColor schemeActive       = wm.readEntry(QStringLiteral("activeBackground"),
+                                                    Config::defaultActiveTitleColor);
+    const QColor schemeInactive     = wm.readEntry(QStringLiteral("inactiveBackground"),
+                                                    Config::defaultInactiveTitleColor);
+    const QColor schemeActiveText   = wm.readEntry(QStringLiteral("activeForeground"),
+                                                    Config::defaultActiveTextColor);
+    const QColor schemeInactiveText = wm.readEntry(QStringLiteral("inactiveForeground"),
+                                                    Config::defaultInactiveTextColor);
+
+    KConfig overrides(Config::configFile);
+    KConfigGroup group = overrides.group(Config::groupName);
 
     m_frameColor = Config::enforceFrameRules(
-        group.readEntry(Config::frameColorKey, Config::defaultFrameColor));
+        group.readEntry(Config::frameColorKey, schemeFrame));
     m_activeTitleColor =
-        group.readEntry(Config::activeTitleColorKey, Config::defaultActiveTitleColor);
+        group.readEntry(Config::activeTitleColorKey, schemeActive);
     m_inactiveTitleColor =
-        group.readEntry(Config::inactiveTitleColorKey, Config::defaultInactiveTitleColor);
+        group.readEntry(Config::inactiveTitleColorKey, schemeInactive);
     m_activeTextColor =
-        group.readEntry(Config::activeTextColorKey, Config::defaultActiveTextColor);
+        group.readEntry(Config::activeTextColorKey, schemeActiveText);
     m_inactiveTextColor =
-        group.readEntry(Config::inactiveTextColorKey, Config::defaultInactiveTextColor);
+        group.readEntry(Config::inactiveTextColorKey, schemeInactiveText);
 }
 
 void CdeDecoration::paint(QPainter *painter, const QRectF &repaintArea)

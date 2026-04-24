@@ -78,8 +78,8 @@ if [ "$PLASMA_VERSION" = "5" ]; then
     DECO_SRC="$REPO_DIR/kwin_cde_decoration_kf5_plasma5"
     STYLE_SRC="$REPO_DIR/cde_qt_style_kf5_plasma5"
 else
-    DECO_SRC="$REPO_DIR/kwin_cde_decoration_kf5"
-    STYLE_SRC="$REPO_DIR/cde_qt_style_kf5"
+    DECO_SRC="$REPO_DIR/kwin_cde_decoration_kf6_plasma6"
+    STYLE_SRC="$REPO_DIR/cde_qt_style_kf6_plasma6"
 fi
 
 STAGE_DIR="$(mktemp -d -t cde-prebuilt-stage-XXXXXX)"

@@ -37,7 +37,7 @@ KDE Plasma 6:
  - Plasma desktop theme (panel, system tray, plasmoids)
  - SDDM login theme
  - Lock screen overlay
- - Blue-gray color scheme
+ - Multiple bundled color schemes (Blue-Gray, Dark, Chartreuse, Electric Pink)
 
 After installation, run `cde-plasma-apply` as your user to switch to the
 theme. Run `cde-plasma-unapply` to revert (the package stays installed).
@@ -48,12 +48,12 @@ theme. Run `cde-plasma-unapply` to revert (the package stays installed).
 %build
 cd cde-plasma
 
-cmake -B build-decoration -S kwin_cde_decoration_kf5 \
+cmake -B build-decoration -S kwin_cde_decoration_kf6_plasma6 \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo
 cmake --build build-decoration %{?_smp_mflags}
 
-cmake -B build-style -S cde_qt_style_kf5 \
+cmake -B build-style -S cde_qt_style_kf6_plasma6 \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo
 cmake --build build-style %{?_smp_mflags}
@@ -74,12 +74,18 @@ DESTDIR=%{buildroot} cmake --install build-assets
 %{_libdir}/qt6/plugins/org.kde.kdecoration3.kcm/kcm_cdedecoration.so
 %{_libdir}/qt6/plugins/styles/cde_qt_style.so
 %{_datadir}/color-schemes/CDE.colors
+%{_datadir}/color-schemes/CDE-Dark.colors
+%{_datadir}/color-schemes/CDE-Chartreuse.colors
+%{_datadir}/color-schemes/CDE-ElectricPink.colors
 %{_datadir}/plasma/desktoptheme/commonality/
+%{_datadir}/plasma/desktoptheme/commonality-dark/
 %{_datadir}/plasma/look-and-feel/org.kde.cde.desktop/
+%{_datadir}/plasma/look-and-feel/org.kde.cde-dark.desktop/
 %{_datadir}/sddm/themes/sddm-cde/
 %{_datadir}/cde-plasma/
 %{_bindir}/cde-plasma-apply
 %{_bindir}/cde-plasma-unapply
+%{_bindir}/cde-plasma-mode
 
 %changelog
 * Wed Apr 22 2026 Connor McRann <cmcrann@protonmail.com> - 0.1.0-1

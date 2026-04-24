@@ -1,0 +1,138 @@
+#!/bin/bash
+#
+# cde-plasma-mode — flip the user's Plasma session between CDE light and CDE
+# Dark in one command. Plasma's Global Theme GUI has per-category checkboxes
+# (Colors / Plasma Style / Window Decorations / ...) that default to
+# unchecked on many 5.27 builds, so "Apply" via the GUI often only writes
+# LookAndFeelPackage and silently skips the rest. This script writes all the
+# necessary keys directly and triggers live reloads.
+#
+# Usage:
+#   cde-plasma-mode light        # apply CDE light palette
+#   cde-plasma-mode dark         # apply CDE dark palette
+#
+# Re-runnable. Does not touch any non-CDE config.
+
+set -e
+
+MODE="${1:-}"
+case "$MODE" in
+    light|dark) ;;
+    *)
+        echo "Usage: $(basename "$0") {light|dark}" >&2
+        exit 2
+        ;;
+esac
+
+# Pick whichever kwriteconfig is available (Plasma 6 first, then 5)
+KWRITECONFIG=""
+for cmd in kwriteconfig6 kwriteconfig5; do
+    if command -v "$cmd" &>/dev/null; then
+        KWRITECONFIG="$cmd"
+        break
+    fi
+done
+if [ -z "$KWRITECONFIG" ]; then
+    echo "Neither kwriteconfig6 nor kwriteconfig5 is available." >&2
+    exit 1
+fi
+
+# Pick a qdbus flavor for live reconfigure signals
+QDBUS=""
+for cmd in qdbus6 qdbus-qt6 qdbus qdbus-qt5; do
+    if command -v "$cmd" &>/dev/null; then
+        QDBUS="$cmd"
+        break
+    fi
+done
+
+if [ "$MODE" = "dark" ]; then
+    LNF="org.kde.cde-dark.desktop"
+    COLORSCHEME="CDE-Dark"
+    PLASMA_THEME="commonality-dark"
+    FRAME_COLOR="55,60,75"
+    ACTIVE_TITLE="111,82,153"
+    INACTIVE_TITLE="52,13,55"
+    ACTIVE_TEXT="255,255,255"
+    INACTIVE_TEXT="170,170,170"
+else
+    LNF="org.kde.cde.desktop"
+    COLORSCHEME="CDE"
+    PLASMA_THEME="commonality"
+    FRAME_COLOR="156,160,176"
+    ACTIVE_TITLE="178,77,122"
+    INACTIVE_TITLE="156,160,176"
+    ACTIVE_TEXT="255,255,255"
+    INACTIVE_TEXT="0,0,0"
+fi
+
+echo "Applying CDE $MODE mode..."
+
+# Manual writes only. Do not call plasma-apply-lookandfeel here: on some
+# Plasma 5.x setups it replays shell/layout state and can disrupt panel
+# applets such as the launcher. This mode switch is intended to be a safe
+# light/dark flip within the installed CDE setup, not a full global-theme
+# reapply.
+$KWRITECONFIG --file kdeglobals        --group KDE                       --key widgetStyle        "cde"
+$KWRITECONFIG --file kdeglobals        --group General                   --key ColorScheme        "$COLORSCHEME"
+$KWRITECONFIG --file plasmarc          --group Theme                     --key name               "$PLASMA_THEME"
+$KWRITECONFIG --file kwinrc            --group org.kde.kdecoration2      --key library            "org.kde.cde.decoration"
+$KWRITECONFIG --file kwinrc            --group org.kde.kdecoration2      --key theme              ""
+$KWRITECONFIG --file kdeglobals        --group KDE                       --key LookAndFeelPackage "$LNF"
+$KWRITECONFIG --file kscreenlockerrc   --group Greeter                   --key LookAndFeel        "$LNF"
+
+# Replay the scheme's [WM] + [Colors:Window] sections into kdeglobals.
+# The decoration plugin reads kdeglobals[WM] / kdeglobals[Colors:Window] for
+# its colors (Plasma 5.27's GUI LaF apply sometimes skips the Colors
+# category), so this guarantees the decoration flips along with the mode.
+SCHEME=""
+for candidate in "/usr/share/color-schemes/${COLORSCHEME}.colors" \
+                 "$HOME/.local/share/color-schemes/${COLORSCHEME}.colors"; do
+    [ -f "$candidate" ] && { SCHEME="$candidate"; break; }
+done
+if [ -n "$SCHEME" ]; then
+    for key in activeBackground activeBlend activeForeground inactiveBackground inactiveBlend inactiveForeground; do
+        v=$(kreadconfig5 --file "$SCHEME" --group WM --key "$key" 2>/dev/null)
+        [ -n "$v" ] && $KWRITECONFIG --file kdeglobals --group WM --key "$key" "$v"
+    done
+    for key in BackgroundNormal BackgroundAlternate ForegroundNormal ForegroundInactive DecorationFocus DecorationHover; do
+        v=$(kreadconfig5 --file "$SCHEME" --group 'Colors:Window' --key "$key" 2>/dev/null)
+        [ -n "$v" ] && $KWRITECONFIG --file kdeglobals --group 'Colors:Window' --key "$key" "$v"
+    done
+fi
+
+# Clear any stale per-key decoration overrides left by older versions so the
+# scheme-driven values actually surface. Users who customize via the KCM will
+# re-populate this group; default users get the clean scheme-driven behavior.
+for key in FrameColor ActiveTitleColor InactiveTitleColor ActiveTextColor InactiveTextColor; do
+    $KWRITECONFIG --file kwinrc --group org.kde.cde.decoration --key "$key" --delete
+done
+rm -f "$HOME/.config/cdedecoration"
+
+echo "  Config written."
+
+# Notify running processes to reread config
+if [ -n "$QDBUS" ]; then
+    "$QDBUS" org.kde.KWin /KWin reconfigure &>/dev/null || true
+fi
+
+# Prod plasma-apply-colorscheme (if present) to broadcast the scheme change
+# to running KDE apps so Dolphin/Kate/etc. recolor without being restarted.
+# Avoid a forced plasmashell refresh here; that is the part most likely to
+# break launcher/menu state on Plasma 5.
+if command -v plasma-apply-colorscheme &>/dev/null; then
+    plasma-apply-colorscheme "$COLORSCHEME" &>/dev/null || true
+fi
+
+cat <<EOF
+
+CDE $MODE mode applied:
+  Global Theme    : $LNF
+  Color Scheme    : $COLORSCHEME
+  Plasma Style    : $PLASMA_THEME
+  Widget Style    : cde
+  Decoration      : org.kde.cde.decoration (preset: $MODE)
+
+KDE apps already running may still show the previous palette — close and
+reopen them, or log out and back in for a full refresh.
+EOF

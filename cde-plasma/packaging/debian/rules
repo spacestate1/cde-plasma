@@ -15,9 +15,9 @@ SRCDIR       := cde-plasma
 DESTDIR      := $(CURDIR)/debian/cde-plasma
 
 override_dh_auto_configure:
-	cmake -B $(BUILD_DECOR) -S $(SRCDIR)/kwin_cde_decoration_kf5 \
+	cmake -B $(BUILD_DECOR) -S $(SRCDIR)/kwin_cde_decoration_kf6_plasma6 \
 		-DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release
-	cmake -B $(BUILD_STYLE) -S $(SRCDIR)/cde_qt_style_kf5 \
+	cmake -B $(BUILD_STYLE) -S $(SRCDIR)/cde_qt_style_kf6_plasma6 \
 		-DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release
 	cmake -B $(BUILD_ASSETS) -S $(SRCDIR) \
 		-DCMAKE_INSTALL_PREFIX=/usr

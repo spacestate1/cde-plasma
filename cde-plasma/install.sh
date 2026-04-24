@@ -19,6 +19,8 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 LOG_DIR="$SCRIPT_DIR/logs"
 mkdir -p "$LOG_DIR"
 LOG_FILE="$LOG_DIR/install-$(date '+%Y%m%d-%H%M%S').log"
+RUNTIME_DIR="${XDG_RUNTIME_DIR:-/tmp}"
+STATE_LOCK_FILE="$RUNTIME_DIR/cde-plasma-install-${UID}.lock"
 
 # Snapshot of pre-install KDE config values — uninstall.sh reads this to
 # restore the user's prior settings (rather than clobbering them with stock
@@ -35,6 +37,19 @@ done) 2>&1
 echo "=== CDE Plasma Theme Installer ==="
 echo "Log file: $LOG_FILE"
 echo
+
+acquire_state_lock() {
+    exec 9>"$STATE_LOCK_FILE"
+    if command -v flock &>/dev/null; then
+        flock 9
+        return
+    fi
+
+    echo "ERROR: flock not found; cannot safely serialize install/uninstall operations." >&2
+    exit 1
+}
+
+acquire_state_lock
 
 # Detect Plasma version (5 or 6)
 PLASMA_VERSION=6
@@ -97,6 +112,39 @@ detect_target() {
 
 PREBUILT_DIR="$SCRIPT_DIR/prebuilt"
 
+prebuilt_member_is_safe() {
+    local rel="$1"
+
+    case "$rel" in
+        ./usr|./usr/*) ;;
+        *)
+            return 1
+            ;;
+    esac
+
+    case "$rel" in
+        *"/../"*|../*|*/..|*"/..")
+            return 1
+            ;;
+    esac
+
+    return 0
+}
+
+validate_prebuilt_tarball() {
+    local tarball="$1" rel
+
+    while IFS= read -r rel; do
+        [ -z "$rel" ] && continue
+        if ! prebuilt_member_is_safe "$rel"; then
+            echo "  ERROR: refusing unsafe prebuilt archive member: $rel"
+            return 1
+        fi
+    done < <(tar tzf "$tarball")
+
+    return 0
+}
+
 # Check a just-extracted .so for unresolved libraries. A prebuilt cut against
 # a slightly different Qt/KF ABI typically leaves "not found" entries in ldd
 # output — we'd rather catch that now than have KWin silently refuse to load
@@ -128,8 +176,12 @@ try_install_prebuilt() {
     fi
 
     echo "  Found prebuilt: $tarball"
+    if ! validate_prebuilt_tarball "$tarball"; then
+        echo "  Unsafe prebuilt tarball contents detected — will build from source."
+        return 1
+    fi
     echo "  Extracting to / (requires sudo)..."
-    if ! sudo tar xzf "$tarball" -C /; then
+    if ! sudo tar xzf "$tarball" -C / --no-same-owner --no-same-permissions; then
         echo "  Extract failed — will build from source."
         return 1
     fi
@@ -153,7 +205,17 @@ try_install_prebuilt() {
         echo "  Prebuilt plugins failed ldd check — removing and falling back to source build."
         # Roll back: re-list the tarball and delete every file it placed.
         while IFS= read -r rel; do
+            if ! prebuilt_member_is_safe "$rel"; then
+                continue
+            fi
             abs="/${rel#./}"
+            case "$abs" in
+                *.so)
+                    ;;
+                *)
+                    continue
+                    ;;
+            esac
             if [ -f "$abs" ]; then
                 sudo rm -f "$abs"
             fi
@@ -207,6 +269,7 @@ install_deps_plasma5() {
                 cmake make gcc pkg-config \
                 qt5-base extra-cmake-modules \
                 kconfig kcoreaddons kdecoration \
+                kconfigwidgets kcmutils kwidgetsaddons \
                 curl
             ;;
         debian)
@@ -216,7 +279,8 @@ install_deps_plasma5() {
                 cmake make g++ pkg-config \
                 qtbase5-dev qtbase5-dev-tools \
                 extra-cmake-modules \
-                libkf5coreaddons-dev libkf5config-dev \
+                libkf5coreaddons-dev libkf5config-dev libkf5configwidgets-dev \
+                libkf5kcmutils-dev libkf5widgetsaddons-dev \
                 libkdecorations2-dev \
                 curl
             ;;
@@ -228,14 +292,15 @@ install_deps_plasma5() {
                 cmake make gcc-c++ pkg-config \
                 qt5-qtbase-devel \
                 extra-cmake-modules \
-                kf5-kcoreaddons-devel kf5-kconfig-devel \
+                kf5-kcoreaddons-devel kf5-kconfig-devel kf5-kconfigwidgets-devel \
+                kf5-kcmutils-devel kf5-kwidgetsaddons-devel \
                 kdecoration-devel \
                 curl
             ;;
         *)
             echo "Unknown distro. Please install manually:"
             echo "  cmake, g++, pkg-config, Qt5, extra-cmake-modules,"
-            echo "  KF5 CoreAddons, Config, KDecoration2"
+            echo "  KF5 CoreAddons, Config, ConfigWidgets, KCMUtils, WidgetsAddons, KDecoration2"
             exit 1
             ;;
     esac
@@ -305,9 +370,30 @@ install_deps() {
     fi
 }
 
+# Return 0 if CMake config for $1 (e.g. KF5ConfigWidgets) exists in any of the
+# standard prefixes across Debian/Ubuntu (multi-arch), Arch, Fedora.
+have_cmake_pkg() {
+    local pkg="$1"
+    local base f
+    for base in /usr/lib/x86_64-linux-gnu/cmake /usr/lib/aarch64-linux-gnu/cmake \
+                /usr/lib/cmake /usr/lib64/cmake /usr/local/lib/cmake; do
+        for f in "$base/$pkg/${pkg}Config.cmake" "$base/$pkg/$(echo "$pkg" | tr '[:upper:]' '[:lower:]')-config.cmake"; do
+            [ -f "$f" ] && return 0
+        done
+    done
+    return 1
+}
+
 # Check for required build dependencies
 check_deps() {
     local need_install=false
+    local required_cmake_pkgs
+
+    if [ "$PLASMA_VERSION" = "5" ]; then
+        required_cmake_pkgs=(KF5CoreAddons KF5Config KF5ConfigWidgets KF5KCMUtils KF5WidgetsAddons KDecoration2)
+    else
+        required_cmake_pkgs=(KF6CoreAddons KF6Config KF6ConfigWidgets KF6KCMUtils KF6WidgetsAddons KDecoration3)
+    fi
 
     for cmd in cmake make g++ pkg-config; do
         if ! command -v "$cmd" &>/dev/null; then
@@ -327,6 +413,14 @@ check_deps() {
             need_install=true
         fi
     fi
+
+    local pkg
+    for pkg in "${required_cmake_pkgs[@]}"; do
+        if ! have_cmake_pkg "$pkg"; then
+            echo "Missing: $pkg development package"
+            need_install=true
+        fi
+    done
 
     if [ "$need_install" = true ]; then
         echo
@@ -352,6 +446,14 @@ check_deps() {
                 exit 1
             fi
         fi
+
+        for pkg in "${required_cmake_pkgs[@]}"; do
+            if ! have_cmake_pkg "$pkg"; then
+                echo "ERROR: $pkg still missing after install attempt."
+                exit 1
+            fi
+        done
+
         echo "All dependencies installed."
     else
         echo "All dependencies present."
@@ -418,7 +520,7 @@ install_kwin_decoration() {
         src_dir="$SCRIPT_DIR/kwin_cde_decoration_kf5_plasma5"
         echo "  Using Plasma 5 (KF5/KDecoration2) source..."
     else
-        src_dir="$SCRIPT_DIR/kwin_cde_decoration_kf5"
+        src_dir="$SCRIPT_DIR/kwin_cde_decoration_kf6_plasma6"
         echo "  Using Plasma 6 (KF6/KDecoration3) source..."
     fi
 
@@ -432,7 +534,7 @@ install_kwin_decoration() {
     echo "Installing KWin decoration (requires sudo)..."
     sudo make install
 
-    # Clean up old misnamed plugins
+    # Clean up old misnamed plugins left by previous installs
     if [ "$PLASMA_VERSION" = "6" ]; then
         local plugin_dir
         plugin_dir="$(pkg-config --variable=plugindir Qt6Core 2>/dev/null || echo /usr/lib/qt6/plugins)"
@@ -443,6 +545,24 @@ install_kwin_decoration() {
                 sudo rm -f "$old"
             fi
         done
+    else
+        # On P5 we renamed the decoration target to org.kde.cde.decoration
+        # (OUTPUT_NAME) so kscreenlocker's per-decoration KCM lookup works.
+        # Any previous install left kwin_cde_decoration_kf5.so behind;
+        # remove it so kwin doesn't load two copies.
+        local plugin_dir
+        plugin_dir="$(pkg-config --variable=plugindir Qt5Core 2>/dev/null || echo /usr/lib/x86_64-linux-gnu/qt5/plugins)"
+        for old in "$plugin_dir/org.kde.kdecoration2/kwin_cde_decoration_kf5.so" \
+                   "$plugin_dir/org.kde.kdecoration2/libkwin_cde_decoration_kf5.so" \
+                   "$plugin_dir/org.kde.kdecoration2.kcm/kcm_cdedecoration_kf5.so" \
+                   "$plugin_dir/org.kde.kdecoration2.kcm/libkcm_cdedecoration_kf5.so"; do
+            if [ -f "$old" ]; then
+                echo "  Removing old P5 plugin: $old"
+                sudo rm -f "$old"
+            fi
+        done
+        # And if the old separate-KCM namespace dir is now empty, clean it up.
+        sudo rmdir "$plugin_dir/org.kde.kdecoration2.kcm" 2>/dev/null || true
     fi
 
     echo "KWin decoration installed."
@@ -458,7 +578,7 @@ install_qt_style() {
         src_dir="$SCRIPT_DIR/cde_qt_style_kf5_plasma5"
         echo "  Using Qt5 style source..."
     else
-        src_dir="$SCRIPT_DIR/cde_qt_style_kf5"
+        src_dir="$SCRIPT_DIR/cde_qt_style_kf6_plasma6"
         echo "  Using Qt6 style source..."
     fi
 
@@ -475,23 +595,27 @@ install_qt_style() {
     echo
 }
 
-# Install Plasma desktop theme
+# Install Plasma desktop themes (light + dark)
 install_plasma_theme() {
-    echo "[3/8] Installing Plasma theme..."
-    local theme_dir="$HOME/.local/share/plasma/desktoptheme/commonality"
-    mkdir -p "$theme_dir"
-    cp -r "$SCRIPT_DIR/commonality/"* "$theme_dir/"
-    echo "Plasma theme installed to $theme_dir"
+    echo "[3/8] Installing Plasma themes..."
+    local base_dir="$HOME/.local/share/plasma/desktoptheme"
+    mkdir -p "$base_dir/commonality" "$base_dir/commonality-dark"
+    cp -r "$SCRIPT_DIR/commonality/"* "$base_dir/commonality/"
+    cp -r "$SCRIPT_DIR/commonality-dark/"* "$base_dir/commonality-dark/"
+    echo "Plasma themes installed to $base_dir (commonality + commonality-dark)"
     echo
 }
 
-# Install color scheme
+# Install color schemes
 install_color_scheme() {
-    echo "[4/8] Installing color scheme..."
+    echo "[4/8] Installing color schemes..."
     local colors_dir="$HOME/.local/share/color-schemes"
     mkdir -p "$colors_dir"
     cp "$SCRIPT_DIR/CDE.colors" "$colors_dir/"
-    echo "Color scheme installed to $colors_dir"
+    cp "$SCRIPT_DIR/CDE-Dark.colors" "$colors_dir/"
+    cp "$SCRIPT_DIR/CDE-Chartreuse.colors" "$colors_dir/"
+    cp "$SCRIPT_DIR/CDE-ElectricPink.colors" "$colors_dir/"
+    echo "Color schemes installed to $colors_dir (Blue-Gray, Dark, Chartreuse, Electric Pink)"
     echo
 }
 
@@ -572,6 +696,7 @@ install_look_and_feel() {
     local laf_dir="$HOME/.local/share/plasma/look-and-feel"
     mkdir -p "$laf_dir"
     cp -r "$SCRIPT_DIR/look-and-feel/org.kde.cde.desktop" "$laf_dir/"
+    cp -r "$SCRIPT_DIR/look-and-feel/org.kde.cde-dark.desktop" "$laf_dir/"
     echo "Look-and-feel theme installed."
     echo
 }
@@ -579,6 +704,24 @@ install_look_and_feel() {
 # Install CDE lock screen
 install_lockscreen() {
     echo "[8/8] Installing CDE lock screen..."
+
+    # Plasma 5 and Plasma 6 deliver the lock screen QML through different
+    # paths. On P5 it lives inside the look-and-feel package; on P6 it's
+    # delivered via the shell's lockscreen dir. Handle both.
+    if [ "$PLASMA_VERSION" = "5" ]; then
+        # The look-and-feel package step already copied our P5 QML to the
+        # per-user dir. Nothing more to do — this is the active lock screen
+        # source as long as kscreenlockerrc points at org.kde.cde.desktop.
+        local laf_lock="$HOME/.local/share/plasma/look-and-feel/org.kde.cde.desktop/contents/lockscreen/LockScreenUi.qml"
+        if [ -f "$laf_lock" ]; then
+            echo "  CDE lock screen provided by look-and-feel package ($laf_lock)."
+        else
+            echo "  WARNING: expected $laf_lock not found — look-and-feel install may have failed."
+        fi
+        echo
+        return
+    fi
+
     local lockscreen_dir="/usr/share/plasma/shells/org.kde.plasma.desktop/contents/lockscreen"
 
     if [ ! -d "$lockscreen_dir" ]; then
@@ -637,8 +780,8 @@ snapshot_kde_config() {
 
     mkdir -p "$SNAPSHOT_DIR"
     local sentinel="__CDE_UNSET_SENTINEL_$$__"
-    local tmp="$SNAPSHOT_FILE.tmp"
-    : > "$tmp"
+    local tmp
+    tmp="$(mktemp "$SNAPSHOT_DIR/pre-install.snapshot.XXXXXX")"
 
     # Every (file, group, key) tuple configure_kde() writes below.
     local entries=(

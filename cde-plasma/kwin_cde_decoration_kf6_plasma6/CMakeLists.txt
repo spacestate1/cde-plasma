@@ -15,7 +15,7 @@ set(CMAKE_AUTOUIC ON)
 
 # Find Qt6/KF6 BEFORE including KDE macros so install paths resolve correctly
 find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets)
-find_package(KF6 REQUIRED COMPONENTS CoreAddons ConfigWidgets KCMUtils WidgetsAddons)
+find_package(KF6 REQUIRED COMPONENTS CoreAddons Config ConfigWidgets KCMUtils WidgetsAddons)
 find_package(KDecoration3 REQUIRED)
 
 include(KDEInstallDirs6)

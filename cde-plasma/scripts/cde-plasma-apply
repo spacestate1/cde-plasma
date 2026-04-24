@@ -25,6 +25,8 @@ LOCKSCREEN_BACKUP="${LOCKSCREEN_DIR}.breeze-backup"
 
 SNAPSHOT_DIR="$HOME/.local/share/cde-plasma"
 SNAPSHOT_FILE="$SNAPSHOT_DIR/pre-apply.snapshot"
+RUNTIME_DIR="${XDG_RUNTIME_DIR:-/tmp}"
+STATE_LOCK_FILE="$RUNTIME_DIR/cde-plasma-${UID}.lock"
 
 KWRITECONFIG=""
 KREADCONFIG=""
@@ -40,6 +42,19 @@ if [ -z "$KWRITECONFIG" ]; then
     exit 1
 fi
 
+acquire_state_lock() {
+    exec 9>"$STATE_LOCK_FILE"
+    if command -v flock &>/dev/null; then
+        flock 9
+        return
+    fi
+
+    echo "ERROR: flock not found; cannot safely serialize apply/unapply operations." >&2
+    exit 1
+}
+
+acquire_state_lock
+
 # --- 1. Snapshot pre-apply state (once) ---
 snapshot_kde_config() {
     [ -z "$KREADCONFIG" ] && return
@@ -52,6 +67,8 @@ snapshot_kde_config() {
     fi
 
     mkdir -p "$SNAPSHOT_DIR"
+    local snapshot_tmp
+    snapshot_tmp="$(mktemp "$SNAPSHOT_DIR/pre-apply.snapshot.XXXXXX")"
     local sentinel="__CDE_UNSET_$$__"
     local entries=(
         "kdeglobals|KDE|widgetStyle"
@@ -66,18 +83,17 @@ snapshot_kde_config() {
         "kwinrc|Wayland|InputMethod"
         "kcmvirtualkeyboardrc|General|VirtualKeyboardEnabled"
     )
-    : > "$SNAPSHOT_FILE.tmp"
     local entry file group key val
     for entry in "${entries[@]}"; do
         IFS='|' read -r file group key <<< "$entry"
         val="$("$KREADCONFIG" --file "$file" --group "$group" --key "$key" --default "$sentinel" 2>/dev/null)" || val="$sentinel"
         if [ "$val" = "$sentinel" ]; then
-            printf '%s\t%s\t%s\tUNSET\t\n' "$file" "$group" "$key" >> "$SNAPSHOT_FILE.tmp"
+            printf '%s\t%s\t%s\tUNSET\t\n' "$file" "$group" "$key" >> "$snapshot_tmp"
         else
-            printf '%s\t%s\t%s\tSET\t%s\n' "$file" "$group" "$key" "$val" >> "$SNAPSHOT_FILE.tmp"
+            printf '%s\t%s\t%s\tSET\t%s\n' "$file" "$group" "$key" "$val" >> "$snapshot_tmp"
         fi
     done
-    mv "$SNAPSHOT_FILE.tmp" "$SNAPSHOT_FILE"
+    mv "$snapshot_tmp" "$SNAPSHOT_FILE"
 }
 
 snapshot_kde_config

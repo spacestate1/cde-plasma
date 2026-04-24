@@ -26,9 +26,9 @@ You need a Plasma 5 / Qt 5 development environment with:
 Example:
 
 ```bash
-cmake -S kwin_cde_decoration_kf5 -B build/kwin_cde_decoration_kf5 -DCMAKE_BUILD_TYPE=RelWithDebInfo
-cmake --build build/kwin_cde_decoration_kf5
-cmake --install build/kwin_cde_decoration_kf5 --prefix ~/.local
+cmake -S kwin_cde_decoration_kf5_plasma5 -B build/kwin_cde_decoration_kf5_plasma5 -DCMAKE_BUILD_TYPE=RelWithDebInfo
+cmake --build build/kwin_cde_decoration_kf5_plasma5
+cmake --install build/kwin_cde_decoration_kf5_plasma5 --prefix ~/.local
 ```
 
 The plugin installs to:

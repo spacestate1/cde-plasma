@@ -18,7 +18,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
 find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets)
-find_package(KF5 REQUIRED COMPONENTS CoreAddons Config)
+find_package(KF5 REQUIRED COMPONENTS CoreAddons Config ConfigWidgets KCMUtils WidgetsAddons)
 find_package(KDecoration2 REQUIRED)
 
 add_library(kwin_cde_decoration_kf5 MODULE
@@ -26,9 +26,16 @@ add_library(kwin_cde_decoration_kf5 MODULE
     src/cdebutton.h
     src/cdedecoration.cpp
     src/cdedecoration.h
+    src/cdedecorationkcm.cpp
+    src/cdedecorationkcm.h
     src/cdecommon.h
     src/cdeconfig.h
     src/plugin.cpp
+)
+
+set_target_properties(kwin_cde_decoration_kf5 PROPERTIES
+    OUTPUT_NAME "org.kde.cde.decoration"
+    PREFIX ""
 )
 
 target_link_libraries(kwin_cde_decoration_kf5 PRIVATE
@@ -37,6 +44,9 @@ target_link_libraries(kwin_cde_decoration_kf5 PRIVATE
     Qt5::Widgets
     KF5::CoreAddons
     KF5::ConfigCore
+    KF5::ConfigWidgets
+    KF5::KCMUtils
+    KF5::WidgetsAddons
     KDecoration2::KDecoration
 )
 
