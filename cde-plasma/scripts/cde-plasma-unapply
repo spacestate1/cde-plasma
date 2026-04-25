@@ -59,6 +59,7 @@ else
     $KWRITECONFIG --file kdeglobals --group General --key ColorScheme "BreezeLight"
     $KWRITECONFIG --file kdeglobals --group KDE --key LookAndFeelPackage "org.kde.breeze.desktop"
     $KWRITECONFIG --file kscreenlockerrc --group Greeter --key LookAndFeel --delete 2>/dev/null || true
+    $KWRITECONFIG --file kscreenlockerrc --group Greeter --key Theme --delete 2>/dev/null || true
 fi
 
 # --- Restore lock screen ---

@@ -794,6 +794,7 @@ snapshot_kde_config() {
         "kcminputrc|Mouse|cursorSize"
         "kdeglobals|KDE|LookAndFeelPackage"
         "kscreenlockerrc|Greeter|LookAndFeel"
+        "kscreenlockerrc|Greeter|Theme"
         "kwinrc|Wayland|InputMethod"
         "kcmvirtualkeyboardrc|General|VirtualKeyboardEnabled"
     )
@@ -838,7 +839,10 @@ configure_kde() {
     fi
 
     $kwriteconfig_cmd --file kdeglobals --group KDE --key LookAndFeelPackage "org.kde.cde.desktop"
+    # Plasma 5's kscreenlocker_greet reads [Greeter] Theme; Plasma 6 reads
+    # [Greeter] LookAndFeel. Write both so the same script works on both.
     $kwriteconfig_cmd --file kscreenlockerrc --group Greeter --key LookAndFeel "org.kde.cde.desktop"
+    $kwriteconfig_cmd --file kscreenlockerrc --group Greeter --key Theme "org.kde.cde.desktop"
 
     # Disable on-screen / virtual keyboard. CDE predates touchscreens; the OSK
     # popping up over text fields breaks the aesthetic.

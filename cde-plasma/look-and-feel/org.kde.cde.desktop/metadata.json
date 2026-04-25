@@ -8,9 +8,13 @@
                 "Name": "CDE Plasma Theme"
             }
         ],
-        "Website": "",
-        "License": "MIT"
+        "License": "MIT",
+        "ServiceTypes": [
+            "Plasma/LookAndFeel"
+        ],
+        "Version": "1.0",
+        "Website": ""
     },
-    "KPackageStructure": "Plasma/LookAndFeel",
-    "X-Plasma-APIVersion": 2
+    "X-Plasma-APIVersion": "2",
+    "X-Plasma-MainScript": "defaults"
 }

@@ -121,6 +121,7 @@ reset_kde_config_to_breeze_defaults() {
     # Remove the lock-screen look-and-feel override entirely so the Greeter
     # falls back to the global LookAndFeelPackage (Breeze).
     $KWRITECONFIG --file kscreenlockerrc --group Greeter --key LookAndFeel --delete 2>/dev/null || true
+    $KWRITECONFIG --file kscreenlockerrc --group Greeter --key Theme --delete 2>/dev/null || true
 
     # Cursor theme — prefer breeze_cursors, fall back to Adwaita if not installed
     if [ -d /usr/share/icons/breeze_cursors/cursors ]; then

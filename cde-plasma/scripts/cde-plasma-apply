@@ -78,6 +78,7 @@ snapshot_kde_config() {
         "kdeglobals|General|ColorScheme"
         "kdeglobals|KDE|LookAndFeelPackage"
         "kscreenlockerrc|Greeter|LookAndFeel"
+        "kscreenlockerrc|Greeter|Theme"
         "kcminputrc|Mouse|cursorTheme"
         "kcminputrc|Mouse|cursorSize"
         "kwinrc|Wayland|InputMethod"
@@ -106,7 +107,10 @@ $KWRITECONFIG --file kwinrc --group org.kde.kdecoration2 --key theme ""
 $KWRITECONFIG --file plasmarc --group Theme --key name "commonality"
 $KWRITECONFIG --file kdeglobals --group General --key ColorScheme "CDE"
 $KWRITECONFIG --file kdeglobals --group KDE --key LookAndFeelPackage "org.kde.cde.desktop"
+# Plasma 5's kscreenlocker_greet reads [Greeter] Theme; Plasma 6 reads
+# [Greeter] LookAndFeel. Write both so the same script works on both.
 $KWRITECONFIG --file kscreenlockerrc --group Greeter --key LookAndFeel "org.kde.cde.desktop"
+$KWRITECONFIG --file kscreenlockerrc --group Greeter --key Theme "org.kde.cde.desktop"
 
 # Cursor — pick whichever retro/system cursor is present
 for theme in Hackneyed LHackneyed Vanilla-DMZ DMZ-Black breeze_cursors Adwaita; do
