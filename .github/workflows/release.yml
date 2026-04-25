@@ -1,0 +1,148 @@
+name: release
+
+# Triggered by:
+#   - Pushing a v* tag (e.g. v0.1.0)        — full release: builds all targets,
+#                                              attaches artifacts to a Release.
+#   - Manual dispatch with a version input  — for smoke-testing the workflow
+#                                              without cutting a tag. Builds
+#                                              packages but does NOT publish.
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to build (without v prefix). Used only for testing.'
+        required: false
+        default: '0.0.0-dev'
+
+permissions:
+  contents: write   # needed by softprops/action-gh-release to upload assets
+
+jobs:
+  build:
+    name: build (${{ matrix.target.distro }})
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ matrix.target.image }}
+    strategy:
+      fail-fast: false
+      matrix:
+        target:
+          - distro: arch
+            image: archlinux:latest
+            script: build-arch.sh
+            artifact-glob: 'dist/*.pkg.tar.zst'
+          - distro: debian
+            image: debian:trixie
+            script: build-debian.sh
+            artifact-glob: 'dist/*.deb'
+          - distro: ubuntu
+            image: ubuntu:24.10
+            script: build-debian.sh
+            artifact-glob: 'dist/*.deb'
+          - distro: fedora
+            image: fedora:40
+            script: build-fedora.sh
+            artifact-glob: 'dist/*.rpm'
+    steps:
+      # ----------------------------------------------------------------------
+      # Pre-checkout dep install. Each container ships barebones; we need at
+      # least git for actions/checkout, plus the toolchain for the package
+      # build itself. Done in one step per distro since dep names diverge.
+      # ----------------------------------------------------------------------
+      - name: Install build deps (arch)
+        if: matrix.target.distro == 'arch'
+        run: |
+          pacman -Syu --noconfirm
+          pacman -S --needed --noconfirm \
+            git rsync sudo base-devel \
+            cmake extra-cmake-modules pkg-config \
+            qt6-base \
+            kdecoration kcoreaddons kconfig kconfigwidgets kcmutils \
+            kwidgetsaddons kcolorscheme
+
+      - name: Install build deps (debian/ubuntu)
+        if: matrix.target.distro == 'debian' || matrix.target.distro == 'ubuntu'
+        run: |
+          apt-get update
+          DEBIAN_FRONTEND=noninteractive apt-get install -y \
+            git rsync devscripts debhelper dpkg-dev \
+            cmake extra-cmake-modules pkg-config g++ \
+            qt6-base-dev qt6-base-private-dev \
+            libkf6coreaddons-dev libkf6config-dev libkf6configwidgets-dev \
+            libkf6kcmutils-dev libkf6widgetsaddons-dev libkf6colorscheme-dev \
+            libkdecorations3-dev
+
+      - name: Install build deps (fedora)
+        if: matrix.target.distro == 'fedora'
+        run: |
+          dnf install -y \
+            git rsync rpm-build rpmdevtools \
+            cmake extra-cmake-modules pkgconfig gcc-c++ \
+            qt6-qtbase-devel qt6-qtbase-private-devel \
+            kf6-kcoreaddons-devel kf6-kconfig-devel kf6-kconfigwidgets-devel \
+            kf6-kcmutils-devel kf6-kwidgetsaddons-devel kf6-kcolorscheme-devel \
+            kdecoration-devel
+
+      - uses: actions/checkout@v4
+
+      - name: Determine version
+        id: ver
+        shell: bash
+        run: |
+          if [[ "${{ github.ref_type }}" == "tag" ]]; then
+            echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+          else
+            echo "version=${{ inputs.version }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build package
+        shell: bash
+        run: bash cde-plasma/packaging/${{ matrix.target.script }} ${{ steps.ver.outputs.version }}
+
+      # debian:trixie and ubuntu:24.10 both produce an identically-named
+      # cde-plasma_VERSION-1_amd64.deb. Append the distro slug so both can
+      # live in the same GitHub Release without overwriting each other.
+      # Arch/Fedora filenames are already distro-unique (pkg.tar.zst +
+      # rpmbuild's %dist tag).
+      - name: Disambiguate .deb filename
+        if: matrix.target.distro == 'debian' || matrix.target.distro == 'ubuntu'
+        shell: bash
+        run: |
+          cd dist
+          for f in *.deb; do
+            [ -e "$f" ] || continue
+            mv "$f" "${f%.deb}_${{ matrix.target.distro }}.deb"
+          done
+          ls -lh
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cde-plasma-${{ matrix.target.distro }}
+          path: ${{ matrix.target.artifact-glob }}
+          if-no-files-found: error
+
+  release:
+    name: publish github release
+    needs: build
+    runs-on: ubuntu-latest
+    # Only publish on real tag pushes — manual dispatch builds artifacts
+    # for download but doesn't create a Release.
+    if: github.event_name == 'push' && github.ref_type == 'tag'
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist/
+          merge-multiple: true
+
+      - name: List collected artifacts
+        run: ls -lh dist/
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*
+          generate_release_notes: true
+          draft: false
+          prerelease: false

@@ -1,0 +1,49 @@
+# CMake build output
+build/
+*/build/
+**/build/
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+install_manifest.txt
+
+# Compiled plugins / objects
+*.so
+*.o
+*.a
+
+# Installer logs (per-run timestamped)
+logs/
+cde-plasma/logs/
+
+# Prebuilt tarballs — these belong on GitHub Releases, not in the repo.
+# Keep the directory stub (.gitkeep) so install.sh / make-prebuilt.sh have
+# somewhere to drop files locally. Patterns use **/ so they match
+# cde-plasma/prebuilt/... (rules with a slash are anchored to the location
+# of the .gitignore file without **/).
+**/prebuilt/*.tar.gz
+**/prebuilt/*.tar.xz
+**/prebuilt/*.tar.zst
+
+# Distro package outputs (produced by CI / local packaging runs)
+dist/
+*.pkg.tar.zst
+*.deb
+*.rpm
+*.buildinfo
+*.changes
+
+# Editor / OS noise
+.DS_Store
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Claude Code local settings (user-local, not for sharing)
+.claude/
+**/.claude/
