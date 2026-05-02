@@ -54,6 +54,15 @@ inline const QColor electricInactiveTitleColor(0, 168, 136);
 inline const QColor electricActiveTextColor(255, 255, 255);
 inline const QColor electricInactiveTextColor(0, 0, 0);
 
+// Classic preset — taken from the OpenCDE demo's Default.dp palette
+// (warm beige body with a steel-blue active titlebar). This is the
+// look most readers picture when they hear "CDE".
+inline const QColor classicFrameColor(198, 178, 168);
+inline const QColor classicActiveTitleColor(137, 152, 170);
+inline const QColor classicInactiveTitleColor(141, 138, 145);
+inline const QColor classicActiveTextColor(0, 0, 0);
+inline const QColor classicInactiveTextColor(0, 0, 0);
+
 // Config keys
 inline const QString frameColorKey = QStringLiteral("FrameColor");
 inline const QString activeTitleColorKey = QStringLiteral("ActiveTitleColor");

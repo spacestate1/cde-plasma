@@ -38,7 +38,7 @@ Description: CDE (Common Desktop Environment) theme for KDE Plasma 5
    - Plasma desktop theme (panel, system tray, plasmoids)
    - SDDM login theme
    - Lock screen overlay
-   - Multiple bundled color schemes (Blue-Gray, Dark, Chartreuse, Electric Pink)
+   - Multiple bundled color schemes (Blue-Gray, Dark, Chartreuse, Electric Pink, Classic)
  .
  This is the Plasma 5 build. For Plasma 6, use the main cde-plasma package
  from a release targeting Debian 13 / Ubuntu 24.10 or later.

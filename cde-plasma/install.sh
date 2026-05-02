@@ -599,10 +599,11 @@ install_qt_style() {
 install_plasma_theme() {
     echo "[3/8] Installing Plasma themes..."
     local base_dir="$HOME/.local/share/plasma/desktoptheme"
-    mkdir -p "$base_dir/commonality" "$base_dir/commonality-dark"
+    mkdir -p "$base_dir/commonality" "$base_dir/commonality-dark" "$base_dir/commonality-classic"
     cp -r "$SCRIPT_DIR/commonality/"* "$base_dir/commonality/"
     cp -r "$SCRIPT_DIR/commonality-dark/"* "$base_dir/commonality-dark/"
-    echo "Plasma themes installed to $base_dir (commonality + commonality-dark)"
+    cp -r "$SCRIPT_DIR/commonality-classic/"* "$base_dir/commonality-classic/"
+    echo "Plasma themes installed to $base_dir (commonality + commonality-dark + commonality-classic)"
     echo
 }
 
@@ -615,7 +616,8 @@ install_color_scheme() {
     cp "$SCRIPT_DIR/CDE-Dark.colors" "$colors_dir/"
     cp "$SCRIPT_DIR/CDE-Chartreuse.colors" "$colors_dir/"
     cp "$SCRIPT_DIR/CDE-ElectricPink.colors" "$colors_dir/"
-    echo "Color schemes installed to $colors_dir (Blue-Gray, Dark, Chartreuse, Electric Pink)"
+    cp "$SCRIPT_DIR/CDE-Classic.colors" "$colors_dir/"
+    echo "Color schemes installed to $colors_dir (Blue-Gray, Dark, Chartreuse, Electric Pink, Classic)"
     echo
 }
 
@@ -868,17 +870,21 @@ restart_kde() {
         if [ -n "$qdbus_cmd" ]; then
             "$qdbus_cmd" org.kde.KWin /KWin reconfigure 2>/dev/null || true
         fi
+        # 9>&- closes the install lock fd in the child. Without it, the
+        # long-lived plasmashell inherits fd 9 and keeps the flock held
+        # indefinitely, blocking any subsequent install.sh / uninstall.sh
+        # run on its acquire_state_lock step.
         if [ -n "$WAYLAND_DISPLAY" ] && pgrep -x plasmashell >/dev/null; then
-            plasmashell --replace &>/dev/null &
+            plasmashell --replace &>/dev/null 9>&- &
         fi
         echo "Note: Log out and back in for full effect on Wayland."
     else
         if [ -n "$DISPLAY" ]; then
             if pgrep -x kwin_x11 >/dev/null; then
-                kwin_x11 --replace &>/dev/null &
+                kwin_x11 --replace &>/dev/null 9>&- &
             fi
             if pgrep -x plasmashell >/dev/null; then
-                plasmashell --replace &>/dev/null &
+                plasmashell --replace &>/dev/null 9>&- &
             fi
         fi
     fi

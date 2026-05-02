@@ -33,13 +33,13 @@ set(PLASMA_DIR      "${KDE_DATADIR}/plasma")
 set(LOCKSCREEN_DIR  "${PLASMA_DIR}/shells/org.kde.plasma.desktop/contents/lockscreen")
 
 # --- Plasma desktop themes (light + dark) ---
-install(DIRECTORY commonality commonality-dark
+install(DIRECTORY commonality commonality-dark commonality-classic
     DESTINATION "${PLASMA_DIR}/desktoptheme"
     PATTERN ".git*" EXCLUDE
 )
 
 # --- Color schemes (light + dark) ---
-install(FILES CDE.colors CDE-Dark.colors CDE-Chartreuse.colors CDE-ElectricPink.colors
+install(FILES CDE.colors CDE-Dark.colors CDE-Chartreuse.colors CDE-ElectricPink.colors CDE-Classic.colors
     DESTINATION "${KDE_DATADIR}/color-schemes"
 )
 

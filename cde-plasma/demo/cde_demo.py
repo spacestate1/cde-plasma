@@ -22,6 +22,15 @@ from PyQt6.QtGui import QPalette, QColor, QFont, QPainter, QAction, QPolygon, QP
 
 PALETTES = [
     {
+        "name": "Classic",
+        "frame":     QColor(198, 178, 168),
+        "titlebar":  QColor(137, 152, 170),
+        "text":      QColor(  0,   0,   0),
+        "textlight": QColor(  0,   0,   0),
+        "base":      QColor(208, 192, 184),
+        "highlight": QColor( 73, 146, 167),
+    },
+    {
         "name": "Blue-Gray",
         "frame":     QColor(186, 190, 210),
         "titlebar":  QColor(192,  64, 128),

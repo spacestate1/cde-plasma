@@ -20,6 +20,7 @@ private Q_SLOTS:
     void applyDarkPreset();
     void applyChartreusePreset();
     void applyElectricPreset();
+    void applyClassicPreset();
 
 private:
     void updateChanged();

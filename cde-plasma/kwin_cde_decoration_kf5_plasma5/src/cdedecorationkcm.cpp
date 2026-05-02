@@ -25,10 +25,12 @@ CdeDecorationKcm::CdeDecorationKcm(QWidget *parent, const QVariantList &args)
     m_inactiveTextColor = new KColorButton(this);
 
     auto *presetRow = new QHBoxLayout;
+    auto *classicButton = new QPushButton(QStringLiteral("Classic"), this);
     auto *lightButton = new QPushButton(QStringLiteral("Light"), this);
     auto *darkButton = new QPushButton(QStringLiteral("Dark"), this);
     auto *chartreuseButton = new QPushButton(QStringLiteral("Chartreuse"), this);
     auto *electricButton = new QPushButton(QStringLiteral("Electric Pink"), this);
+    presetRow->addWidget(classicButton);
     presetRow->addWidget(lightButton);
     presetRow->addWidget(darkButton);
     presetRow->addWidget(chartreuseButton);
@@ -42,6 +44,7 @@ CdeDecorationKcm::CdeDecorationKcm(QWidget *parent, const QVariantList &args)
     form->addRow(QStringLiteral("Active Text Color:"), m_activeTextColor);
     form->addRow(QStringLiteral("Inactive Text Color:"), m_inactiveTextColor);
 
+    connect(classicButton, &QPushButton::clicked, this, &CdeDecorationKcm::applyClassicPreset);
     connect(lightButton, &QPushButton::clicked, this, &CdeDecorationKcm::applyLightPreset);
     connect(darkButton, &QPushButton::clicked, this, &CdeDecorationKcm::applyDarkPreset);
     connect(chartreuseButton, &QPushButton::clicked, this, &CdeDecorationKcm::applyChartreusePreset);
@@ -138,6 +141,16 @@ void CdeDecorationKcm::applyElectricPreset()
     m_inactiveTitleColor->setColor(Config::electricInactiveTitleColor);
     m_activeTextColor->setColor(Config::electricActiveTextColor);
     m_inactiveTextColor->setColor(Config::electricInactiveTextColor);
+    updateChanged();
+}
+
+void CdeDecorationKcm::applyClassicPreset()
+{
+    m_frameColor->setColor(Config::classicFrameColor);
+    m_activeTitleColor->setColor(Config::classicActiveTitleColor);
+    m_inactiveTitleColor->setColor(Config::classicInactiveTitleColor);
+    m_activeTextColor->setColor(Config::classicActiveTextColor);
+    m_inactiveTextColor->setColor(Config::classicInactiveTextColor);
     updateChanged();
 }
 

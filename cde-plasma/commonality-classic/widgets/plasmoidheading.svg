@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="74"
+   height="50"
+   viewBox="0 0 74 50.000002"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
+   sodipodi:docname="plasmoidheading.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#d1d1d1"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="false"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="4.7169022"
+     inkscape:cx="44.626747"
+     inkscape:cy="37.312624"
+     inkscape:current-layer="layer1"
+     showgrid="true">
+    <inkscape:grid
+       id="grid1"
+       units="px"
+       originx="-4.9999995"
+       originy="-4.9999964"
+       spacingx="1"
+       spacingy="1"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       enabled="true"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-4.9999995,-4.9999962)">
+    <rect
+       style="fill:none;stroke-width:18;stroke-linecap:square"
+       id="header-center"
+       width="24"
+       height="24"
+       x="10"
+       y="10" />
+    <rect
+       style="fill:none;stroke-width:18;stroke-linecap:square"
+       id="header-top"
+       width="24"
+       height="5"
+       x="10"
+       y="4.9999995" />
+    <rect
+       style="fill:none;stroke-width:18;stroke-linecap:square"
+       id="header-topright"
+       width="5"
+       height="5"
+       x="34"
+       y="4.9999995" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#header-top"
+       id="header-left"
+       transform="rotate(-90,22,22)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#header-top"
+       id="header-right"
+       transform="rotate(90,22.000001,21.999999)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#header-topright"
+       id="header-topleft"
+       transform="translate(-29)" />
+    <rect
+       style="fill:#008000;stroke-width:18;stroke-linecap:square"
+       id="hint-top-margin"
+       width="1"
+       height="5"
+       x="44"
+       y="43.999996" />
+    <rect
+       style="fill:#008000;stroke-width:18;stroke-linecap:square"
+       id="hint-bottom-margin"
+       width="1"
+       height="5"
+       x="44"
+       y="49.999996" />
+    <rect
+       style="fill:#008000;stroke-width:18;stroke-linecap:square"
+       id="hint-right-margin"
+       width="5"
+       height="0.99999964"
+       x="45"
+       y="48.999996" />
+    <rect
+       style="fill:#008000;stroke-width:18;stroke-linecap:square"
+       id="hint-left-margin"
+       width="5"
+       height="0.99999964"
+       x="39"
+       y="48.999996" />
+    <g
+       id="header-bottom">
+      <rect
+         style="fill:none;stroke-width:18;stroke-linecap:square"
+         id="rect9"
+         width="24"
+         height="5"
+         x="10"
+         y="33.999996" />
+      <rect
+         style="fill:#e7deda;fill-opacity:1;stroke-width:18;stroke-linecap:square"
+         id="rect7"
+         width="24"
+         height="0.99999797"
+         x="10"
+         y="38" />
+      <rect
+         style="fill:#6a605a;fill-opacity:1;stroke-width:18;stroke-linecap:square"
+         id="rect8"
+         width="24"
+         height="0.99999797"
+         x="10"
+         y="37" />
+    </g>
+    <g
+       id="header-bottomright"
+       transform="matrix(0.20833333,0,0,1,31.916667,0)"
+       style="stroke-width:2.19089">
+      <rect
+         style="fill:none;stroke-width:39.436;stroke-linecap:square"
+         id="rect10"
+         width="24"
+         height="5"
+         x="10"
+         y="33.999996" />
+      <rect
+         style="fill:#e7deda;fill-opacity:1;stroke-width:39.436;stroke-linecap:square"
+         id="rect11"
+         width="9.5999985"
+         height="0.99999797"
+         x="10"
+         y="38" />
+      <rect
+         style="fill:#6a605a;fill-opacity:1;stroke-width:39.436;stroke-linecap:square"
+         id="rect12"
+         width="9.5999985"
+         height="0.99999797"
+         x="10"
+         y="37" />
+    </g>
+    <g
+       id="header-bottomleft"
+       transform="matrix(0.20833333,0,0,1,2.916667,-1.7812499e-6)"
+       style="stroke-width:2.19089">
+      <rect
+         style="fill:none;stroke-width:39.436;stroke-linecap:square"
+         id="rect13"
+         width="24"
+         height="5"
+         x="10"
+         y="33.999996" />
+      <rect
+         style="fill:#e7deda;fill-opacity:1;stroke-width:39.436;stroke-linecap:square"
+         id="rect14"
+         width="9.5999985"
+         height="0.99999797"
+         x="24.4"
+         y="38" />
+      <rect
+         style="fill:#6a605a;fill-opacity:1;stroke-width:39.436;stroke-linecap:square"
+         id="rect15"
+         width="9.5999985"
+         height="0.99999797"
+         x="24.4"
+         y="37" />
+    </g>
+    <rect
+       style="fill:none;stroke-width:18;stroke-linecap:square"
+       id="footer-center"
+       width="24"
+       height="24"
+       x="50"
+       y="10" />
+    <rect
+       style="fill:none;stroke-width:18;stroke-linecap:square"
+       id="footer-bottom"
+       width="24"
+       height="5"
+       x="50"
+       y="34" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#footer-bottom"
+       id="footer-left"
+       transform="rotate(-90,47.5,36.5)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#footer-bottom"
+       id="footer-right"
+       transform="rotate(90,76.5,36.5)" />
+    <rect
+       style="fill:none;stroke-width:18;stroke-linecap:square"
+       id="footer-bottomright"
+       width="5"
+       height="5"
+       x="74"
+       y="34" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#footer-bottomright"
+       id="footer-bottomleft"
+       transform="translate(-29)" />
+    <g
+       id="footer-top"
+       transform="translate(40,-28.999997)">
+      <rect
+         style="fill:none;stroke-width:18;stroke-linecap:square"
+         id="rect16"
+         width="24"
+         height="5"
+         x="10"
+         y="33.999996" />
+      <rect
+         style="fill:#e7deda;fill-opacity:1;stroke-width:18;stroke-linecap:square"
+         id="rect17"
+         width="24"
+         height="0.99999797"
+         x="10"
+         y="34.999996" />
+      <rect
+         style="fill:#6a605a;fill-opacity:1;stroke-width:18;stroke-linecap:square"
+         id="rect18"
+         width="24"
+         height="0.99999797"
+         x="10"
+         y="33.999996" />
+    </g>
+    <g
+       id="footer-topright"
+       transform="matrix(0.20833333,0,0,1,71.916667,-29)"
+       style="stroke-width:2.19089">
+      <rect
+         style="fill:none;stroke-width:39.436;stroke-linecap:square"
+         id="rect19"
+         width="24"
+         height="5"
+         x="10"
+         y="33.999996" />
+      <rect
+         style="fill:#e7deda;fill-opacity:1;stroke-width:39.436;stroke-linecap:square"
+         id="rect20"
+         width="9.5999985"
+         height="0.99999797"
+         x="10"
+         y="35.000004" />
+      <rect
+         style="fill:#6a605a;fill-opacity:1;stroke-width:39.436;stroke-linecap:square"
+         id="rect21"
+         width="9.5999985"
+         height="0.99999797"
+         x="10"
+         y="34.000004" />
+    </g>
+    <g
+       id="footer-topleft"
+       transform="matrix(0.20833333,0,0,1,42.916667,-29)"
+       style="stroke-width:2.19089">
+      <rect
+         style="fill:none;stroke-width:39.436;stroke-linecap:square"
+         id="rect22"
+         width="24"
+         height="5"
+         x="10"
+         y="33.999996" />
+      <rect
+         style="fill:#e7deda;fill-opacity:1;stroke-width:39.436;stroke-linecap:square"
+         id="rect23"
+         width="9.5999985"
+         height="0.99999797"
+         x="24.4"
+         y="35" />
+      <rect
+         style="fill:#6a605a;fill-opacity:1;stroke-width:39.436;stroke-linecap:square"
+         id="rect24"
+         width="9.5999985"
+         height="0.99999797"
+         x="24.4"
+         y="34" />
+    </g>
+  </g>
+</svg>

@@ -183,6 +183,7 @@ sudo rm -f /usr/lib/*/qt5/plugins/styles/cde_qt_style.so 2>/dev/null || true
 echo "Removing Plasma themes..."
 rm -rf ~/.local/share/plasma/desktoptheme/commonality 2>/dev/null || true
 rm -rf ~/.local/share/plasma/desktoptheme/commonality-dark 2>/dev/null || true
+rm -rf ~/.local/share/plasma/desktoptheme/commonality-classic 2>/dev/null || true
 
 echo "Removing look-and-feel..."
 rm -rf ~/.local/share/plasma/look-and-feel/org.kde.cde.desktop 2>/dev/null || true
@@ -193,6 +194,7 @@ rm -f ~/.local/share/color-schemes/CDE.colors 2>/dev/null || true
 rm -f ~/.local/share/color-schemes/CDE-Dark.colors 2>/dev/null || true
 rm -f ~/.local/share/color-schemes/CDE-Chartreuse.colors 2>/dev/null || true
 rm -f ~/.local/share/color-schemes/CDE-ElectricPink.colors 2>/dev/null || true
+rm -f ~/.local/share/color-schemes/CDE-Classic.colors 2>/dev/null || true
 
 # Per-user CDE decoration color config (Frame/ActiveTitle/etc.). Written by
 # the CDE look-and-feel's `defaults` file on apply, and by the decoration's
@@ -263,17 +265,21 @@ if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
             break
         fi
     done
+    # 9>&- closes the uninstall lock fd in the child. Without it, the
+    # long-lived plasmashell inherits fd 9 and keeps the flock held
+    # indefinitely, blocking any subsequent install.sh / uninstall.sh
+    # run on its acquire_state_lock step.
     if [ -n "$WAYLAND_DISPLAY" ] && pgrep -x plasmashell >/dev/null; then
-        plasmashell --replace &>/dev/null &
+        plasmashell --replace &>/dev/null 9>&- &
     fi
     echo "Note: Log out and back in for full effect on Wayland."
 else
     if [ -n "$DISPLAY" ]; then
         if pgrep -x kwin_x11 >/dev/null; then
-            kwin_x11 --replace &>/dev/null &
+            kwin_x11 --replace &>/dev/null 9>&- &
         fi
         if pgrep -x plasmashell >/dev/null; then
-            plasmashell --replace &>/dev/null &
+            plasmashell --replace &>/dev/null 9>&- &
         fi
     fi
 fi

@@ -37,7 +37,7 @@ KDE Plasma 6:
  - Plasma desktop theme (panel, system tray, plasmoids)
  - SDDM login theme
  - Lock screen overlay
- - Multiple bundled color schemes (Blue-Gray, Dark, Chartreuse, Electric Pink)
+ - Multiple bundled color schemes (Blue-Gray, Dark, Chartreuse, Electric Pink, Classic)
 
 After installation, run `cde-plasma-apply` as your user to switch to the
 theme. Run `cde-plasma-unapply` to revert (the package stays installed).
@@ -77,8 +77,10 @@ DESTDIR=%{buildroot} cmake --install build-assets
 %{_datadir}/color-schemes/CDE-Dark.colors
 %{_datadir}/color-schemes/CDE-Chartreuse.colors
 %{_datadir}/color-schemes/CDE-ElectricPink.colors
+%{_datadir}/color-schemes/CDE-Classic.colors
 %{_datadir}/plasma/desktoptheme/commonality/
 %{_datadir}/plasma/desktoptheme/commonality-dark/
+%{_datadir}/plasma/desktoptheme/commonality-classic/
 %{_datadir}/plasma/look-and-feel/org.kde.cde.desktop/
 %{_datadir}/plasma/look-and-feel/org.kde.cde-dark.desktop/
 %{_datadir}/sddm/themes/sddm-cde/
