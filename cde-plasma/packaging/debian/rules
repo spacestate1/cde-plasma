@@ -23,8 +23,8 @@ override_dh_auto_configure:
 		-DCMAKE_INSTALL_PREFIX=/usr
 
 override_dh_auto_build:
-	cmake --build $(BUILD_DECOR)
-	cmake --build $(BUILD_STYLE)
+	cmake --build $(BUILD_DECOR) -j$$(nproc)
+	cmake --build $(BUILD_STYLE) -j$$(nproc)
 
 override_dh_auto_install:
 	DESTDIR=$(DESTDIR) cmake --install $(BUILD_DECOR)

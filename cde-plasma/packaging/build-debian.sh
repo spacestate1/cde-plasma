@@ -77,7 +77,17 @@ cd "$WORK_DIR/$SRC_TOP"
 dpkg-buildpackage -b -us -uc -d
 
 # .deb / .changes / .buildinfo land in the parent dir.
-mv "$WORK_DIR"/*.deb "$DIST_DIR/" 2>/dev/null || true
+# Fail loudly if no .deb was produced.
+shopt -s nullglob
+debs=("$WORK_DIR"/*.deb)
+shopt -u nullglob
+
+if [[ ${#debs[@]} -eq 0 ]]; then
+    echo "ERROR: No .deb files produced by dpkg-buildpackage" >&2
+    exit 1
+fi
+
+mv "$WORK_DIR"/*.deb "$DIST_DIR/"
 mv "$WORK_DIR"/*.buildinfo "$DIST_DIR/" 2>/dev/null || true
 mv "$WORK_DIR"/*.changes "$DIST_DIR/" 2>/dev/null || true
 

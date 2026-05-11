@@ -11,17 +11,20 @@ VERSION="${1:-0.0.0}"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 DIST_DIR="$REPO_ROOT/dist"
-RPM_TOP="$(mktemp -d -t cde-fedora-build-XXXXXX)"
-trap 'rm -rf "$RPM_TOP"' EXIT
+WORK_DIR="$(mktemp -d -t cde-fedora-build-XXXXXX)"
+trap 'rm -rf "$WORK_DIR"' EXIT
+
+RPM_TOP="$WORK_DIR/rpmbuild"
+STAGE="$WORK_DIR/stage"
 
 mkdir -p "$DIST_DIR"
 mkdir -p "$RPM_TOP"/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
+mkdir -p "$STAGE"
 
 echo "=== Fedora build: cde-plasma $VERSION ==="
 
 # Source tarball — top dir cde-plasma-VERSION/ matches %autosetup default.
 SRC_TOP="cde-plasma-$VERSION"
-STAGE="$(mktemp -d)"
 mkdir -p "$STAGE/$SRC_TOP"
 rsync -a \
     --exclude='.git' \
@@ -31,7 +34,6 @@ rsync -a \
     --exclude='prebuilt/*.tar.gz' \
     "$REPO_ROOT/" "$STAGE/$SRC_TOP/"
 tar czf "$RPM_TOP/SOURCES/v$VERSION.tar.gz" -C "$STAGE" "$SRC_TOP"
-rm -rf "$STAGE"
 
 # Spec with version pinned.
 cp "$SCRIPT_DIR/fedora/cde-plasma.spec" "$RPM_TOP/SPECS/cde-plasma.spec"

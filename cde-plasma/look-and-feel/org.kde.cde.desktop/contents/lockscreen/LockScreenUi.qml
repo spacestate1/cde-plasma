@@ -71,10 +71,16 @@ Item {
     }
 
     function onViewHidden() {
-        // Screen going off — stop timers, clear transient state.
+        // Screen going off — stop timers, clear transient state so we're
+        // fresh on the next wake. This prevents stale PAM state from blocking
+        // authentication after suspend/resume.
         fadeoutTimer.stop()
+        pendingPasswordTimer.stop()
+        respondWatchdog.stop()
         lockScreenUi.pendingPassword = ""
         lockScreenUi.attemptInFlight = false
+        lockScreenUi.promptReady = false
+        lockScreenUi.failMessage = ""
         clearPassword()
         lockScreenUi.uiVisible = false
     }
@@ -326,9 +332,11 @@ Item {
             authenticator.respond(passwordInput.text)
             lockScreenUi.promptReady = false
             lockScreenUi.attemptInFlight = true
+            respondWatchdog.restart()
         } else {
             // PAM isn't prompting yet — queue and start a session.
             lockScreenUi.pendingPassword = passwordInput.text
+            pendingPasswordTimer.restart()
             authenticator.tryUnlock()
         }
     }
@@ -337,6 +345,8 @@ Item {
         target: typeof authenticator !== "undefined" ? authenticator : null
         ignoreUnknownSignals: true
         function onFailed() {
+            respondWatchdog.stop()
+            pendingPasswordTimer.stop()
             lockScreenUi.failMessage = "Unlock failed"
             passwordInput.text = ""
             lockScreenUi.pendingPassword = ""
@@ -346,6 +356,8 @@ Item {
             graceLockTimer.restart()
         }
         function onSucceeded() {
+            respondWatchdog.stop()
+            pendingPasswordTimer.stop()
             lockScreenUi.attemptInFlight = false
             if (lockScreenUi.hadPrompt) {
                 Qt.quit()
@@ -367,6 +379,7 @@ Item {
             passwordInput.forceActiveFocus()
         }
         function onPromptForSecret(msg) {
+            pendingPasswordTimer.stop()
             lockScreenUi.promptReady = true
             lockScreenUi.hadPrompt = true
             lockScreenUi.attemptInFlight = false
@@ -376,6 +389,7 @@ Item {
                 lockScreenUi.pendingPassword = ""
                 lockScreenUi.promptReady = false
                 lockScreenUi.attemptInFlight = true
+                respondWatchdog.restart()
             }
         }
     }
@@ -391,6 +405,44 @@ Item {
                 authenticator.tryUnlock()
             }
             passwordInput.forceActiveFocus()
+        }
+    }
+
+    // Timeout for pending password — if PAM doesn't prompt within 5 seconds
+    // after we queued a password, something is wrong. Show error and retry.
+    Timer {
+        id: pendingPasswordTimer
+        interval: 5000
+        onTriggered: {
+            if (lockScreenUi.pendingPassword.length > 0) {
+                lockScreenUi.failMessage = "Authentication timed out, retrying..."
+                lockScreenUi.pendingPassword = ""
+                lockScreenUi.attemptInFlight = false
+                passwordInput.text = ""
+                if (typeof authenticator !== "undefined") {
+                    authenticator.tryUnlock()
+                }
+                passwordInput.forceActiveFocus()
+            }
+        }
+    }
+
+    // Watchdog for respond() — if neither succeeded nor failed fires within
+    // 10 seconds after we sent the password, assume the session is dead.
+    Timer {
+        id: respondWatchdog
+        interval: 10000
+        onTriggered: {
+            if (lockScreenUi.attemptInFlight) {
+                lockScreenUi.failMessage = "No response from authenticator, retrying..."
+                lockScreenUi.attemptInFlight = false
+                lockScreenUi.promptReady = false
+                passwordInput.text = ""
+                if (typeof authenticator !== "undefined") {
+                    authenticator.tryUnlock()
+                }
+                passwordInput.forceActiveFocus()
+            }
         }
     }
 

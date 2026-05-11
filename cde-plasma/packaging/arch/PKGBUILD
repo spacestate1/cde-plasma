@@ -46,12 +46,12 @@ build() {
     cmake -B build-decoration -S kwin_cde_decoration_kf6_plasma6 \
         -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_BUILD_TYPE=Release
-    cmake --build build-decoration
+    cmake --build build-decoration -j$(nproc)
 
     cmake -B build-style -S cde_qt_style_kf6_plasma6 \
         -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_BUILD_TYPE=Release
-    cmake --build build-style
+    cmake --build build-style -j$(nproc)
 
     cmake -B build-assets -S . \
         -DCMAKE_INSTALL_PREFIX=/usr
