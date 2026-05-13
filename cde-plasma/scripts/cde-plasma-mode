@@ -37,6 +37,14 @@ if [ -z "$KWRITECONFIG" ]; then
     exit 1
 fi
 
+KREADCONFIG=""
+for cmd in kreadconfig6 kreadconfig5; do
+    if command -v "$cmd" &>/dev/null; then
+        KREADCONFIG="$cmd"
+        break
+    fi
+done
+
 # Pick a qdbus flavor for live reconfigure signals
 QDBUS=""
 for cmd in qdbus6 qdbus-qt6 qdbus qdbus-qt5; do
@@ -91,14 +99,18 @@ for candidate in "/usr/share/color-schemes/${COLORSCHEME}.colors" \
     [ -f "$candidate" ] && { SCHEME="$candidate"; break; }
 done
 if [ -n "$SCHEME" ]; then
-    for key in activeBackground activeBlend activeForeground inactiveBackground inactiveBlend inactiveForeground; do
-        v=$(kreadconfig5 --file "$SCHEME" --group WM --key "$key" 2>/dev/null)
-        [ -n "$v" ] && $KWRITECONFIG --file kdeglobals --group WM --key "$key" "$v"
-    done
-    for key in BackgroundNormal BackgroundAlternate ForegroundNormal ForegroundInactive DecorationFocus DecorationHover; do
-        v=$(kreadconfig5 --file "$SCHEME" --group 'Colors:Window' --key "$key" 2>/dev/null)
-        [ -n "$v" ] && $KWRITECONFIG --file kdeglobals --group 'Colors:Window' --key "$key" "$v"
-    done
+    if [ -z "$KREADCONFIG" ]; then
+        echo "  WARNING: no kreadconfig6/5 found; skipping scheme-key replay."
+    else
+        for key in activeBackground activeBlend activeForeground inactiveBackground inactiveBlend inactiveForeground; do
+            v=$("$KREADCONFIG" --file "$SCHEME" --group WM --key "$key" 2>/dev/null)
+            [ -n "$v" ] && $KWRITECONFIG --file kdeglobals --group WM --key "$key" "$v"
+        done
+        for key in BackgroundNormal BackgroundAlternate ForegroundNormal ForegroundInactive DecorationFocus DecorationHover; do
+            v=$("$KREADCONFIG" --file "$SCHEME" --group 'Colors:Window' --key "$key" 2>/dev/null)
+            [ -n "$v" ] && $KWRITECONFIG --file kdeglobals --group 'Colors:Window' --key "$key" "$v"
+        done
+    fi
 fi
 
 # Clear any stale per-key decoration overrides left by older versions so the
